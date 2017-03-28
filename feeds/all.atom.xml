@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Doing The Dishes</title><link href="https://eyalshafran.github.io/" rel="alternate"></link><link href="https://eyalshafran.github.io/feeds/all.atom.xml" rel="self"></link><id>https://eyalshafran.github.io/</id><updated>2017-03-17T23:54:00-06:00</updated><entry><title>First Post</title><link href="https://eyalshafran.github.io/first-post.html" rel="alternate"></link><published>2017-03-17T23:54:00-06:00</published><updated>2017-03-17T23:54:00-06:00</updated><author><name>Eyal</name></author><id>tag:eyalshafran.github.io,2017-03-17:/first-post.html</id><content type="html">&lt;style type="text/css"&gt;/*!
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Doing The Dishes</title><link href="http://eyalshafran.github.io/" rel="alternate"></link><link href="http://eyalshafran.github.io/feeds/all.atom.xml" rel="self"></link><id>http://eyalshafran.github.io/</id><updated>2017-03-17T23:54:00-06:00</updated><entry><title>First Post</title><link href="http://eyalshafran.github.io/first-post.html" rel="alternate"></link><published>2017-03-17T23:54:00-06:00</published><updated>2017-03-17T23:54:00-06:00</updated><author><name>Eyal</name></author><id>tag:eyalshafran.github.io,2017-03-17:/first-post.html</id><content type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
