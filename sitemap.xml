@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eyalshafran.github.io/</loc>
-<lastmod>2017-10-18T21:44:57-00:00</lastmod>
+<lastmod>2017-11-08T23:41:14-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eyalshafran.github.io/archives.html</loc>
-<lastmod>2017-10-18T21:44:57-00:00</lastmod>
+<lastmod>2017-11-08T23:41:14-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eyalshafran.github.io/tags.html</loc>
-<lastmod>2017-10-18T21:44:57-00:00</lastmod>
+<lastmod>2017-11-08T23:41:14-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eyalshafran.github.io/categories.html</loc>
-<lastmod>2017-10-18T21:44:57-00:00</lastmod>
+<lastmod>2017-11-08T23:41:14-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -40,9 +40,16 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eyalshafran.github.io/pages/contact-en.html</loc>
-<lastmod>2017-10-18T21:44:57-00:00</lastmod>
+<lastmod>2017-11-08T23:41:14-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eyalshafran.github.io/team_logos.html</loc>
+<lastmod>2017-11-08T23:30:00-07:00</lastmod>
+<changefreq>always</changefreq>
+<priority>1.0</priority>
 </url>
 
 <url>
@@ -96,21 +103,42 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eyalshafran.github.io/category/posts.html</loc>
-<lastmod>2017-10-18T23:00:00-07:00</lastmod>
+<lastmod>2017-11-08T23:30:00-07:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eyalshafran.github.io/tag/python.html</loc>
-<lastmod>2017-10-18T23:00:00-07:00</lastmod>
+<lastmod>2017-11-08T23:30:00-07:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eyalshafran.github.io/tag/nba.html</loc>
-<lastmod>2017-10-18T23:00:00-07:00</lastmod>
+<lastmod>2017-11-08T23:30:00-07:00</lastmod>
+<changefreq>hourly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eyalshafran.github.io/tag/scatter.html</loc>
+<lastmod>2017-11-08T23:30:00-07:00</lastmod>
+<changefreq>hourly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eyalshafran.github.io/tag/offensive-rating.html</loc>
+<lastmod>2017-11-08T23:30:00-07:00</lastmod>
+<changefreq>hourly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eyalshafran.github.io/tag/defensive-rating.html</loc>
+<lastmod>2017-11-08T23:30:00-07:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -201,7 +229,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eyalshafran.github.io/author/eyal.html</loc>
-<lastmod>2017-10-18T23:00:00-07:00</lastmod>
+<lastmod>2017-11-08T23:30:00-07:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
