@@ -8,6 +8,7 @@
 &lt;p&gt;This figure is the same basic idea as the first but with effective field goal % displayed in color.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="figure 2" src="images/Player_unassisted_points_v1.png"&gt;&lt;/p&gt;
 &lt;p&gt;Can't see much correlation between the EFG and the % of unassisted shots. Let's plot this more closely to see if there is any correlation:&lt;/p&gt;
+&lt;h3&gt;Note that for the next two figures the % unassisted FGM is now the x-axis.&lt;/h3&gt;
 &lt;p&gt;&lt;img alt="figure 3" src="images/Player_unassisted_points_v3.png"&gt;&lt;/p&gt;
 &lt;p&gt;Can't see any noticeable correlation. &lt;/p&gt;
 &lt;p&gt;How about teams?&lt;/p&gt;
