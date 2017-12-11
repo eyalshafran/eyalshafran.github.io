@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Doing The Dishes - Blog</title><link href="https://eyalshafran.github.io/" rel="alternate"></link><link href="https://eyalshafran.github.io/feeds/blog.atom.xml" rel="self"></link><id>https://eyalshafran.github.io/</id><updated>2017-11-29T07:30:00-07:00</updated><entry><title>Which Players Create Their Own Shots</title><link href="https://eyalshafran.github.io/shot-creation.html" rel="alternate"></link><published>2017-11-29T07:30:00-07:00</published><updated>2017-11-29T07:30:00-07:00</updated><author><name>Eyal Shafran</name></author><id>tag:eyalshafran.github.io,2017-11-29:/shot-creation.html</id><summary type="html">&lt;p&gt;Some players create their own shots and others depend more on their teammates.&lt;/p&gt;</summary><content type="html">&lt;p&gt;All figures are updated for the 2017-18 season as of the posts date.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Doing The Dishes - Blog</title><link href="https://eyalshafran.github.io/" rel="alternate"></link><link href="https://eyalshafran.github.io/feeds/blog.atom.xml" rel="self"></link><id>https://eyalshafran.github.io/</id><updated>2017-12-11T15:30:00-07:00</updated><entry><title>A few figures - week 1</title><link href="https://eyalshafran.github.io/figure-summary-1.html" rel="alternate"></link><published>2017-12-11T15:30:00-07:00</published><updated>2017-12-11T15:30:00-07:00</updated><author><name>Eyal Shafran</name></author><id>tag:eyalshafran.github.io,2017-12-11:/figure-summary-1.html</id><summary type="html">&lt;p&gt;A few figures from accross the league&lt;/p&gt;</summary><content type="html">&lt;h2&gt;A couple of figures that show Stephen Curry's shooting greatness:&lt;/h2&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;
+&lt;img alt="figure 1" src="images/week1/Three_pointers.png"&gt;
+&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="figure 2" src="images/week1/Three_pointer_record.png"&gt;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2&gt;Cousins on pace to shot more 3's than Curry:&lt;/h2&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;
+&lt;img alt="figure 3" src="images/week1/Cousins_3Point_shooting.png"&gt;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2&gt;You can leave Houston but Houton (shot selection) does not leave you:&lt;/h2&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;
+&lt;img alt="figure 4" src="images/week1/Casspi_shotchart.png"&gt;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2&gt;Talking about a complete outlier:&lt;/h2&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;
+&lt;img alt="figure 5" src="images/week1/Harden_threes_fouls.png"&gt;&lt;/p&gt;
+&lt;p&gt;This was inspired by this: &lt;a href="https://fivethirtyeight.com/features/james-harden-gets-fouled-on-3s-more-than-any-nba-team/"&gt;fivethirtyeight&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Let me know what you think&lt;/h3&gt;
+&lt;p&gt;Thank you Tomer Tal for helpful comments.&lt;/p&gt;</content><category term="NBA"></category><category term="Cousins"></category><category term="Casspi"></category><category term="Curry"></category></entry><entry><title>Which Players Create Their Own Shots</title><link href="https://eyalshafran.github.io/shot-creation.html" rel="alternate"></link><published>2017-11-29T07:30:00-07:00</published><updated>2017-11-29T07:30:00-07:00</updated><author><name>Eyal Shafran</name></author><id>tag:eyalshafran.github.io,2017-11-29:/shot-creation.html</id><summary type="html">&lt;p&gt;Some players create their own shots and others depend more on their teammates.&lt;/p&gt;</summary><content type="html">&lt;p&gt;All figures are updated for the 2017-18 season as of the posts date.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="figure 1" src="images/Player_unassisted_points_v2.png"&gt;&lt;/p&gt;
 &lt;p&gt;Top right - create their own shots and scores a lot.&lt;/p&gt;
 &lt;p&gt;Bottom right - High scoring mostly from assisted FGM.&lt;/p&gt;

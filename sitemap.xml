@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eyalshafran.github.io/</loc>
-<lastmod>2017-11-29T22:26:42-00:00</lastmod>
+<lastmod>2017-12-11T14:33:34-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eyalshafran.github.io/archives.html</loc>
-<lastmod>2017-11-29T22:26:42-00:00</lastmod>
+<lastmod>2017-12-11T14:33:34-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eyalshafran.github.io/tags.html</loc>
-<lastmod>2017-11-29T22:26:42-00:00</lastmod>
+<lastmod>2017-12-11T14:33:34-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eyalshafran.github.io/categories.html</loc>
-<lastmod>2017-11-29T22:26:42-00:00</lastmod>
+<lastmod>2017-12-11T14:33:34-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -40,9 +40,16 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eyalshafran.github.io/pages/contact-en.html</loc>
-<lastmod>2017-11-29T22:26:42-00:00</lastmod>
+<lastmod>2017-12-11T14:33:34-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eyalshafran.github.io/figure-summary-1.html</loc>
+<lastmod>2017-12-11T15:30:00-07:00</lastmod>
+<changefreq>always</changefreq>
+<priority>1.0</priority>
 </url>
 
 <url>
@@ -117,7 +124,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eyalshafran.github.io/category/blog.html</loc>
-<lastmod>2017-11-29T07:30:00-07:00</lastmod>
+<lastmod>2017-12-11T15:30:00-07:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -125,6 +132,34 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://eyalshafran.github.io/category/code.html</loc>
 <lastmod>2017-11-24T23:30:00-07:00</lastmod>
+<changefreq>hourly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eyalshafran.github.io/tag/nba.html</loc>
+<lastmod>2017-12-11T15:30:00-07:00</lastmod>
+<changefreq>hourly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eyalshafran.github.io/tag/cousins.html</loc>
+<lastmod>2017-12-11T15:30:00-07:00</lastmod>
+<changefreq>hourly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eyalshafran.github.io/tag/casspi.html</loc>
+<lastmod>2017-12-11T15:30:00-07:00</lastmod>
+<changefreq>hourly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eyalshafran.github.io/tag/curry.html</loc>
+<lastmod>2017-12-11T15:30:00-07:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -138,13 +173,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eyalshafran.github.io/tag/unassisted-fgm.html</loc>
-<lastmod>2017-11-29T07:30:00-07:00</lastmod>
-<changefreq>hourly</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://eyalshafran.github.io/tag/nba.html</loc>
 <lastmod>2017-11-29T07:30:00-07:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
@@ -292,7 +320,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eyalshafran.github.io/author/eyal-shafran.html</loc>
-<lastmod>2017-11-29T07:30:00-07:00</lastmod>
+<lastmod>2017-12-11T15:30:00-07:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
