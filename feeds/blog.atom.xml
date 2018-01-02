@@ -1,5 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Doing The Dishes - Blog</title><link href="https://eyalshafran.github.io/" rel="alternate"></link><link href="https://eyalshafran.github.io/feeds/blog.atom.xml" rel="self"></link><id>https://eyalshafran.github.io/</id><updated>2017-12-11T15:30:00-07:00</updated><entry><title>A few figures - week 1</title><link href="https://eyalshafran.github.io/figure-summary-1.html" rel="alternate"></link><published>2017-12-11T15:30:00-07:00</published><updated>2017-12-11T15:30:00-07:00</updated><author><name>Eyal Shafran</name></author><id>tag:eyalshafran.github.io,2017-12-11:/figure-summary-1.html</id><summary type="html">&lt;p&gt;A few figures from accross the league&lt;/p&gt;</summary><content type="html">&lt;h2&gt;A couple of figures that show Stephen Curry's shooting greatness:&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Doing The Dishes - Blog</title><link href="https://eyalshafran.github.io/" rel="alternate"></link><link href="https://eyalshafran.github.io/feeds/blog.atom.xml" rel="self"></link><id>https://eyalshafran.github.io/</id><updated>2018-01-01T11:59:00-07:00</updated><entry><title>Assists Breakdown</title><link href="https://eyalshafran.github.io/assists_breakdown.html" rel="alternate"></link><published>2018-01-01T11:59:00-07:00</published><updated>2018-01-01T11:59:00-07:00</updated><author><name>Eyal Shafran</name></author><id>tag:eyalshafran.github.io,2018-01-01:/assists_breakdown.html</id><summary type="html">&lt;p&gt;A more in depth look at assists&lt;/p&gt;</summary><content type="html">&lt;p&gt;What gets you most excited about the game? A crazy dunk? Buzzer beater? A LeBron style block? If you ask for my opinion it is a beautiful assist. I find nothing more satisfying than a nice team play that ends up in an easy dunk or a creative pass.&lt;/p&gt;
+&lt;p&gt;My first attempt was to try and show that assists are important for winning. One way to do that is to check whether a team that assists on a lot of their FG also shoots at a higher FG %. So I plotted the % of assisted FG (i.e. assisted FG / Total FG) as a function of the EFG to see if there is a correlation:&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;
+&lt;img alt="figure 1" src="images/assists/team_assisted_EFG_2017.png"&gt;
+&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Conclusion? At first glance there seems to be a medium-strong correlation. Yes! Assists are very important! &lt;/p&gt;
+&lt;p&gt;But to be more throughout I also looked at a few other season. To my surprise, for some season there is a strong correlation and for others a weak or no correlation. In 2004-05 it even seems like assisting less helped teams score more efficiently. If we look at the last 10 seasons combined, there seems to be no correlation at all. Does this mean assists are not important? I still think they significant but more importantly, a coach needs to match the team style of play to the strengh of the players on the team. For Golden State the ball and player movement are vital for shooting effeciently. The Rockets on the other hand, can still shoot at a high perecntage without many assists due to the amazing ability of Harden and Paul to score unassisted. So the question of how important assists are for winning is still an open question.&lt;/p&gt;
+&lt;p&gt;I still think a more in depth investigation of the location of the shooter on an assist is an important piece of information.  &lt;/p&gt;
+&lt;p&gt;I divided the court into 4 section - under the basket (8 ft. or less), short 2 (8-16 ft.), long 2 (16-24 ft.) and 3-Points. Here is an illustration of the court:
+&lt;br&gt;&lt;br&gt;
+&lt;img alt="figure 1" src="images/assists/Court_breakdown.png"&gt;
+&lt;br&gt;&lt;br&gt;
+We can look at the assist leaders and where their passes go:
+&lt;br&gt;&lt;br&gt;
+&lt;img alt="figure 1" src="images/assists/Assists_breakdown.png"&gt;
+&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;For example, Chris Paul leads the NBA in assists to 3-Pointers, Westbrook has the most assists when the shooter is under the basket and Draymond Green has the most for midrange shots. This is highly correlated with the teams style of play - Houston shoots a lot of 3s and do not shot from midrange whereas Golden State shots from everywhere with some of the best midrange jumpers in the game.&lt;/p&gt;
+&lt;p&gt;We can even do more and look at what I call the assist shot chart. For each player you can scroll through the images and see their passing preference by players and location on the floor:&lt;/p&gt;
+&lt;h3&gt;Westbrook&lt;/h3&gt;
+&lt;p&gt;&lt;blockquote class="imgur-embed-pub" lang="en" data-id="a/wToLW"&gt;&lt;a href="//imgur.com/wToLW"&gt;Assists by Westbrook&lt;/a&gt;&lt;/blockquote&gt;&lt;script async src="//s.imgur.com/min/embed.js" charset="utf-8"&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;h3&gt;James&lt;/h3&gt;
+&lt;p&gt;&lt;blockquote class="imgur-embed-pub" lang="en" data-id="a/9yoGF"&gt;&lt;a href="//imgur.com/9yoGF"&gt;Assists by LeBron&lt;/a&gt;&lt;/blockquote&gt;&lt;script async src="//s.imgur.com/min/embed.js" charset="utf-8"&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;h3&gt;Harden&lt;/h3&gt;
+&lt;p&gt;&lt;blockquote class="imgur-embed-pub" lang="en" data-id="a/EyIoi"&gt;&lt;a href="//imgur.com/EyIoi"&gt;Assists by Harden&lt;/a&gt;&lt;/blockquote&gt;&lt;script async src="//s.imgur.com/min/embed.js" charset="utf-8"&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;h3&gt;Wall&lt;/h3&gt;
+&lt;p&gt;&lt;blockquote class="imgur-embed-pub" lang="en" data-id="a/yA5Fo"&gt;&lt;a href="//imgur.com/yA5Fo"&gt;Assists by Wall&lt;/a&gt;&lt;/blockquote&gt;&lt;script async src="//s.imgur.com/min/embed.js" charset="utf-8"&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;h3&gt;Paul&lt;/h3&gt;
+&lt;p&gt;&lt;blockquote class="imgur-embed-pub" lang="en" data-id="a/TqPSV"&gt;&lt;a href="//imgur.com/TqPSV"&gt;Assists by Paul&lt;/a&gt;&lt;/blockquote&gt;&lt;script async src="//s.imgur.com/min/embed.js" charset="utf-8"&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;h3&gt;Green&lt;/h3&gt;
+&lt;p&gt;&lt;blockquote class="imgur-embed-pub" lang="en" data-id="a/RITRb"&gt;&lt;a href="//imgur.com/RITRb"&gt;Assists by Green&lt;/a&gt;&lt;/blockquote&gt;&lt;script async src="//s.imgur.com/min/embed.js" charset="utf-8"&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;A few things I noticed:
+&lt;em&gt; Harden likes to pass to Capela (88 assists) but he only assisted on 6 Chris Paul shots (also due to limited games played together).
+&lt;/em&gt; Westbrook assited to Adams and Robrson from 8 ft. or under 84 and 39 times respectively.
+&lt;em&gt; LeBron likes to pass to 3s with 4.5 assists per game (second in the league).
+&lt;/em&gt; Green leads the NBA in midrange assists mostly due to Thompson and Durant which are excelent from that range.&lt;/p&gt;
+&lt;h3&gt;Who is the team with the highest % of assisted FGM?&lt;/h3&gt;
+&lt;p&gt;The 2002-03 Utah Jazz assisted on 73% of their made FG. It was Stockton's last year on the team. Despite the large number of assists, their EFG was a mediocre 48.6%.&lt;/p&gt;
+&lt;h3&gt;What are your thought?&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://www.facebook.com/sportsplotting/"&gt;follow my page on facebook&lt;/a&gt;&lt;/p&gt;</content><category term="NBA"></category><category term="Assists"></category><category term="Shot chart"></category></entry><entry><title>A few figures - week 1</title><link href="https://eyalshafran.github.io/figure-summary-1.html" rel="alternate"></link><published>2017-12-11T15:30:00-07:00</published><updated>2017-12-11T15:30:00-07:00</updated><author><name>Eyal Shafran</name></author><id>tag:eyalshafran.github.io,2017-12-11:/figure-summary-1.html</id><summary type="html">&lt;p&gt;A few figures from accross the league&lt;/p&gt;</summary><content type="html">&lt;h2&gt;A couple of figures that show Stephen Curry's shooting greatness:&lt;/h2&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;
 &lt;img alt="figure 1" src="images/week1/Three_pointers.png"&gt;
 &lt;br&gt;&lt;br&gt;&lt;/p&gt;

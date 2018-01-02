@@ -1,0 +1,14 @@
+table.dataframe tr:nth-child(even) {
+	background-color: lightblue;
+}
+
+table.dataframe th {
+    background-color: darkblue;
+    color: white;
+	text-align: center;
+	border: 0px solid black;
+}
+table.dataframe td {
+	text-align: center;
+	border: 0px solid black;
+}

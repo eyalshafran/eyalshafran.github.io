@@ -38,9 +38,16 @@
 
 
 
+	<!-- Doing the Dishes Specific CSS -->
+	<link href="https://eyalshafran.github.io/theme/css/doingthedishes/dtd-main.css" rel="stylesheet">
 </head>
 <body>
 
+
+<!-- Embedded Javascript. Same as referecing an external JS document -->
+<script language="javascript">
+	//alert("Hello World!  I am an annoying popup!");
+</script>
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
 	<div class="container">
         <div class="navbar-header">
@@ -82,6 +89,18 @@ Doing The Dishes            </a>
     <section id="tags">
         <h1>Tags for Doing The Dishes</h1>
         <div class="panel-group" id="accordion">            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-assists">Assists <span class="badge pull-right">1</span></a>
+                    </h4>
+                </div>
+                <div id="collapse-assists" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p><span class="categories-timestamp"><time datetime="2018-01-01T11:59:00-07:00">Mon 01 January 2018</time></span> <a href="https://eyalshafran.github.io/assists_breakdown.html">Assists Breakdown</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#accordion" href="#collapse-basketball-reference">basketball-reference <span class="badge pull-right">1</span></a>
@@ -240,11 +259,12 @@ Doing The Dishes            </a>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-nba">NBA <span class="badge pull-right">10</span></a>
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-nba">NBA <span class="badge pull-right">11</span></a>
                     </h4>
                 </div>
                 <div id="collapse-nba" class="panel-collapse collapse">
                     <div class="panel-body">
+                        <p><span class="categories-timestamp"><time datetime="2018-01-01T11:59:00-07:00">Mon 01 January 2018</time></span> <a href="https://eyalshafran.github.io/assists_breakdown.html">Assists Breakdown</a></p>
                         <p><span class="categories-timestamp"><time datetime="2017-12-11T15:30:00-07:00">Mon 11 December 2017</time></span> <a href="https://eyalshafran.github.io/figure-summary-1.html">A few figures - week 1</a></p>
                         <p><span class="categories-timestamp"><time datetime="2017-11-29T07:30:00-07:00">Wed 29 November 2017</time></span> <a href="https://eyalshafran.github.io/shot-creation.html">Which Players Create Their Own Shots</a></p>
                         <p><span class="categories-timestamp"><time datetime="2017-11-24T23:30:00-07:00">Fri 24 November 2017</time></span> <a href="https://eyalshafran.github.io/four_factors.html">Four Factors</a></p>
@@ -328,11 +348,12 @@ Doing The Dishes            </a>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-shot-chart">shot chart <span class="badge pull-right">2</span></a>
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-shot-chart">Shot chart <span class="badge pull-right">3</span></a>
                     </h4>
                 </div>
                 <div id="collapse-shot-chart" class="panel-collapse collapse">
                     <div class="panel-body">
+                        <p><span class="categories-timestamp"><time datetime="2018-01-01T11:59:00-07:00">Mon 01 January 2018</time></span> <a href="https://eyalshafran.github.io/assists_breakdown.html">Assists Breakdown</a></p>
                         <p><span class="categories-timestamp"><time datetime="2017-05-19T23:00:00-06:00">Fri 19 May 2017</time></span> <a href="https://eyalshafran.github.io/mvp_shotchart.html">Shot chart for every MVP in the last 20 years</a></p>
                         <p><span class="categories-timestamp"><time datetime="2017-05-07T23:00:00-06:00">Sun 07 May 2017</time></span> <a href="https://eyalshafran.github.io/grantland_shotchart.html">Creating Grantland style shot charts</a></p>
                     </div>
@@ -423,6 +444,11 @@ Doing The Dishes            </a>
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="https://eyalshafran.github.io/assists_breakdown.html">
+                            Assists Breakdown
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="https://eyalshafran.github.io/figure-summary-1.html">
                             A few figures - week 1
                         </a>
@@ -440,11 +466,6 @@ Doing The Dishes            </a>
                     <li class="list-group-item">
                         <a href="https://eyalshafran.github.io/team_logos.html">
                             Scatter plot with team logos
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://eyalshafran.github.io/scraping_basketball_reference.html">
-                            Scraping Basketball Reference
                         </a>
                     </li>
                 </ul>
@@ -486,7 +507,7 @@ Doing The Dishes            </a>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2017 Eyal Shafran
+         <div class="col-xs-10">&copy; 2018 Eyal Shafran
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
