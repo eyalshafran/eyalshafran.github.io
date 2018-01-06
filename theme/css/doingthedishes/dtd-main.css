@@ -1,4 +1,4 @@
-table.dataframe tr:nth-child(even) {
+table.dataframe tbody tr:nth-child(even) {
 	background-color: #f2f2f2;
 }
 
