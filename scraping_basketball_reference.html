@@ -51,14 +51,17 @@
 
 	<!-- Doing the Dishes Specific CSS -->
 	<link href="https://eyalshafran.github.io/theme/css/doingthedishes/dtd-main.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.11.1.min.css" type="text/css" />
 </head>
 <body>
 
 
 <!-- Embedded Javascript. Same as referecing an external JS document -->
-<script language="javascript">
-	//alert("Hello World!  I am an annoying popup!");
-</script>
+ <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.11.1.min.js"></script>
+ <script type="text/javascript">
+     Bokeh.set_log_level("info");
+ </script>
+
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
 	<div class="container">
         <div class="navbar-header">

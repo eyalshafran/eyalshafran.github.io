@@ -1,5 +1,5 @@
 table.dataframe tr:nth-child(even) {
-	background-color: lightblue;
+	background-color: #f2f2f2;
 }
 
 table.dataframe th {
@@ -7,8 +7,20 @@ table.dataframe th {
     color: white;
 	text-align: center;
 	border: 0px solid black;
+	padding: 4px;
 }
 table.dataframe td {
 	text-align: center;
 	border: 0px solid black;
+	padding: 4px;
+}
+
+table.dataframe {
+    border-collapse: collapse;
+	border: 0px solid black;
+}
+
+table.dataframe thead{
+    background-color: darkblue;
+    color: white;
 }
