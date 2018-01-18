@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eyalshafran.github.io/</loc>
-<lastmod>2018-01-05T18:11:50-00:00</lastmod>
+<lastmod>2018-01-18T00:18:01-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eyalshafran.github.io/archives.html</loc>
-<lastmod>2018-01-05T18:11:50-00:00</lastmod>
+<lastmod>2018-01-18T00:18:01-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eyalshafran.github.io/tags.html</loc>
-<lastmod>2018-01-05T18:11:50-00:00</lastmod>
+<lastmod>2018-01-18T00:18:01-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eyalshafran.github.io/categories.html</loc>
-<lastmod>2018-01-05T18:11:50-00:00</lastmod>
+<lastmod>2018-01-18T00:18:01-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -40,9 +40,16 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eyalshafran.github.io/pages/contact-en.html</loc>
-<lastmod>2018-01-05T18:11:50-00:00</lastmod>
+<lastmod>2018-01-18T00:18:01-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eyalshafran.github.io/per-ws-vs-salary.html</loc>
+<lastmod>2018-01-17T23:45:00-07:00</lastmod>
+<changefreq>always</changefreq>
+<priority>1.0</priority>
 </url>
 
 <url>
@@ -139,6 +146,34 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://eyalshafran.github.io/category/code.html</loc>
 <lastmod>2017-11-24T23:30:00-07:00</lastmod>
+<changefreq>hourly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eyalshafran.github.io/category/interactive-graphs.html</loc>
+<lastmod>2018-01-17T23:45:00-07:00</lastmod>
+<changefreq>hourly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eyalshafran.github.io/tag/per.html</loc>
+<lastmod>2018-01-17T23:45:00-07:00</lastmod>
+<changefreq>hourly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eyalshafran.github.io/tag/ws.html</loc>
+<lastmod>2018-01-17T23:45:00-07:00</lastmod>
+<changefreq>hourly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eyalshafran.github.io/tag/salary.html</loc>
+<lastmod>2018-01-17T23:45:00-07:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -334,7 +369,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eyalshafran.github.io/author/eyal-shafran.html</loc>
-<lastmod>2018-01-01T11:59:00-07:00</lastmod>
+<lastmod>2018-01-17T23:45:00-07:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
