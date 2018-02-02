@@ -1,5 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Doing The Dishes - Blog</title><link href="https://eyalshafran.github.io/" rel="alternate"></link><link href="https://eyalshafran.github.io/feeds/blog.atom.xml" rel="self"></link><id>https://eyalshafran.github.io/</id><updated>2018-01-01T11:59:00-07:00</updated><entry><title>Assists Breakdown</title><link href="https://eyalshafran.github.io/assists_breakdown.html" rel="alternate"></link><published>2018-01-01T11:59:00-07:00</published><updated>2018-01-01T11:59:00-07:00</updated><author><name>Eyal Shafran</name></author><id>tag:eyalshafran.github.io,2018-01-01:/assists_breakdown.html</id><summary type="html">&lt;p&gt;A more in depth look at assists&lt;/p&gt;</summary><content type="html">&lt;p&gt;What gets you most excited about the game? A crazy dunk? Buzzer beater? A LeBron style block? If you ask for my opinion it is a beautiful assist. I find nothing more satisfying than a nice team play that ends up in an easy dunk or a creative pass.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Doing The Dishes - Blog</title><link href="https://eyalshafran.github.io/" rel="alternate"></link><link href="https://eyalshafran.github.io/feeds/blog.atom.xml" rel="self"></link><id>https://eyalshafran.github.io/</id><updated>2018-02-01T11:59:00-07:00</updated><entry><title>Age</title><link href="https://eyalshafran.github.io/age.html" rel="alternate"></link><published>2018-02-01T11:59:00-07:00</published><updated>2018-02-01T11:59:00-07:00</updated><author><name>Eyal Shafran</name></author><id>tag:eyalshafran.github.io,2018-02-01:/age.html</id><summary type="html">&lt;p&gt;Are the Celtics too young to win a championship? Are the Cavs too old? In this post I look at historical data to try and figure out the ideal age to win a championship.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://www.facebook.com/sportsplotting/"&gt;follow my page on facebook&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I keep hearing about how old the Cavs are. Are they really that old? What about the Celtics? Are they too young to win a championship? Has there ever been a team with such young lineup play so well?&lt;/p&gt;
+&lt;p&gt;I decided to answer those questions by looking at team's average age since the 1980-81 season. Since I mostly care about the players that actually play I calculated the team age the following way:
+&lt;em&gt; The team average age is weighted by player's playing minutes. That means that the more a player plays the more they contribute to the average age of the team.
+&lt;/em&gt; A player's age for a season is calculated by their exact age on Feb. 1st of that season. For example, for the 2017-18 season, the player's ages where calculated by their age today (Feb. 1st, 2018). This date was choosen since it is roughly the middle of the regular season.&lt;/p&gt;
+&lt;p&gt;Are the Cavs really that old? &lt;/p&gt;
+&lt;h3&gt;10 Oldest teams in the last 40 years:&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="figure 1" src="images/age/old_teams.png"&gt;&lt;/p&gt;
+&lt;p&gt;They are the 6th oldest team in that timespan. So pretty old. However, most of these old teams were very good teams. &lt;/p&gt;
+&lt;p&gt;How about the youngest teams?&lt;/p&gt;
+&lt;h3&gt;10 youngest teams in the last 40 years:&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="figure 2" src="images/age/young_teams.png"&gt;&lt;/p&gt;
+&lt;p&gt;We can see that most of those teams are bad. The biggest exception are the Thunder in the 2009-10 season with a win % of 61%! &lt;/p&gt;
+&lt;p&gt;Let's look at the historical data of team's ages and winning %. &lt;/p&gt;
+&lt;h3&gt;Teams age and winning percentage:&lt;/h3&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;
+&lt;img alt="figure 3" src="images/age/Team_winning_age_summary1.png"&gt;
+&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;There is a clear trend - older teams have a better winning %. The correlation coefficient is 0.5 which is medium correlation. &lt;/p&gt;
+&lt;p&gt;This makes sense - older teams are in it to win and younger teams are in rebuild mode. If you are bad, you might as well try to develop the young talent you have on your team. &lt;/p&gt;
+&lt;p&gt;Let's look at the same figure but this time label some noticeable teams.&lt;/p&gt;
+&lt;h3&gt;Teams age and winning percentage:&lt;/h3&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;
+&lt;img alt="figure 4" src="images/age/Team_winning_age_summary2.png"&gt;
+&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;It is clear that really young teams don't win the championship. The closest young team were the Thunder who made it to the finals. &lt;/p&gt;
+&lt;p&gt;If we look at the age distribution of all the teams vs. champoinship teams we can see a clear difference:&lt;/p&gt;
+&lt;h3&gt;Teams age distribution&lt;/h3&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;
+&lt;img alt="figure 5" src="images/age/Team_age_dist.png"&gt;
+&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;So it does seem like the Celtics are too inexperienced to win. If they do win the champoinship this year they would be the youngest team to do so by a fairly large margin. On the other hand, plenty of old teams have one it but only one team with a record sub 60% (1994-95 Rockets). &lt;/p&gt;
+&lt;p&gt;There are only 11 teams that are under 26 and have managed to finish the regular season with over 60% wins. The Celtics are on pace to be the 12th.&lt;/p&gt;
+&lt;h3&gt;Young teams with great winning %:&lt;/h3&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;
+&lt;img alt="figure 6" src="images/age/winning_young_teams.png"&gt;
+&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;The intereseting thing is that none of those teams have won the NBA champoinship in the following years. Most noticeable are the Thunder which managed to be included in this list 3 times with the same core players who just got older. We all know how that ended...&lt;/p&gt;
+&lt;p&gt;Has the average age in the NBA changed over time?&lt;/p&gt;
+&lt;h3&gt;Team Ages Over Time&lt;/h3&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;
+&lt;img alt="figure 7" src="images/age/Team_age_time.png"&gt;
+&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;We can see some small changes over time but the average team age is the same today as it was 40 years ago.&lt;/p&gt;
+&lt;h3&gt;2017-18 Season:&lt;/h3&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;
+&lt;img alt="figure 8" src="images/age/Team_winning_age.png"&gt;
+&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;and a bonus figure... Team age vs. pace:
+&lt;br&gt;&lt;br&gt;
+&lt;img alt="figure 9" src="images/age/Team_pace_age.png"&gt;
+&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3&gt;Let me know what you think!&lt;/h3&gt;</content><category term="NBA"></category><category term="Age"></category><category term="Win %"></category></entry><entry><title>Assists Breakdown</title><link href="https://eyalshafran.github.io/assists_breakdown.html" rel="alternate"></link><published>2018-01-01T11:59:00-07:00</published><updated>2018-01-01T11:59:00-07:00</updated><author><name>Eyal Shafran</name></author><id>tag:eyalshafran.github.io,2018-01-01:/assists_breakdown.html</id><summary type="html">&lt;p&gt;A more in depth look at assists&lt;/p&gt;</summary><content type="html">&lt;p&gt;What gets you most excited about the game? A crazy dunk? Buzzer beater? A LeBron style block? If you ask for my opinion it is a beautiful assist. I find nothing more satisfying than a nice team play that ends up in an easy dunk or a creative pass.&lt;/p&gt;
 &lt;p&gt;My first attempt was to try and show that assists are important for winning. One way to do that is to check whether a team that assists on a lot of their FG also shoots at a higher FG %. So I plotted the % of assisted FG (i.e. assisted FG / Total FG) as a function of the EFG to see if there is a correlation:&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;
 &lt;img alt="figure 1" src="images/assists/team_assisted_EFG_2017.png"&gt;
