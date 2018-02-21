@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eyalshafran.github.io/</loc>
-<lastmod>2018-02-02T00:00:03-00:00</lastmod>
+<lastmod>2018-02-20T20:39:48-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eyalshafran.github.io/archives.html</loc>
-<lastmod>2018-02-02T00:00:03-00:00</lastmod>
+<lastmod>2018-02-20T20:39:48-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eyalshafran.github.io/tags.html</loc>
-<lastmod>2018-02-02T00:00:03-00:00</lastmod>
+<lastmod>2018-02-20T20:39:48-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eyalshafran.github.io/categories.html</loc>
-<lastmod>2018-02-02T00:00:03-00:00</lastmod>
+<lastmod>2018-02-20T20:39:48-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -40,9 +40,16 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eyalshafran.github.io/pages/contact-en.html</loc>
-<lastmod>2018-02-02T00:00:03-00:00</lastmod>
+<lastmod>2018-02-20T20:39:48-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eyalshafran.github.io/all-star-and-draft-picks.html</loc>
+<lastmod>2018-02-20T23:45:00-07:00</lastmod>
+<changefreq>always</changefreq>
+<priority>1.0</priority>
 </url>
 
 <url>
@@ -159,7 +166,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eyalshafran.github.io/category/interactive-graphs.html</loc>
-<lastmod>2018-01-17T23:45:00-07:00</lastmod>
+<lastmod>2018-02-20T23:45:00-07:00</lastmod>
+<changefreq>hourly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eyalshafran.github.io/tag/all-star.html</loc>
+<lastmod>2018-02-20T23:45:00-07:00</lastmod>
+<changefreq>hourly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eyalshafran.github.io/tag/draft.html</loc>
+<lastmod>2018-02-20T23:45:00-07:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -390,7 +411,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eyalshafran.github.io/author/eyal-shafran.html</loc>
-<lastmod>2018-02-01T11:59:00-07:00</lastmod>
+<lastmod>2018-02-20T23:45:00-07:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.5</priority>
 </url>

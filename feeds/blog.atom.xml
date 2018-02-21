@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Doing The Dishes - Blog</title><link href="https://eyalshafran.github.io/" rel="alternate"></link><link href="https://eyalshafran.github.io/feeds/blog.atom.xml" rel="self"></link><id>https://eyalshafran.github.io/</id><updated>2018-02-01T11:59:00-07:00</updated><entry><title>Age</title><link href="https://eyalshafran.github.io/age.html" rel="alternate"></link><published>2018-02-01T11:59:00-07:00</published><updated>2018-02-01T11:59:00-07:00</updated><author><name>Eyal Shafran</name></author><id>tag:eyalshafran.github.io,2018-02-01:/age.html</id><summary type="html">&lt;p&gt;Are the Celtics too young to win a championship? Are the Cavs too old? In this post I look at historical data to try and figure out the ideal age to win a championship.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://www.facebook.com/sportsplotting/"&gt;follow my page on facebook&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;I keep hearing about how old the Cavs are. Are they really that old? What about the Celtics? Are they too young to win a championship? Has there ever been a team with such young lineup play so well?&lt;/p&gt;
-&lt;p&gt;I decided to answer those questions by looking at team's average age since the 1980-81 season. Since I mostly care about the players that actually play I calculated the team age the following way:
-&lt;em&gt; The team average age is weighted by player's playing minutes. That means that the more a player plays the more they contribute to the average age of the team.
-&lt;/em&gt; A player's age for a season is calculated by their exact age on Feb. 1st of that season. For example, for the 2017-18 season, the player's ages where calculated by their age today (Feb. 1st, 2018). This date was choosen since it is roughly the middle of the regular season.&lt;/p&gt;
+&lt;p&gt;I decided to answer those questions by looking at team's average age since the 1980-81 season. Since I mostly care about the players that actually play I calculated the team age the following way:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The team average age is weighted by player's playing minutes. That means that the more a player plays the more they contribute to the average age of the team.&lt;/li&gt;
+&lt;li&gt;A player's age for a season is calculated by their exact age on Feb. 1st of that season. For example, for the 2017-18 season, the player's ages where calculated by their age today (Feb. 1st, 2018). This date was choosen since it is roughly the middle of the regular season.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;Are the Cavs really that old? &lt;/p&gt;
 &lt;h3&gt;10 Oldest teams in the last 40 years:&lt;/h3&gt;
 &lt;p&gt;&lt;img alt="figure 1" src="images/age/old_teams.png"&gt;&lt;/p&gt;
