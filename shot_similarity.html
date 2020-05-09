@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="english" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>NBA Player Shot Similarity - Doing The Dishes</title>
+    <title>NBA Player Shot Similarity - Eyal Shafran</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -13,26 +13,24 @@
 <link rel="canonical" href="https://eyalshafran.github.io/shot_similarity.html">
 
         <meta name="author" content="Eyal" />
-        <meta name="keywords" content="python,NBA,similarity,clustering" />
+        <meta name="keywords" content="data science,python,NBA,similarity,clustering" />
         <meta name="description" content="In this post I will compare different NBA players based on their shot selection and cluster them into groups. These new groups can be compared to the assigned position of players to check for correlation." />
 
-        <meta property="og:site_name" content="Doing The Dishes" />
+        <meta property="og:site_name" content="Eyal Shafran" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="NBA Player Shot Similarity"/>
         <meta property="og:url" content="https://eyalshafran.github.io/shot_similarity.html"/>
         <meta property="og:description" content="In this post I will compare different NBA players based on their shot selection and cluster them into groups. These new groups can be compared to the assigned position of players to check for correlation."/>
         <meta property="article:published_time" content="2017-10-18" />
-            <meta property="article:section" content="Code" />
+            <meta property="article:section" content="Code - Deprecated" />
+            <meta property="article:tag" content="data science" />
             <meta property="article:tag" content="python" />
             <meta property="article:tag" content="NBA" />
             <meta property="article:tag" content="similarity" />
             <meta property="article:tag" content="clustering" />
             <meta property="article:author" content="Eyal" />
 
-    <meta name="twitter:card" content="summary">
-        <meta name="twitter:site" content="@EyalShafran">
-        <meta name="twitter:creator" content="@EyalShafran">
-    <meta name="twitter:domain" content="https://eyalshafran.github.io">
+
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="https://eyalshafran.github.io/theme/css/bootstrap.flatly.min.css" type="text/css"/>
@@ -40,32 +38,18 @@
 
     <link href="https://eyalshafran.github.io/theme/css/pygments/default.css" rel="stylesheet">
     <link rel="stylesheet" href="https://eyalshafran.github.io/theme/css/style.css" type="text/css"/>
+        <link href="https://eyalshafran.github.io/static/css/custom.css" rel="stylesheet">
 
         <link href="https://eyalshafran.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
-              title="Doing The Dishes ATOM Feed"/>
+              title="Eyal Shafran ATOM Feed"/>
 
-
-
-        <link href="https://eyalshafran.github.io/feeds/code.atom.xml" type="application/atom+xml" rel="alternate"
-              title="Doing The Dishes Code ATOM Feed"/>
-
-	<!-- Doing the Dishes Specific CSS -->
-	<link href="https://eyalshafran.github.io/theme/css/doingthedishes/dtd-main.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.11.1.min.css" type="text/css" />
-	<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.12.13.min.css" type="text/css" />
+        <link href="https://eyalshafran.github.io/feeds/code-deprecated.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Eyal Shafran Code - Deprecated ATOM Feed"/>
 </head>
 <body>
 
-
-<!-- Embedded Javascript. Same as referecing an external JS document -->
- <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.11.1.min.js"></script>
- <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.13.min.js"></script>
- <script type="text/javascript">
-     Bokeh.set_log_level("info");
- </script>
-
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="container">
+    <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -74,24 +58,21 @@
                 <span class="icon-bar"></span>
             </button>
             <a href="https://eyalshafran.github.io/" class="navbar-brand">
-Doing The Dishes            </a>
+Eyal Shafran            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                         <li><a href="https://eyalshafran.github.io/pages/about-me.html">
-                             About Me
-                          </a></li>
-                         <li><a href="https://eyalshafran.github.io/pages/contact-en.html">
-                             Contact
+                         <li><a href="https://eyalshafran.github.io/pages/about.html">
+                             About
                           </a></li>
                         <li >
                             <a href="https://eyalshafran.github.io/category/blog.html">Blog</a>
                         </li>
-                        <li class="active">
+                        <li >
                             <a href="https://eyalshafran.github.io/category/code.html">Code</a>
                         </li>
-                        <li >
-                            <a href="https://eyalshafran.github.io/category/interactive-graphs.html">Interactive graphs</a>
+                        <li class="active">
+                            <a href="https://eyalshafran.github.io/category/code-deprecated.html">Code - deprecated</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -100,11 +81,14 @@ Doing The Dishes            </a>
         <!-- /.navbar-collapse -->
     </div>
 </div> <!-- /.navbar -->
+
 <!-- Banner -->
 <!-- End Banner -->
+
+<!-- Content Container -->
 <div class="container">
     <div class="row">
-        <div class="col-sm-9">
+        <div class="col-lg-12">
     <section id="content">
         <article>
             <header class="page-header">
@@ -126,12 +110,16 @@ Doing The Dishes            </a>
     </span>
 
 
+            <span class="label label-default">By</span>
+            <a href="https://eyalshafran.github.io/author/eyal.html"><i class="fa fa-user"></i> Eyal</a>
 
         <span class="label label-default">Category</span>
-        <a href="https://eyalshafran.github.io/category/code.html">Code</a>
+        <a href="https://eyalshafran.github.io/category/code-deprecated.html">Code - Deprecated</a>
 
 
 <span class="label label-default">Tags</span>
+	<a href="https://eyalshafran.github.io/tag/data-science.html">data science</a>
+        /
 	<a href="https://eyalshafran.github.io/tag/python.html">python</a>
         /
 	<a href="https://eyalshafran.github.io/tag/nba.html">NBA</a>
@@ -147,9 +135,124 @@ Doing The Dishes            </a>
 * IPython notebook
 *
 */
-/* CSS font colors for translated ANSI colors. */
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
 .ansibold {
   font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
 }
 /* use dark versions for foreground, to improve visibility */
 .ansiblack {
@@ -228,12 +331,20 @@ div.cell {
   /* This acts as a spacer between cells, that is outside the border */
   margin: 0px;
   outline: none;
-  border-left-width: 1px;
-  padding-left: 5px;
-  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
 }
 div.cell.jupyter-soft-selected {
-  border-left-color: #90CAF9;
   border-left-color: #E3F2FD;
   border-left-width: 1px;
   padding-left: 5px;
@@ -246,27 +357,39 @@ div.cell.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected {
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
   border-color: #ababab;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
 }
 @media print {
-  div.cell.selected {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected.jupyter-soft-selected {
-  border-left-width: 0;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
-}
 .edit_mode div.cell.selected {
   border-color: #66BB6A;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
 }
 @media print {
   .edit_mode div.cell.selected {
@@ -462,7 +585,9 @@ div.input_area > div.highlight > pre {
 .CodeMirror-lines {
   /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
   /* we have set a different line-height and want this to scale with that. */
-  padding: 0.4em;
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
 }
 .CodeMirror-linenumber {
   padding: 0 8px 0 4px;
@@ -472,11 +597,24 @@ div.input_area > div.highlight > pre {
   border-top-left-radius: 2px;
 }
 .CodeMirror pre {
-  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
-  /* .CodeMirror-lines */
-  padding: 0;
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
   border: 0;
   border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
 }
 /*
 
@@ -724,6 +862,9 @@ div.output_area img.unconfined,
 div.output_area svg.unconfined {
   max-width: none;
 }
+div.output_area .mglyph > img {
+  max-width: none;
+}
 /* This is needed to protect the pre formating from global settings such
    as that of bootstrap */
 .output {
@@ -762,7 +903,7 @@ div.output_area svg.unconfined {
 }
 div.output_area pre {
   margin: 0;
-  padding: 0;
+  padding: 1px 0 1px 0;
   border: 0;
   vertical-align: baseline;
   color: black;
@@ -884,6 +1025,10 @@ div.output_unrecognized a:hover {
 .rendered_html h6:first-child {
   margin-top: 1em;
 }
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
 
 
 
@@ -900,16 +1045,24 @@ div.output_unrecognized a:hover {
 }
 
 
+
+
+
 .rendered_html pre,
+
 
 
 
 .rendered_html tr,
 .rendered_html th,
 
-.rendered_html td,
 
-
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
 .rendered_html * + table {
   margin-top: 1em;
 }
@@ -925,6 +1078,11 @@ div.output_unrecognized a:hover {
 
 .rendered_html img.unconfined,
 
+
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] 
 div.text_cell {
   /* Old browsers */
   display: -webkit-box;
@@ -975,8 +1133,15 @@ h6:hover .anchor-link {
   display: none;
 }
 .text_cell.rendered 
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered 
 .text_cell.unrendered .text_cell_render {
   display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
 }
 .cm-header-1,
 .cm-header-2,
@@ -1076,48 +1241,8 @@ h6:hover .anchor-link {
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
-<style type="text/css">
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-</style>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The goal of the project was to compare different NBA players based on their shot selection and cluster them into groups. These new groups can be compared to the assigned position of players to check for correlation.</p>
 </div>
@@ -1128,7 +1253,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<div class="highlight hl-ipython2"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
@@ -1145,10 +1270,8 @@ h6:hover .anchor-link {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Load-shot-chart-data">Load shot chart data<a class="anchor-link" href="#Load-shot-chart-data">¶</a></h3>
 </div>
@@ -1159,7 +1282,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="p">,</span><span class="n">_</span> <span class="o">=</span> <span class="n">nba</span><span class="o">.</span><span class="n">shotchart</span><span class="o">.</span><span class="n">shotchartdetail</span><span class="p">(</span><span class="n">season</span><span class="o">=</span><span class="s1">'2014-15'</span><span class="p">)</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="p">,</span><span class="n">_</span> <span class="o">=</span> <span class="n">nba</span><span class="o">.</span><span class="n">shotchart</span><span class="o">.</span><span class="n">shotchartdetail</span><span class="p">(</span><span class="n">season</span><span class="o">=</span><span class="s1">'2014-15'</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1171,7 +1294,7 @@ h6:hover .anchor-link {
 <div class="prompt output_prompt">Out[2]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
-<table border="1" class="dataframe">
+<table class="dataframe">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -1328,10 +1451,8 @@ h6:hover .anchor-link {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Let's-write-a-few-useful-functions-that-will-be-used-throughout-this-project:">Let's write a few useful functions that will be used throughout this project:<a class="anchor-link" href="#Let's-write-a-few-useful-functions-that-will-be-used-throughout-this-project:">¶</a></h3>
 </div>
@@ -1342,7 +1463,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">KDE_heatmap</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">sigma</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">KDE_heatmap</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">sigma</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
     <span class="sd">'''</span>
 <span class="sd">    This function performs KDE calculation for a given shot chart.</span>
 <span class="sd">    Input  - dataframe with x and y shot coordinates.</span>
@@ -1425,10 +1546,8 @@ h6:hover .anchor-link {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Choose-players-with-500-shots-or-more:">Choose players with 500 shots or more:<a class="anchor-link" href="#Choose-players-with-500-shots-or-more:">¶</a></h2>
 </div>
@@ -1439,8 +1558,8 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">player_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'shots'</span> <span class="p">:</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">'PLAYER_ID'</span><span class="p">,</span><span class="s1">'PLAYER_NAME'</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()})</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-<span class="n">idx</span> <span class="o">=</span> <span class="n">player_df</span><span class="o">.</span><span class="n">shots</span><span class="o">.</span><span class="n">values</span> <span class="o">></span> <span class="mi">500</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">player_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'shots'</span> <span class="p">:</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">'PLAYER_ID'</span><span class="p">,</span><span class="s1">'PLAYER_NAME'</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()})</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">idx</span> <span class="o">=</span> <span class="n">player_df</span><span class="o">.</span><span class="n">shots</span><span class="o">.</span><span class="n">values</span> <span class="o">&gt;</span> <span class="mi">500</span>
 <span class="n">player_df</span> <span class="o">=</span> <span class="n">player_df</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
 <span class="n">players</span> <span class="o">=</span> <span class="n">player_df</span><span class="o">.</span><span class="n">PLAYER_ID</span><span class="o">.</span><span class="n">values</span>
 <span class="n">player_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -1454,7 +1573,7 @@ h6:hover .anchor-link {
 <div class="prompt output_prompt">Out[4]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
-<table border="1" class="dataframe">
+<table class="dataframe">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -1502,10 +1621,8 @@ h6:hover .anchor-link {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Plot-example-heatmaps-+-scatter-plots">Plot example heatmaps + scatter plots<a class="anchor-link" href="#Plot-example-heatmaps-+-scatter-plots">¶</a></h2>
 </div>
@@ -1516,7 +1633,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">'Stephen Curry'</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">'Stephen Curry'</span>
 <span class="n">f</span><span class="p">,</span> <span class="n">axarr</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">'white'</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
     <span class="n">axarr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mf">41.5</span><span class="p">])</span>
@@ -1536,7 +1653,7 @@ h6:hover .anchor-link {
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABEwAAAIuCAYAAACl7Z3RAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3XmYm3W9//9ncm+5s83Wme4UWmSHQlsWZREUOKCsLgiC
 gIgieH1RUcSvleM5HPTIT9HzRUWQCgIHUdwQCwKipyhSD9ACLQilFCilpdt0tky2+76T3x/3TNqC
@@ -4400,8 +4517,8 @@ AACABIEJAAAAQILABAAAACBBYAIAAACQIDABAAAASBCYAAAAACQITAAAAAASBCYAAAAACQITAAAA
 gASBCQAAAECCwAQAAAAgQWACAAAAkCAwAQAAAEgQmAAAAAAkCEwAAAAAEgQmAAAAAAkCEwAAAIAE
 gQkAAABAgsAEAAAAIEFgAgAAAJAgMAEAAABIEJgAAAAAJAhMAAAAABIEJgAAAAAJAhMAAACABIEJ
 AAAAQILABAAAACDhP75u7PN3x9h+AAAAAElFTkSuQmCC
-">
-</img></div>
+"/>
+</div>
 </div>
 </div>
 </div>
@@ -4411,7 +4528,7 @@ AAAAQILABAAAACDhP75u7PN3x9h+AAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">'Dirk Nowitzki'</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">'Dirk Nowitzki'</span>
 <span class="n">f</span><span class="p">,</span> <span class="n">axarr</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">'white'</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
     <span class="n">axarr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mf">41.5</span><span class="p">])</span>
@@ -4431,7 +4548,7 @@ AAAAQILABAAAACDhP75u7PN3x9h+AAAAAElFTkSuQmCC
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABEwAAAIuCAYAAACl7Z3RAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3XmYXHWZ9/931Vnq1N57d7qzkAQJCQkQkrCICigBdAC3
 kQFxQVBRfMZn1EFwkMcNGP2NjjOOMlGYAXWQEZ0RGRZBVFAGxkCQTYGwhmydpLfq2s9S9fvjdHcA
@@ -7660,16 +7777,14 @@ AABQEEwAAAAACoIJAAAAQEEwAQAAACgIJgAAAAAFwQQAAACgIJgAAAAAFAQTAAAAgIJgAgAAAFAQ
 TAAAAAAKggkAAABAQTABAAAAKAgmAAAAAAXBBAAAAKAgmAAAAAAUBBMAAACAgmACAAAAUBBMAAAA
 AAqCCQAAAEBBMAEAAAAoCCYAAAAABcEEAAAAoCCYAAAAABQEEwAAAICCYAIAAABQEEwAAAAACoIJ
 AAAAQEEwAQAAACj8Bcxo8YbuCsykAAAAAElFTkSuQmCC
-">
-</img></div>
+"/>
 </div>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
 </div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Comparing-players">Comparing players<a class="anchor-link" href="#Comparing-players">¶</a></h3><p>In order to compare players I'm going to calculate the KDE for each player based on their shots during the entire season. The KDE is conceptaully equivalent to calculating the heatmaps for each player.</p>
 <p>Note: when computing the KDE the $\sigma$ of the Gaussian kernel needs to be choosen. Larger $\sigma$ means that further shots are still going to be correlated but we do not want to choose a $\sigma$ that is too large. I found that $\sigma = 3$ (feet) was a good compromise between resolution and ensuring that close shots are correlated.</p>
@@ -7681,7 +7796,7 @@ AAAAQEEwAQAAACj8Bcxo8YbuCsykAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">hmaps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="mi">500</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">players</span><span class="p">)])</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">hmaps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="mi">500</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">players</span><span class="p">)])</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">player</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">player_df</span><span class="o">.</span><span class="n">PLAYER_NAME</span><span class="p">):</span>
     <span class="n">hmaps</span><span class="p">[:,:,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">KDE_heatmap</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'PLAYER_ID'</span><span class="p">]</span><span class="o">==</span><span class="n">players</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span>
 </pre></div>
@@ -7689,10 +7804,8 @@ AAAAQEEwAQAAACj8Bcxo8YbuCsykAAAAAElFTkSuQmCC
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now that we have a heatmap for each player (i.e. KDE) we can take each pair of players and compare how similar those heatmaps are. To do so I'm using the correlation_distance function that I defined above. There are sevevral ways to compute a similarity measure. I choose this one after exploring a few different options. Another similarity measure that I like (but I am not sowing here) is the Kernal Distance (<a href="https://arxiv.org/abs/1103.1625">https://arxiv.org/abs/1103.1625</a>).</p>
 <p>By comparing each pair of players we can create a similarity matrix $S$ using $1 - D$ where D is the player's shot density distance (i.e. how different they are from each other):</p>
@@ -7704,7 +7817,7 @@ AAAAQEEwAQAAACj8Bcxo8YbuCsykAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="nb">len</span><span class="p">(</span><span class="n">players</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">players</span><span class="p">)])</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="nb">len</span><span class="p">(</span><span class="n">players</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">players</span><span class="p">)])</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">players</span><span class="p">)):</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">players</span><span class="p">)):</span>
         <span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">correlation_distance</span><span class="p">(</span><span class="n">hmaps</span><span class="p">[:,:,</span><span class="n">i</span><span class="p">],</span><span class="n">hmaps</span><span class="p">[:,:,</span><span class="n">j</span><span class="p">])</span>
@@ -7714,10 +7827,8 @@ AAAAQEEwAQAAACj8Bcxo8YbuCsykAAAAAElFTkSuQmCC
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Let's-plot-the-matrix-D:">Let's plot the matrix D:<a class="anchor-link" href="#Let's-plot-the-matrix-D:">¶</a></h3>
 </div>
@@ -7728,7 +7839,7 @@ AAAAQEEwAQAAACj8Bcxo8YbuCsykAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">fig</span><span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">fig</span><span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
 <span class="n">im</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">S</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">'jet'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span><span class="n">fraction</span><span class="o">=</span><span class="mf">0.046</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.04</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -7740,7 +7851,7 @@ AAAAQEEwAQAAACj8Bcxo8YbuCsykAAAAAElFTkSuQmCC
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfkAAAG4CAYAAABGsp4tAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzsfXucz3X2//NDmtlMjSVMUSNMyqURRRY7ogxhR41Lbjs0
 uYXFDiFk5B7CuoeMpaRYLBK5zLjkEmKR5LIziyKXmkW5xOf3xznndc4Hu/v41uxKv9d5PDzeb6/X
@@ -9766,25 +9877,21 @@ vGiZ6xGZmZl4/vnnUaFCBQwePBgA0LBhQzz11FOIjIxEREQEXNfFsGHDULx48Xxu7X+HsmXLFoi2
 x8TEYOzYsVi2bBn8/f0xY8YMBAQEFIi23yiwincWFhYWFhY3KKwYjoWFhYWFxQ0K+0fewsLCwsLi
 BoX9I29hYWFhYXGDwv6Rt7CwsLCwuEFh/8hbWFhYWFjcoLB/5C0sLCwsLG5Q2D/yFhYWFhYWNyj+
 D9AvtAG1bbxlAAAAAElFTkSuQmCC
-">
-</img></div>
+"/>
 </div>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
 </div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>At this point it does not look like much. We need to work a little more to get some interesting information out of this data.</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Find-players-with-minimum-similiraty:">Find players with minimum similiraty:<a class="anchor-link" href="#Find-players-with-minimum-similiraty:">¶</a></h2>
 </div>
@@ -9795,7 +9902,7 @@ D9AvtAG1bbxlAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unravel_index</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">S</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">S</span><span class="p">))</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unravel_index</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">S</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">S</span><span class="p">))</span>
 <span class="n">name1</span> <span class="o">=</span>  <span class="n">player_df</span><span class="o">.</span><span class="n">PLAYER_NAME</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">player_df</span><span class="p">[</span><span class="s1">'PLAYER_ID'</span><span class="p">]</span><span class="o">==</span> <span class="n">players</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 <span class="n">name2</span> <span class="o">=</span>  <span class="n">player_df</span><span class="o">.</span><span class="n">PLAYER_NAME</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">player_df</span><span class="p">[</span><span class="s1">'PLAYER_ID'</span><span class="p">]</span><span class="o">==</span> <span class="n">players</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 <span class="n">f</span><span class="p">,</span> <span class="n">axarr</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">'white'</span><span class="p">)</span>
@@ -9818,7 +9925,7 @@ D9AvtAG1bbxlAAAAAElFTkSuQmCC
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABXkAAALfCAYAAAA0d8HRAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Xd4VHXaxvHv9JRJAknoSBVFQUCQZQWULoiKiEoRC8Ky
 FBFdy2sHVmXVtaGCFJEmoKiI2BBXEAURkC5NREInBBJIMpnJ9PePkFGkKBA4meT+XJeXOOWc+4xz
@@ -12378,16 +12485,14 @@ AAAAUMNI8gIAAAAAAABADSPJCwAAAAAAAAA1jCQvAAAAAAAAANQwkrwAAAAAAAAAUMNI8gIAAAAA
 AABADSPJCwAAAAAAAAA1jCQvAAAAAAAAANQwkrwAAAAAAAAAUMNI8gIAAAAAAABADSPJCwAAAAAA
 AAA1jCQvAAAAAAAAANQwkrwAAAAAAAAAUMNI8gIAAAAAAABADSPJCwAAAAAAAAA17P8DvYWVDGw+
 iSUAAAAASUVORK5CYII=
-">
-</img></div>
+"/>
 </div>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
 </div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Find-players-with-maximum-similarity">Find players with maximum similarity<a class="anchor-link" href="#Find-players-with-maximum-similarity">¶</a></h2>
 </div>
@@ -12398,7 +12503,7 @@ iSUAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unravel_index</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">S</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">S</span><span class="p">))),</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">S</span><span class="p">))</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unravel_index</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">S</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">S</span><span class="p">))),</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">S</span><span class="p">))</span>
 <span class="n">name1</span> <span class="o">=</span>  <span class="n">player_df</span><span class="o">.</span><span class="n">PLAYER_NAME</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">player_df</span><span class="p">[</span><span class="s1">'PLAYER_ID'</span><span class="p">]</span><span class="o">==</span> <span class="n">players</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 <span class="n">name2</span> <span class="o">=</span>  <span class="n">player_df</span><span class="o">.</span><span class="n">PLAYER_NAME</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">player_df</span><span class="p">[</span><span class="s1">'PLAYER_ID'</span><span class="p">]</span><span class="o">==</span> <span class="n">players</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 <span class="n">f</span><span class="p">,</span> <span class="n">axarr</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">'white'</span><span class="p">)</span>
@@ -12421,7 +12526,7 @@ iSUAAAAASUVORK5CYII=
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABXkAAALfCAYAAAA0d8HRAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3XmczvX+//HH9VmudXaDsVSMHIpQyCnKno7TIp1DUpJO
 RSnfI/10qhOnTXXSdoiWQwqlknbpUEpJQlEilUlUiLHMfq2/Py5zIVtpxmeu8bzfbnNrfK7t+blc
@@ -15248,16 +15353,14 @@ AAAAAICDkeQFAAAAAAAAAAcjyQsAAAAAAAAADkaSFwAAAAAAAAAcjCQvAAAAAAAAADgYSV4AAAAA
 AAAAcDCSvAAAAAAAAADgYCR5AQAAAAAAAMDBSPICAAAAAAAAgIOR5AUAAAAAAAAAByPJCwAAAAAA
 AAAORpIXAAAAAAAAAByMJC8AAAAAAAAAOBhJXgAAAAAAAABwsP8DP2JASJuEYfsAAAAASUVORK5C
 YII=
-">
-</img></div>
+"/>
 </div>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
 </div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Clustering">Clustering<a class="anchor-link" href="#Clustering">¶</a></h3><p>The distance matrix D (D = 1 − S) can be clustered using hierarchical clustering. I have tried numerous types of linkage functions including single-link, complete-link and average-link. Average link yields the best clusters. The matrix is
 then reorganized in such way that close pairs are next to each other - a common technique used in
@@ -15271,7 +15374,7 @@ genetic research (<a href="https://www.ncbi.nlm.nih.gov/pubmed/9843981">https://
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">D</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="n">S</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">D</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="n">S</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 
 <span class="c1"># Compute and plot dendrogram.</span>
@@ -15310,12 +15413,12 @@ genetic research (<a href="https://www.ncbi.nlm.nih.gov/pubmed/9843981">https://
 <div class="output_area">
 <div class="prompt output_prompt">Out[12]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre><matplotlib.colorbar.colorbar at 0x1a72fc18></pre>
+<pre>&lt;matplotlib.colorbar.Colorbar at 0x1a72fc18&gt;</pre>
 </div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAegAAAJbCAYAAAAv5gdKAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzsvX9wXNd5JfgRv0k0RYgACRgExXYIi4xFl2mRsbSKHHNi
 e6OyrR3V2JX17iaVbG2q7K3KODOpnZnsRLXppDxZz+xMkqrNVOKqpOIpOzVOSjujKToTOSUnlC0r
@@ -16715,16 +16818,14 @@ EVm4MB/Qh+F/oB0Oh8PheB1w3XXXyeOPhxSa+/btk8svV9e8a665Rvbu3Sujo6Ny5swZOXz4cOZ3
 C05xOxwOh8PxOgAq7kOHDsnU1JR8+tOflscff1xWrVolt99+uzz66KPyyCOPyNTUlLz3ve+VO+64
 Y9r6/A+0w+FwOBwzEE5xOxwOh8MxA+F/oB0Oh8PhmIHwP9AOh8PhcMxA+B9oh8PhcDhmIPwPtMPh
 cDgcMxD+B9rhcDgcjhkI/wPtcDgcDscMhP+BdjgcDodjBuL/B6DyHuFlqqabAAAAAElFTkSuQmCC
-">
-</img></div>
+"/>
 </div>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
 </div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We can view the results of the clustering in a table format:</p>
 </div>
@@ -16735,7 +16836,7 @@ cDgcMxD+B9rhcDgcjhkI/wPtcDgcDscMhP+BdjgcDodjBuL/B6DyHuFlqqabAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">num_clusters</span> <span class="o">=</span> <span class="mi">6</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">num_clusters</span> <span class="o">=</span> <span class="mi">6</span>
 <span class="n">T</span> <span class="o">=</span> <span class="n">sch</span><span class="o">.</span><span class="n">fcluster</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span><span class="n">num_clusters</span><span class="p">,</span><span class="n">criterion</span><span class="o">=</span><span class="s1">'maxclust'</span><span class="p">)</span>
 <span class="n">player_names</span> <span class="o">=</span> <span class="n">player_df</span><span class="o">.</span><span class="n">PLAYER_NAME</span><span class="o">.</span><span class="n">values</span>
 
@@ -16756,7 +16857,7 @@ cDgcMxD+B9rhcDgcjhkI/wPtcDgcDscMhP+BdjgcDodjBuL/B6DyHuFlqqabAAAAAElFTkSuQmCC
 <div class="prompt output_prompt">Out[13]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
-<table border="1" class="dataframe">
+<table class="dataframe">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -17371,10 +17472,8 @@ cDgcMxD+B9rhcDgcjhkI/wPtcDgcDscMhP+BdjgcDodjBuL/B6DyHuFlqqabAAAAAElFTkSuQmCC
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Plot-heatmaps-for-each-cluster-to-visualize-the-differences">Plot heatmaps for each cluster to visualize the differences<a class="anchor-link" href="#Plot-heatmaps-for-each-cluster-to-visualize-the-differences">¶</a></h2>
 </div>
@@ -17385,7 +17484,7 @@ cDgcMxD+B9rhcDgcjhkI/wPtcDgcDscMhP+BdjgcDodjBuL/B6DyHuFlqqabAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">axarr</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">),</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">'white'</span><span class="p">)</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">axarr</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">),</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">'white'</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
     <span class="n">axarr</span><span class="p">[</span><span class="n">i</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">i</span><span class="o">%</span><span class="k">2</span>].set_ylim([-10,41.5])
     <span class="n">axarr</span><span class="p">[</span><span class="n">i</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">i</span><span class="o">%</span><span class="k">2</span>].set_xlim([25,-25])
@@ -17397,7 +17496,7 @@ cDgcMxD+B9rhcDgcjhkI/wPtcDgcDscMhP+BdjgcDodjBuL/B6DyHuFlqqabAAAAAElFTkSuQmCC
     <span class="n">idx</span> <span class="o">=</span> <span class="n">T</span><span class="o">==</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
     <span class="n">Lia</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'PLAYER_ID'</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">players</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
     <span class="n">shot_heatmap</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="n">Lia</span><span class="p">],</span><span class="n">ax</span><span class="o">=</span><span class="n">axarr</span><span class="p">[</span><span class="n">i</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">i</span><span class="o">%</span><span class="k">2</span>],log=True,player_pic=False)
-    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">Lia</span><span class="p">)</span><span class="o"><</span><span class="mi">2000</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">Lia</span><span class="p">)</span><span class="o">&lt;</span><span class="mi">2000</span><span class="p">:</span>
         <span class="n">a</span> <span class="o">=</span> <span class="mf">0.3</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">a</span> <span class="o">=</span> <span class="mf">0.01</span>
@@ -17412,7 +17511,7 @@ cDgcMxD+B9rhcDgcjhkI/wPtcDgcDscMhP+BdjgcDodjBuL/B6DyHuFlqqabAAAAAElFTkSuQmCC
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABEwAAAaCCAYAAAA/fGhXAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Xm0LFV99/9PVw/3cO4AXJTpMiNcFS+TqDGKCAIaDSqK
 idGQXzT+/D0xcUhC1jJZieZJHLJiXFFJiHH4xWA0Ro1DEoN51BhF4oAyyKwiF0RAhssFLvee211d
@@ -29214,16 +29313,14 @@ CCGEhwQTIYQQQgghhBBCCA8JJkIIIYQQQgghhBAeEkyEEEIIIYQQQgghPCSYCCGEEEIIIYQQQnhI
 MBFCCCGEEEIIIYTwkGAihBBCCCGEEEII4SHBRAghhBBCCCGEEMJDgokQQgghhBBCCCGEhwQTIYQQ
 QgghhBBCCA8JJkIIIYQQQgghhBAeEkyEEEIIIYQQQgghPCSYCCGEEEIIIYQQQnj8/9J9zs4CJRXM
 AAAAAElFTkSuQmCC
-">
-</img></div>
+"/>
 </div>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
 </div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Conclusions about clusters:</p>
 <ol>
@@ -29237,10 +29334,8 @@ AAAAAElFTkSuQmCC
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Include-player-position-from-nylon-calculus">Include player position from nylon calculus<a class="anchor-link" href="#Include-player-position-from-nylon-calculus">¶</a></h2><p>Nylon Calculus (<a href="http://nyloncalculus.com/">http://nyloncalculus.com/</a>) used to have players position data. I downloaded the player position list for the relevant year. This file can be found on my github.</p>
 </div>
@@ -29251,7 +29346,7 @@ AAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">PP</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">'C:\Users\eyal\Desktop\NBA\notebooks\player_postion.txt'</span><span class="p">)</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">PP</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">'C:\Users\eyal\Desktop\NBA\notebooks\player_postion.txt'</span><span class="p">)</span>
 <span class="n">PP</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -29263,7 +29358,7 @@ AAAAAElFTkSuQmCC
 <div class="prompt output_prompt">Out[15]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
-<table border="1" class="dataframe">
+<table class="dataframe">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -29305,10 +29400,8 @@ AAAAAElFTkSuQmCC
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Merge-dataframes">Merge dataframes<a class="anchor-link" href="#Merge-dataframes">¶</a></h3><p>We need to merge the new dataframe we have with players position to the one that has the player information:</p>
 </div>
@@ -29319,7 +29412,7 @@ AAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">player_position</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">player_df</span><span class="p">,</span><span class="n">PP</span><span class="p">,</span><span class="n">on</span><span class="o">=</span><span class="s1">'PLAYER_NAME'</span><span class="p">,</span><span class="n">how</span><span class="o">=</span><span class="s1">'left'</span><span class="p">)</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">player_position</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">player_df</span><span class="p">,</span><span class="n">PP</span><span class="p">,</span><span class="n">on</span><span class="o">=</span><span class="s1">'PLAYER_NAME'</span><span class="p">,</span><span class="n">how</span><span class="o">=</span><span class="s1">'left'</span><span class="p">)</span>
 <span class="n">player_position</span> <span class="o">=</span> <span class="n">player_position</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s1">'PLAYER_NAME'</span><span class="p">)</span>
 <span class="n">index</span> <span class="o">=</span> <span class="n">player_position</span><span class="p">[</span><span class="s1">'PLAYER_NAME'</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">player_position</span><span class="p">[</span><span class="s1">'POSITION'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">)]</span>
 <span class="n">player_position</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="s1">'POSITION'</span><span class="p">,</span> <span class="p">[</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">])</span>
@@ -29335,7 +29428,7 @@ AAAAAElFTkSuQmCC
 <div class="prompt output_prompt">Out[16]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
-<table border="1" class="dataframe">
+<table class="dataframe">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -29395,10 +29488,8 @@ AAAAAElFTkSuQmCC
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Plot-(normalized)-position-distribution">Plot (normalized) position distribution<a class="anchor-link" href="#Plot-(normalized)-position-distribution">¶</a></h2>
 </div>
@@ -29409,7 +29500,7 @@ AAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="n">num_clusters</span><span class="p">])</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="n">num_clusters</span><span class="p">])</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">num_clusters</span><span class="p">):</span>
     <span class="n">temp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">player_position</span><span class="p">[</span><span class="n">player_position</span><span class="p">[</span><span class="s1">'cluster'</span><span class="p">]</span><span class="o">==</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="s1">'POSITION'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">+</span><span class="mf">0.01</span><span class="p">)</span>
     <span class="n">n</span><span class="p">[:,</span><span class="n">i</span><span class="p">],</span><span class="n">_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span><span class="n">bins</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.1</span><span class="p">,</span><span class="mf">2.1</span><span class="p">,</span><span class="mf">3.1</span><span class="p">,</span><span class="mf">4.1</span><span class="p">,</span><span class="mf">5.1</span><span class="p">])</span>
@@ -29423,7 +29514,7 @@ AAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In [18]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">n_nor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="n">num_clusters</span><span class="p">])</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">n_nor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="n">num_clusters</span><span class="p">])</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
     <span class="n">n_nor</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">n</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="n">i</span><span class="p">,:])</span>
 </pre></div>
@@ -29436,7 +29527,7 @@ AAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In [19]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">n_nor</span><span class="p">[</span><span class="mi">0</span><span class="p">,:],</span><span class="n">width</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'b'</span><span class="p">,</span><span class="n">align</span><span class="o">=</span><span class="s1">'center'</span><span class="p">)</span>
@@ -29462,7 +29553,7 @@ AAAAAElFTkSuQmCC
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAl8AAAHfCAYAAABu571YAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3XtclHXe//H3DAOeBgN12C0LcxE8ZC1Rv607IytC3U5q
 ukIWdq+nWiSrNbdwvdGMELd9tK2U2JHdtYOYGnZ4lEnrRtFjbcWmFlMzLcrsFio2BVxomPn94aPZ
@@ -29641,16 +29732,14 @@ Vmjp0qW68sor5XA4FB8fr4cfflgDBgzQnj17/OfOnDlTd955p9atW6eMjAxJksPh0Ny5czV9+nT1
 6NFD/fv3V3Fxsfr27atTTjlFOTk5WrVqlfLy8nTDDTfI6/Vq+PDhmj17dqd1ud1unX322ZKkXbt2
 aejQodY1AUBYsPm+mZsHAACA5bjtCAAAYBDhCwAAwCDCFwAAgEGELwAAAIMIXwAAAAYRvgAAAAwi
 fAEAABhE+AIAADDo/wPSz85SdyTlXwAAAABJRU5ErkJggg==
-">
-</img></div>
+"/>
 </div>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
 </div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Based-on-this-distribution-we-can-reach-the-following-conclusions:">Based on this distribution we can reach the following conclusions:<a class="anchor-link" href="#Based-on-this-distribution-we-can-reach-the-following-conclusions:">¶</a></h4><ol>
 <li>Cluster 4 has the most players followed by cluster 3. This is an indication that players are required to shot
@@ -29671,17 +29760,14 @@ cluster 3 - the ”stretch” 4 is a new position in the NBA were big man with 3
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Acknowledgements:">Acknowledgements:<a class="anchor-link" href="#Acknowledgements:">¶</a></h3><p>This project was done as part of CS 6140 / Data Mining at the University of Utah (<a href="http://www.cs.utah.edu/~jeffp/teaching/cs5140.html">http://www.cs.utah.edu/~jeffp/teaching/cs5140.html</a>)</p>
 <p>Many thanks to Prof. Jeff Phillips for his guidance.</p>
 </div>
 </div>
 </div>
-
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
@@ -29730,11 +29816,11 @@ cluster 3 - the ”stretch” 4 is a new position in the NBA were big man with 3
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
             var disqus_shortname = 'doing-the-dishes'; // required: replace example with your forum shortname
 
-                    var disqus_identifier = 'shot_similarity';
-                var disqus_url = 'https://eyalshafran.github.io/shot_similarity.html';
-
             var disqus_config = function () {
-                this.language = "english";
+                this.language = "en";
+
+                        this.page.identifier = '2017-10-18-shot_similarity';
+                        this.page.url = 'https://eyalshafran.github.io/shot_similarity.html';
             };
 
             /* * * DON'T EDIT BELOW THIS LINE * * */
@@ -29755,91 +29841,15 @@ cluster 3 - the ”stretch” 4 is a new position in the NBA were big man with 3
     </section>
 
         </div>
-        <div class="col-sm-3" id="sidebar">
-            <aside>
-<div id="aboutme">
-        <p>
-            <img width="100%" class="img-thumbnail" src="https://eyalshafran.github.io/images/logo.png"/>
-        </p>
-</div>
-<section class="well well-sm">
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
-              <ul class="list-group" id="social">
-                <li class="list-group-item"><a href="https://github.com/eyalshafran"><i class="fa fa-github-square fa-lg"></i> github</a></li>
-                <li class="list-group-item"><a href="https://twitter.com/EyalShafran"><i class="fa fa-twitter-square fa-lg"></i> twitter</a></li>
-                <li class="list-group-item"><a href="https://www.linkedin.com/in/eyal-shafran-11924216/"><i class="fa fa-linkedin-square fa-lg"></i> linkedin</a></li>
-                <li class="list-group-item"><a href="https://www.facebook.com/sportsplotting/"><i class="fa fa-facebook-square fa-lg"></i> facebook</a></li>
-              </ul>
-            </li>
-
-            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
-                <ul class="list-group" id="recentposts">
-                    <li class="list-group-item">
-                        <a href="https://eyalshafran.github.io/all-star-and-draft-picks.html">
-                            All-Star and Draft Picks
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://eyalshafran.github.io/age.html">
-                            Age
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://eyalshafran.github.io/per-ws-vs-salary.html">
-                            PER & WS vs. Salary
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://eyalshafran.github.io/assists_breakdown.html">
-                            Assists Breakdown
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://eyalshafran.github.io/figure-summary-1.html">
-                            A few figures - week 1
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-
-
-
-    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
-      <ul class="list-group" id="links">
-        <li class="list-group-item">
-            <a href="http://shafrane.wixsite.com/doingthedishes" target="_blank">
-                My old blog
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://grantland.com/" target="_blank">
-                Grantland
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="https://fivethirtyeight.com/" target="_blank">
-                FiveThirtyEight
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://nyloncalculus.com/" target="_blank">
-                nylon calculus
-            </a>
-        </li>
-      </ul>
-    </li>
-    </ul>
-</section>            </aside>
-        </div>
     </div>
 </div>
+<!-- End Content Container -->
+
 <footer>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2018 Eyal Shafran
+         <div class="col-xs-10">&copy; 2020 Eyal Shafran
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
@@ -29854,6 +29864,7 @@ cluster 3 - the ”stretch” 4 is a new position in the NBA were big man with 3
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
 <script src="https://eyalshafran.github.io/theme/js/respond.min.js"></script>
+
 
     <!-- Disqus -->
     <script type="text/javascript">
@@ -29887,6 +29898,7 @@ cluster 3 - the ”stretch” 4 is a new position in the NBA were big man with 3
         })();
     </script>
     <!-- End Google Analytics Code -->
+
 
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58f04647af3a2863"></script>
 </body>

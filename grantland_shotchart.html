@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="english" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>Creating Grantland style shot charts - Doing The Dishes</title>
+    <title>Creating Grantland style shot charts - Eyal Shafran</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -16,22 +16,19 @@
         <meta name="keywords" content="python,NBA,shot chart" />
         <meta name="description" content="In this post I will show how to make with Python. The basic idea of the shot chart is: Shots are represented by hexagons. More shots = larger hexagon and vice versa. Color of the hexagon represents the FG % relative to the league average." />
 
-        <meta property="og:site_name" content="Doing The Dishes" />
+        <meta property="og:site_name" content="Eyal Shafran" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Creating Grantland style shot charts"/>
         <meta property="og:url" content="https://eyalshafran.github.io/grantland_shotchart.html"/>
         <meta property="og:description" content="In this post I will show how to make with Python. The basic idea of the shot chart is: Shots are represented by hexagons. More shots = larger hexagon and vice versa. Color of the hexagon represents the FG % relative to the league average."/>
         <meta property="article:published_time" content="2017-05-07" />
-            <meta property="article:section" content="Code" />
+            <meta property="article:section" content="Code - deprecated" />
             <meta property="article:tag" content="python" />
             <meta property="article:tag" content="NBA" />
             <meta property="article:tag" content="shot chart" />
             <meta property="article:author" content="Eyal" />
 
-    <meta name="twitter:card" content="summary">
-        <meta name="twitter:site" content="@EyalShafran">
-        <meta name="twitter:creator" content="@EyalShafran">
-    <meta name="twitter:domain" content="https://eyalshafran.github.io">
+
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="https://eyalshafran.github.io/theme/css/bootstrap.flatly.min.css" type="text/css"/>
@@ -39,32 +36,18 @@
 
     <link href="https://eyalshafran.github.io/theme/css/pygments/default.css" rel="stylesheet">
     <link rel="stylesheet" href="https://eyalshafran.github.io/theme/css/style.css" type="text/css"/>
+        <link href="https://eyalshafran.github.io/static/css/custom.css" rel="stylesheet">
 
         <link href="https://eyalshafran.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
-              title="Doing The Dishes ATOM Feed"/>
+              title="Eyal Shafran ATOM Feed"/>
 
-
-
-        <link href="https://eyalshafran.github.io/feeds/code.atom.xml" type="application/atom+xml" rel="alternate"
-              title="Doing The Dishes Code ATOM Feed"/>
-
-	<!-- Doing the Dishes Specific CSS -->
-	<link href="https://eyalshafran.github.io/theme/css/doingthedishes/dtd-main.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.11.1.min.css" type="text/css" />
-	<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.12.13.min.css" type="text/css" />
+        <link href="https://eyalshafran.github.io/feeds/code-deprecated.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Eyal Shafran Code - deprecated ATOM Feed"/>
 </head>
 <body>
 
-
-<!-- Embedded Javascript. Same as referecing an external JS document -->
- <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.11.1.min.js"></script>
- <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.13.min.js"></script>
- <script type="text/javascript">
-     Bokeh.set_log_level("info");
- </script>
-
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="container">
+    <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -73,24 +56,21 @@
                 <span class="icon-bar"></span>
             </button>
             <a href="https://eyalshafran.github.io/" class="navbar-brand">
-Doing The Dishes            </a>
+Eyal Shafran            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                         <li><a href="https://eyalshafran.github.io/pages/about-me.html">
-                             About Me
-                          </a></li>
-                         <li><a href="https://eyalshafran.github.io/pages/contact-en.html">
-                             Contact
+                         <li><a href="https://eyalshafran.github.io/pages/about.html">
+                             About
                           </a></li>
                         <li >
                             <a href="https://eyalshafran.github.io/category/blog.html">Blog</a>
                         </li>
-                        <li class="active">
+                        <li >
                             <a href="https://eyalshafran.github.io/category/code.html">Code</a>
                         </li>
-                        <li >
-                            <a href="https://eyalshafran.github.io/category/interactive-graphs.html">Interactive graphs</a>
+                        <li class="active">
+                            <a href="https://eyalshafran.github.io/category/code-deprecated.html">Code - deprecated</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -99,11 +79,14 @@ Doing The Dishes            </a>
         <!-- /.navbar-collapse -->
     </div>
 </div> <!-- /.navbar -->
+
 <!-- Banner -->
 <!-- End Banner -->
+
+<!-- Content Container -->
 <div class="container">
     <div class="row">
-        <div class="col-sm-9">
+        <div class="col-lg-12">
     <section id="content">
         <article>
             <header class="page-header">
@@ -125,9 +108,11 @@ Doing The Dishes            </a>
     </span>
 
 
+            <span class="label label-default">By</span>
+            <a href="https://eyalshafran.github.io/author/eyal.html"><i class="fa fa-user"></i> Eyal</a>
 
         <span class="label label-default">Category</span>
-        <a href="https://eyalshafran.github.io/category/code.html">Code</a>
+        <a href="https://eyalshafran.github.io/category/code-deprecated.html">Code - deprecated</a>
 
 
 <span class="label label-default">Tags</span>
@@ -144,9 +129,124 @@ Doing The Dishes            </a>
 * IPython notebook
 *
 */
-/* CSS font colors for translated ANSI colors. */
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
 .ansibold {
   font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
 }
 /* use dark versions for foreground, to improve visibility */
 .ansiblack {
@@ -225,12 +325,20 @@ div.cell {
   /* This acts as a spacer between cells, that is outside the border */
   margin: 0px;
   outline: none;
-  border-left-width: 1px;
-  padding-left: 5px;
-  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
 }
 div.cell.jupyter-soft-selected {
-  border-left-color: #90CAF9;
   border-left-color: #E3F2FD;
   border-left-width: 1px;
   padding-left: 5px;
@@ -243,27 +351,39 @@ div.cell.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected {
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
   border-color: #ababab;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
 }
 @media print {
-  div.cell.selected {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected.jupyter-soft-selected {
-  border-left-width: 0;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
-}
 .edit_mode div.cell.selected {
   border-color: #66BB6A;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
 }
 @media print {
   .edit_mode div.cell.selected {
@@ -459,7 +579,9 @@ div.input_area > div.highlight > pre {
 .CodeMirror-lines {
   /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
   /* we have set a different line-height and want this to scale with that. */
-  padding: 0.4em;
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
 }
 .CodeMirror-linenumber {
   padding: 0 8px 0 4px;
@@ -469,11 +591,24 @@ div.input_area > div.highlight > pre {
   border-top-left-radius: 2px;
 }
 .CodeMirror pre {
-  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
-  /* .CodeMirror-lines */
-  padding: 0;
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
   border: 0;
   border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
 }
 /*
 
@@ -721,6 +856,9 @@ div.output_area img.unconfined,
 div.output_area svg.unconfined {
   max-width: none;
 }
+div.output_area .mglyph > img {
+  max-width: none;
+}
 /* This is needed to protect the pre formating from global settings such
    as that of bootstrap */
 .output {
@@ -759,7 +897,7 @@ div.output_area svg.unconfined {
 }
 div.output_area pre {
   margin: 0;
-  padding: 0;
+  padding: 1px 0 1px 0;
   border: 0;
   vertical-align: baseline;
   color: black;
@@ -881,6 +1019,10 @@ div.output_unrecognized a:hover {
 .rendered_html h6:first-child {
   margin-top: 1em;
 }
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
 
 
 
@@ -897,16 +1039,24 @@ div.output_unrecognized a:hover {
 }
 
 
+
+
+
 .rendered_html pre,
+
 
 
 
 .rendered_html tr,
 .rendered_html th,
 
-.rendered_html td,
 
-
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
 .rendered_html * + table {
   margin-top: 1em;
 }
@@ -922,6 +1072,11 @@ div.output_unrecognized a:hover {
 
 .rendered_html img.unconfined,
 
+
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] 
 div.text_cell {
   /* Old browsers */
   display: -webkit-box;
@@ -972,8 +1127,15 @@ h6:hover .anchor-link {
   display: none;
 }
 .text_cell.rendered 
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered 
 .text_cell.unrendered .text_cell_render {
   display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
 }
 .cm-header-1,
 .cm-header-2,
@@ -1073,48 +1235,8 @@ h6:hover .anchor-link {
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
-<style type="text/css">
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-</style>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In this post I will show how to make <a href="https://www.google.com/search?q=grantland+shot+chart&amp;newwindow=1&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=0ahUKEwiH7fqBs9_TAhUKslQKHXNdDOEQ_AUIDCgD&amp;biw=1536&amp;bih=686#imgrc=PtFvtiAvmijqYM:">Grantland type shot charts</a> with Python.</p>
 <p>The basic idea of the shot chart is:</p>
@@ -1131,7 +1253,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">NBAapi</span> <span class="kn">as</span> <span class="nn">nba</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">matplotlib.patches</span> <span class="kn">import</span> <span class="n">Polygon</span>
@@ -1147,10 +1269,8 @@ h6:hover .anchor-link {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>I'm going to create a new function that accepts X and Y coordiantes and returns a tuple with the shot zome. This will be used later.</p>
 </div>
@@ -1161,54 +1281,54 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">shot_zone</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">):</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">shot_zone</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">):</span>
     <span class="sd">'''</span>
 <span class="sd">    Uses shot coordinates x and y (in feet - divide by 10 if using the shotchart units)</span>
 <span class="sd">    and returns a tuple with the zone location</span>
 <span class="sd">    '''</span>
     <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">X</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">Y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span><span class="n">X</span><span class="p">)</span><span class="o">*</span><span class="mf">180.0</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">Y</span><span class="o"><</span><span class="mi">0</span><span class="p">)</span> <span class="o">&</span> <span class="p">(</span><span class="n">X</span> <span class="o">></span> <span class="mi">0</span><span class="p">):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">Y</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">X</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
         <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">elif</span> <span class="p">(</span><span class="n">Y</span><span class="o"><</span><span class="mi">0</span><span class="p">)</span> <span class="o">&</span> <span class="p">(</span><span class="n">X</span> <span class="o"><</span> <span class="mi">0</span><span class="p">):</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">Y</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">X</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">):</span>
         <span class="n">a</span> <span class="o">=</span> <span class="mi">180</span>
-    <span class="k">if</span> <span class="n">r</span><span class="o"><=</span><span class="mi">8</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">r</span><span class="o">&lt;=</span><span class="mi">8</span><span class="p">:</span>
         <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'Less Than 8 ft.'</span><span class="p">,</span><span class="s1">'Center(C)'</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="p">(</span><span class="n">r</span><span class="o">></span><span class="mi">8</span><span class="p">)</span> <span class="o">&</span> <span class="p">(</span><span class="n">r</span><span class="o"><=</span><span class="mi">16</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">a</span> <span class="o"><</span> <span class="mi">60</span><span class="p">:</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">r</span><span class="o">&gt;</span><span class="mi">8</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">r</span><span class="o">&lt;=</span><span class="mi">16</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">60</span><span class="p">:</span>
             <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'8-16 ft.'</span><span class="p">,</span><span class="s1">'Right Side(R)'</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="p">(</span><span class="n">a</span><span class="o">>=</span><span class="mi">60</span><span class="p">)</span> <span class="o">&</span> <span class="p">(</span><span class="n">a</span><span class="o"><=</span><span class="mi">120</span><span class="p">):</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="n">a</span><span class="o">&gt;=</span><span class="mi">60</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">a</span><span class="o">&lt;=</span><span class="mi">120</span><span class="p">):</span>
             <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'8-16 ft.'</span><span class="p">,</span><span class="s1">'Center(C)'</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'8-16 ft.'</span><span class="p">,</span><span class="s1">'Left Side(L)'</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="p">(</span><span class="n">r</span><span class="o">></span><span class="mi">16</span><span class="p">)</span> <span class="o">&</span> <span class="p">(</span><span class="n">r</span><span class="o"><=</span><span class="mf">23.75</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">a</span> <span class="o"><</span> <span class="mi">36</span><span class="p">:</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">r</span><span class="o">&gt;</span><span class="mi">16</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">r</span><span class="o">&lt;=</span><span class="mf">23.75</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">36</span><span class="p">:</span>
             <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'16-24 ft.'</span><span class="p">,</span><span class="s1">'Right Side(R)'</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="p">(</span><span class="n">a</span><span class="o">>=</span><span class="mi">36</span><span class="p">)</span> <span class="o">&</span> <span class="p">(</span><span class="n">a</span><span class="o"><</span><span class="mi">72</span><span class="p">):</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="n">a</span><span class="o">&gt;=</span><span class="mi">36</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">a</span><span class="o">&lt;</span><span class="mi">72</span><span class="p">):</span>
             <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'16-24 ft.'</span><span class="p">,</span><span class="s1">'Right Side Center(RC)'</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="p">(</span><span class="n">a</span><span class="o">>=</span><span class="mi">72</span><span class="p">)</span> <span class="o">&</span> <span class="p">(</span><span class="n">a</span><span class="o"><=</span><span class="mi">108</span><span class="p">):</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="n">a</span><span class="o">&gt;=</span><span class="mi">72</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">a</span><span class="o">&lt;=</span><span class="mi">108</span><span class="p">):</span>
             <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'16-24 ft.'</span><span class="p">,</span><span class="s1">'Center(C)'</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="p">(</span><span class="n">a</span><span class="o">></span><span class="mi">108</span><span class="p">)</span> <span class="o">&</span> <span class="p">(</span><span class="n">a</span><span class="o"><</span><span class="mi">144</span><span class="p">):</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="n">a</span><span class="o">&gt;</span><span class="mi">108</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">a</span><span class="o">&lt;</span><span class="mi">144</span><span class="p">):</span>
             <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'16-24 ft.'</span><span class="p">,</span><span class="s1">'Left Side Center(LC)'</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'16-24 ft.'</span><span class="p">,</span><span class="s1">'Left Side(L)'</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">r</span><span class="o">></span><span class="mf">23.75</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">a</span> <span class="o"><</span> <span class="mi">72</span><span class="p">:</span>
+    <span class="k">elif</span> <span class="n">r</span><span class="o">&gt;</span><span class="mf">23.75</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">72</span><span class="p">:</span>
             <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'24+ ft.'</span><span class="p">,</span><span class="s1">'Right Side Center(RC)'</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="p">(</span><span class="n">a</span><span class="o">>=</span><span class="mi">72</span><span class="p">)</span> <span class="o">&</span> <span class="p">(</span><span class="n">a</span><span class="o"><=</span><span class="mi">108</span><span class="p">):</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="n">a</span><span class="o">&gt;=</span><span class="mi">72</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">a</span><span class="o">&lt;=</span><span class="mi">108</span><span class="p">):</span>
             <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'24+ ft.'</span><span class="p">,</span><span class="s1">'Center(C)'</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'24+ ft.'</span><span class="p">,</span><span class="s1">'Left Side Center(LC)'</span><span class="p">)</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">>=</span><span class="mi">22</span><span class="p">):</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">X</span> <span class="o">></span> <span class="mi">0</span><span class="p">)</span> <span class="o">&</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span><span class="o"><</span><span class="mf">8.75</span><span class="p">):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">&gt;=</span><span class="mi">22</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">X</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span><span class="o">&lt;</span><span class="mf">8.75</span><span class="p">):</span>
             <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'24+ ft.'</span><span class="p">,</span><span class="s1">'Right Side(R)'</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="p">(</span><span class="n">X</span> <span class="o"><</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span><span class="o"><</span><span class="mf">8.75</span><span class="p">):</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="n">X</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span><span class="o">&lt;</span><span class="mf">8.75</span><span class="p">):</span>
             <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'24+ ft.'</span><span class="p">,</span><span class="s1">'Left Side(L)'</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="p">(</span><span class="n">X</span> <span class="o">></span> <span class="mi">0</span><span class="p">)</span> <span class="o">&</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span><span class="o">>=</span><span class="mf">8.75</span><span class="p">):</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="n">X</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span><span class="o">&gt;=</span><span class="mf">8.75</span><span class="p">):</span>
             <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'24+ ft.'</span><span class="p">,</span><span class="s1">'Right Side Center(RC)'</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="p">(</span><span class="n">X</span> <span class="o"><</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span><span class="o">>=</span><span class="mf">8.75</span><span class="p">):</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="n">X</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span><span class="o">&gt;=</span><span class="mf">8.75</span><span class="p">):</span>
             <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'24+ ft.'</span><span class="p">,</span><span class="s1">'Left Side Center(LC)'</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">Y</span> <span class="o">>=</span> <span class="mi">40</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">Y</span> <span class="o">&gt;=</span> <span class="mi">40</span><span class="p">:</span>
         <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'Back Court Shot'</span><span class="p">,</span> <span class="s1">'Back Court(BC)'</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">z</span>
 </pre></div>
@@ -1216,10 +1336,8 @@ h6:hover .anchor-link {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This function returns a players picture base on their player ID:</p>
 </div>
@@ -1230,7 +1348,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">players_picture</span><span class="p">(</span><span class="n">player_id</span><span class="p">):</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">players_picture</span><span class="p">(</span><span class="n">player_id</span><span class="p">):</span>
     <span class="sd">'''</span>
 <span class="sd">    Input: player ID</span>
 <span class="sd">    Output: players picture</span>
@@ -1243,10 +1361,8 @@ h6:hover .anchor-link {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>First, let's load a list of all NBA players using the commonallplayers function:</p>
 </div>
@@ -1257,7 +1373,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">player_list</span> <span class="o">=</span> <span class="n">nba</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">commonallplayers</span><span class="p">(</span><span class="n">currentseason</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># load a list of NBA players including retired players </span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">player_list</span> <span class="o">=</span> <span class="n">nba</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">commonallplayers</span><span class="p">(</span><span class="n">currentseason</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># load a list of NBA players including retired players </span>
 <span class="n">player_list</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1269,7 +1385,7 @@ h6:hover .anchor-link {
 <div class="prompt output_prompt">Out[4]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
-<table border="1" class="dataframe">
+<table class="dataframe">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -1377,10 +1493,8 @@ h6:hover .anchor-link {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We need to create a DataFrame with the FG% per zone for the entire league and for the player we are interested in:</p>
 </div>
@@ -1391,7 +1505,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">player_name</span> <span class="o">=</span> <span class="s1">'James, LeBron'</span> <span class="c1"># identify player by name</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">player_name</span> <span class="o">=</span> <span class="s1">'James, LeBron'</span> <span class="c1"># identify player by name</span>
 <span class="n">player_id</span> <span class="o">=</span> <span class="n">player_list</span><span class="p">[</span><span class="n">player_list</span><span class="p">[</span><span class="s1">'DISPLAY_LAST_COMMA_FIRST'</span><span class="p">]</span><span class="o">==</span> <span class="n">player_name</span><span class="p">]</span><span class="o">.</span><span class="n">PERSON_ID</span> <span class="c1"># get players id</span>
 
 <span class="c1"># get shotchart for the player and the league average</span>
@@ -1410,10 +1524,8 @@ h6:hover .anchor-link {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We are going to use the hexbin histogram from matplotlib to get the shot frequency and use the counts and bin vertices to reconstruct the plot:</p>
 </div>
@@ -1424,7 +1536,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">player_vs_league</span> <span class="o">=</span> <span class="p">(</span><span class="n">player</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">'FGP'</span><span class="p">]</span> <span class="o">-</span> <span class="n">LA</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">'FGP'</span><span class="p">])</span><span class="o">*</span><span class="mi">100</span> <span class="c1"># compares player's FG% to league average</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">player_vs_league</span> <span class="o">=</span> <span class="p">(</span><span class="n">player</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">'FGP'</span><span class="p">]</span> <span class="o">-</span> <span class="n">LA</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">'FGP'</span><span class="p">])</span><span class="o">*</span><span class="mi">100</span> <span class="c1"># compares player's FG% to league average</span>
 <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="mf">0.1</span><span class="o">*</span><span class="n">shotchart</span><span class="o">.</span><span class="n">LOC_X</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="mf">0.1</span><span class="o">*</span><span class="n">shotchart</span><span class="o">.</span><span class="n">LOC_Y</span><span class="o">.</span><span class="n">values</span> <span class="c1"># get players shot coordinates</span>
 
 <span class="c1"># get heetxbin to do the hard work for us. Use the extent and gridsize to get the desired bins</span>
@@ -1441,10 +1553,8 @@ h6:hover .anchor-link {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Here is how the player's FG% vs. league looks like (in this case LeBron's):</p>
 </div>
@@ -1455,7 +1565,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">player_vs_league</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">player_vs_league</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1487,10 +1597,8 @@ Name: FGP, dtype: float64</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We are ready to plot:</p>
 </div>
@@ -1501,7 +1609,7 @@ Name: FGP, dtype: float64</pre>
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># create figure plot</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="c1"># create figure plot</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">'white'</span><span class="p">)</span> 
 <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">(</span><span class="n">xlim</span> <span class="o">=</span> <span class="p">[</span><span class="mi">30</span><span class="p">,</span><span class="o">-</span><span class="mi">30</span><span class="p">],</span><span class="n">ylim</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">40</span><span class="p">],</span><span class="n">xticks</span><span class="o">=</span><span class="p">[],</span><span class="n">yticks</span><span class="o">=</span><span class="p">[],</span><span class="n">aspect</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span><span class="s1">'By: Doingthedishes'</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span><span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">'center'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">fontweight</span><span class="o">=</span><span class="s1">'bold'</span><span class="p">)</span>
@@ -1523,9 +1631,9 @@ Name: FGP, dtype: float64</pre>
 <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 <span class="c1"># adjust size scaling factor depending on the frequency of shots. Size-frequency relationship was choosen empirically </span>
 <span class="n">counts_norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
-<span class="n">counts_norm</span><span class="p">[</span><span class="n">counts</span><span class="o">>=</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># 4 shots or more= full size hexagon</span>
-<span class="n">counts_norm</span><span class="p">[(</span><span class="n">counts</span><span class="o">>=</span><span class="mi">2</span><span class="p">)</span> <span class="o">&</span> <span class="p">(</span><span class="n">counts</span><span class="o"><</span><span class="mi">4</span><span class="p">)]</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1"># 2 or 3 shots = half size hexagon </span>
-<span class="n">counts_norm</span><span class="p">[(</span><span class="n">counts</span><span class="o">>=</span><span class="mi">1</span><span class="p">)</span> <span class="o">&</span> <span class="p">(</span><span class="n">counts</span><span class="o"><</span><span class="mi">2</span><span class="p">)]</span> <span class="o">=</span> <span class="mf">0.3</span> <span class="c1"># 1 shot = small hexagon</span>
+<span class="n">counts_norm</span><span class="p">[</span><span class="n">counts</span><span class="o">&gt;=</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># 4 shots or more= full size hexagon</span>
+<span class="n">counts_norm</span><span class="p">[(</span><span class="n">counts</span><span class="o">&gt;=</span><span class="mi">2</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">counts</span><span class="o">&lt;</span><span class="mi">4</span><span class="p">)]</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1"># 2 or 3 shots = half size hexagon </span>
+<span class="n">counts_norm</span><span class="p">[(</span><span class="n">counts</span><span class="o">&gt;=</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">counts</span><span class="o">&lt;</span><span class="mi">2</span><span class="p">)]</span> <span class="o">=</span> <span class="mf">0.3</span> <span class="c1"># 1 shot = small hexagon</span>
 
 <span class="c1"># start creating patch and color list</span>
 <span class="n">patches</span><span class="o">=</span><span class="p">[]</span>
@@ -1592,12 +1700,12 @@ Name: FGP, dtype: float64</pre>
 <div class="output_area">
 <div class="prompt output_prompt">Out[8]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre><matplotlib.text.text at 0xc69da58></pre>
+<pre>&lt;matplotlib.text.Text at 0xc69da58&gt;</pre>
 </div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA7YAAAMaCAYAAACyJNoNAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAPYQAAD2EBqD+naQAAIABJREFUeJzs3Wmw59ld3/f3WX7rf7lr3+6e7p5F22hGksVqG0QRQBJI
 Jq4KTqXKMXY5gB0cbKpMbAIVZEgepCoGHsXBUAk4DmBjYUDSIExsgSTAZrHFZiFpRsvsPb3c/b/+
@@ -4748,16 +4856,14 @@ sbGxL8+WlpZyenqa7e3tLC4u5vHxMb29vZmYmEhPT09aWlry9PSUhYWFPDw8pKurK7Ozs9nZ2Uny
 AACAoglbAAAAiiZsAQAAKJqwBQAAoGjCFgAAgKIJWwAAAIombAEAACiasAUAAKBowhYAAICiCVsA
 AACKJmwBAAAomrAFAACgaMIWAACAoglbAAAAiiZsAQAAKJqwBQAAoGjCFgAAgKIJWwAAAIombAEA
 ACiasAUAAKBowhYAAICiCVsAAACKJmwBAAAomrAFAACgaD8ALr2lWZd/tmwAAAAASUVORK5CYII=
-">
-</img></div>
+"/>
 </div>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
 </div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>I created a function - NBAapi.plot.grantland_shotchart that includes all of the code above.</p>
 <h2 id="Shot-chart-over-time">Shot chart over time<a class="anchor-link" href="#Shot-chart-over-time">¶</a></h2><p>I would like to check a player's shot chart evolution over time so let's create a function that returns a list of seasons based on starting and ending years</p>
@@ -4769,7 +4875,7 @@ ACiasAUAAKBowhYAAICiCVsAAACKJmwBAAAomrAFAACgaD8ALr2lWZd/tmwAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">seasons_string</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="p">):</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">seasons_string</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="p">):</span>
     <span class="sd">'''</span>
 <span class="sd">    creates a list of NBA seasons from start-end</span>
 <span class="sd">    '''</span>
@@ -4786,10 +4892,8 @@ ACiasAUAAKBowhYAAICiCVsAAACKJmwBAAAomrAFAACgaD8ALr2lWZd/tmwAAAAASUVORK5CYII=
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Interactive-Shotchart">Interactive Shotchart<a class="anchor-link" href="#Interactive-Shotchart">¶</a></h2><p>We can use the ipywidgets to get interactive plotting in Jupyter Notebook</p>
 </div>
@@ -4800,7 +4904,7 @@ ACiasAUAAKBowhYAAICiCVsAAACKJmwBAAAomrAFAACgaD8ALr2lWZd/tmwAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span>
 
 <span class="c1"># Plotting </span>
 <span class="n">player_name</span> <span class="o">=</span> <span class="s1">'Curry, Stephen'</span>
@@ -4828,7 +4932,7 @@ ACiasAUAAKBowhYAAICiCVsAAACKJmwBAAAomrAFAACgaD8ALr2lWZd/tmwAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">browse_images</span><span class="p">(</span><span class="n">seasons</span><span class="p">)</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">browse_images</span><span class="p">(</span><span class="n">seasons</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -4837,10 +4941,10 @@ ACiasAUAAKBowhYAAICiCVsAAACKJmwBAAAomrAFAACgaD8ALr2lWZd/tmwAAAAASUVORK5CYII=
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div id="0c0ad0f8-33cb-4e60-afe7-f23f429d9484"></div>
-<div class="output_subarea output_widget_view ">
+<div id="7700afaa-b022-4f85-a305-dbe9086a8d08"></div>
+<div class="output_subarea output_widget_view">
 <script type="text/javascript">
-var element = $('#0c0ad0f8-33cb-4e60-afe7-f23f429d9484');
+var element = $('#7700afaa-b022-4f85-a305-dbe9086a8d08');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "62258e44b7ad41bb8eee0ab026fbcea4"}
@@ -4850,10 +4954,8 @@ var element = $('#0c0ad0f8-33cb-4e60-afe7-f23f429d9484');
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Interactive plotting works on the notebook (see <a href="https://github.com/eyalshafran/Example-notebooks">here</a>). 
 For the website here is how the shot charts look over time:</p>
@@ -4865,7 +4967,7 @@ For the website here is how the shot charts look over time:</p>
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">for</span> <span class="n">Season</span> <span class="ow">in</span> <span class="n">seasons</span><span class="p">:</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="k">for</span> <span class="n">Season</span> <span class="ow">in</span> <span class="n">seasons</span><span class="p">:</span>
         <span class="n">shotchart</span><span class="p">,</span><span class="n">leagueavergae</span> <span class="o">=</span> <span class="n">nba</span><span class="o">.</span><span class="n">shotchart</span><span class="o">.</span><span class="n">shotchartdetail</span><span class="p">(</span><span class="n">playerid</span><span class="o">=</span><span class="n">player_id</span><span class="p">,</span><span class="n">season</span><span class="o">=</span><span class="n">Season</span><span class="p">)</span> <span class="c1"># get shot chart data from NBA.stats</span>
         <span class="n">nba</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">grantland_shotchart</span><span class="p">(</span><span class="n">shotchart</span><span class="p">,</span><span class="n">leagueavergae</span><span class="p">)</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">38</span><span class="p">,</span><span class="n">Season</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">'center'</span><span class="p">,</span><span class="n">verticalalignment</span><span class="o">=</span><span class="s1">'center'</span><span class="p">)</span>
@@ -4877,7 +4979,7 @@ For the website here is how the shot charts look over time:</p>
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABFEAAAOcCAYAAACGyC5DAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAPYQAAD2EBqD+naQAAIABJREFUeJzs3Xu0XVdd9//3vK21L+eSk5wkLUlaaltaLFjb0lIEtSKC
 tFKhVX/4Y6jgEAR+WHR4YciDPiiigsDwypCLICigUARRHiyK2gotDZQ7UpqmaUvaJk1OcnJue++1
@@ -9051,12 +9153,12 @@ iIiISA4MohARERERERERyYFBFCIiIiIiIiIiOTCIQkREREREREQkBwZRiIiIiIiIiIjkwCAKERER
 EREREZEcGEQhIiIiIiIiIpIDgyhERERERERERHJgEIWIiIiIiIiISA4MohARERERERERyYFBFCIi
 IiIiIiIiOTCIQkREREREREQkBwZRiIiIiIiIiIjkwCAKEREREREREZEc/g+D64xC4MYBYwAAAABJ
 RU5ErkJggg==
-">
-</img></div>
+"/>
+</div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABFEAAAOcCAYAAACGyC5DAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAPYQAAD2EBqD+naQAAIABJREFUeJzs3XmwZWV9//v3M6y19nCGPt2nu4GmmYeWQQQDqBiNRCGx
 jGFITO7Vqz8HEr1RNCmjFX9WSpPKYBmxKuRnXdE4JL+oiZhEr9cMaCJGo0IciEHmbsYW6On0mfbe
@@ -12960,12 +13062,12 @@ gUEUIiIiIiIiIiI1MIhCRERERERERKQGBlGIiIiIiIiIiNTAIAoRERERERERkRoYRCEiIiIiIiIi
 UgODKEREREREREREamAQhYiIiIiIiIhIDQyiEBERERERERGpgUEUIiIiIiIiIiI1MIhCRERERERE
 RKQGBlGIiIiIiIiIiNTAIAoRERERERERkRoYRCEiIiIiIiIiUgODKEREREREREREavh/UVCZnlW0
 OWAAAAAASUVORK5CYII=
-">
-</img></div>
+"/>
+</div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABFEAAAOcCAYAAACGyC5DAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAPYQAAD2EBqD+naQAAIABJREFUeJzs3XuwpXdd5/v37/Y867LX3n3Z3bl07iGhIYRAIMjFgcMt
 GRUQg4IMHhgQKDhnBKdULBxKHZRRSi5VwmAhiESOgGPiOVKeA4gzEoyACWpQQwK5dBKSJqFvu/dt
@@ -15374,12 +15476,12 @@ RERKYBCFiIiIiIiIiEgJDKIQERERERERESmBQRQiIiIiIiIiIiUwiEJEREREREREpAQGUYiIiIiI
 iIiIlMAgChERERERERGREhhEISIiIiIiIiJSAoMoRERERERERERKYBCFiIiIiIiIiEgJDKIQERER
 ERERESmBQRQiIiIiIiIiIiUwiEJEREREREREpAQGUYiIiIiIiIiIlMAgChERERERERGREhhEISIi
 IiIiIiJSwv8Dwu6DMG/5X6QAAAAASUVORK5CYII=
-">
-</img></div>
+"/>
+</div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABFEAAAOcCAYAAACGyC5DAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAPYQAAD2EBqD+naQAAIABJREFUeJzs3XmUZVV9//33Hs45d6hb1dVd3c08yKiICIoTRgURh18U
 xF800TxOS13OaJboL+oyDsnvccIZnzDERH/RGKcn+sQYg1FxiAooIkHG7mbqFuypuqZ77zln7/38
@@ -19897,12 +19999,12 @@ UBCFEEIIIYQQQgghRAYURCGEEEIIIYQQQgiRAQVRCCGEEEIIIYQQQmRAQRRCCCGEEEIIIYQQGVAQ
 hRBCCCGEEEIIIUQGFEQhhBBCCCGEEEIIkQEFUQghhBBCCCGEEEJkQEEUQgghhBBCCCGEEBlQEIUQ
 QgghhBBCCCFEBhREIYQQQgghhBBCCJEBBVEIIYQQQgghhBBCZEBBFEIIIYQQQgghhBAZUBCFEEII
 IYQQQgghRAYURCGEEEIIIYQQQgiRAQVRCCGEEEIIIYQQQmTwf3m14ntqT0ESAAAAAElFTkSuQmCC
-">
-</img></div>
+"/>
+</div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABFEAAAOcCAYAAACGyC5DAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAPYQAAD2EBqD+naQAAIABJREFUeJzs3XmYZVV97//3mvbeZ6iqru6iG2jm2RFFiRh+V39OqHk0
 KvojuY/5EckvEKNRiV5NjD5evcbcGBPiY1SMGhnidbjBRLwZURMlGqCJcQAEaaZGaMCeqms85+y9
@@ -24196,12 +24298,12 @@ AAAAMECIAgAAAAAAYIAQBQAAAAAAwAAhCgAAAAAAgAFCFAAAAAAAAAOEKAAAAAAAAAYIUQAAAAAA
 AAwQogAAAAAAABggRAEAAAAAADBAiAIAAAAAAGCAEAUAAAAAAMAAIQoAAAAAAIABQhQAAAAAAAAD
 hCgAAAAAAAAGCFEAAAAAAAAMEKIAAAAAAAAYIEQBAAAAAAAwQIgCAAAAAABggBAFAAAAAADAACEK
 AAAAAACAAUIUAAAAAAAAA4QoAAAAAAAABv4Cfl9AjO2j3f4AAAAASUVORK5CYII=
-">
-</img></div>
+"/>
+</div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABFEAAAOcCAYAAACGyC5DAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAPYQAAD2EBqD+naQAAIABJREFUeJzs3XuUZWdZ7/vve5mXtVZdurqrO5dO557QkISQQAAJBkES
 tg43YBBBGcrGQxCPiGwVFbfDC+oWhMDYgEGBg4bN9gDidsjAoxgRgkBigiJqSEIu3bk1SfpWXbe1
@@ -28247,12 +28349,12 @@ RAEAAAAAAHAAIQoAAAAAAIADCFEAAAAAAAAcQIgCAAAAAADgAEIUAAAAAAAABxCiAAAAAAAAOIAQ
 BQAAAAAAwAGEKAAAAAAAAA4gRAEAAAAAAHAAIQoAAAAAAIADCFEAAAAAAAAcQIgCAAAAAADgAEIU
 AAAAAAAABxCiAAAAAAAAOIAQBQAAAAAAwAGEKAAAAAAAAA4gRAEAAAAAAHAAIQoAAAAAAIADCFEA
 AAAAAAAcQIgCAAAAAADgAEIUAAAAAAAABxCiAAAAAAAAOOD/AEDP62qeprhvAAAAAElFTkSuQmCC
-">
-</img></div>
+"/>
+</div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABFEAAAOcCAYAAACGyC5DAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAPYQAAD2EBqD+naQAAIABJREFUeJzs3Xm0XVWZ7/3vbNZauzlNTjqa0CO9CESxA+WtsgqbQlFs
 x/C9eMXmgpZYVZZaja8Dy9JxUdF7xWZQelUsS8sCy6bKoijvW68oSCdwLaVNQgiSQEh3ktPsvdda
@@ -32297,12 +32399,12 @@ gB0IUQAAAAAAAOxAiAIAAAAAAGAHQhQAAAAAAAA7EKIAAAAAAADYgRAFAAAAAADADoQoAAAAAAAA
 diBEAQAAAAAAsAMhCgAAAAAAgB0IUQAAAAAAAOxAiAIAAAAAAGAHQhQAAAAAAAA7EKIAAAAAAADY
 gRAFAAAAAADADoQoAAAAAAAAdiBEAQAAAAAAsAMhCgAAAAAAgB0IUQAAAAAAAOxAiAIAAAAAAGCH
 /wXbWcTk/sCo2gAAAABJRU5ErkJggg==
-">
-</img></div>
+"/>
+</div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABFEAAAOcCAYAAACGyC5DAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAPYQAAD2EBqD+naQAAIABJREFUeJzs3Xm4XmV97//3Pay1nmHvnWmHACGEQIFYRAYbEa1aB7Dy
 wwlsj796HGilFQfQVqTF1qo4AWr9FQ+tSDloHY8oOJ1q7a9HLAiCoFQRJISEKUDm7Ol5nrXWfd/n
@@ -36414,16 +36516,14 @@ iIiISAkMohARERERERERKYFBFCIiIiIiIiIiJTCIQkRERERERESkBAZRiIiIiIiIiIiUwCAKERER
 EREREZESGEQhIiIiIiIiIlICgyhEREREREREREpgEIWIiIiIiIiISAkMohARERERERERKYFBFCIi
 IiIiIiIiJTCIQkRERERERESkBAZRiIiIiIiIiIiUwCAKEREREREREZESGEQhIiIiIiIiIlLC/wPm
 d3/rETSa9gAAAABJRU5ErkJggg==
-">
-</img></div>
+"/>
 </div>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
 </div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Let-me-know-what-you-think">Let me know what you think<a class="anchor-link" href="#Let-me-know-what-you-think">¶</a></h3><p>Reference:</p>
 <ol>
@@ -36436,7 +36536,6 @@ d3/rETSa9gAAAABJRU5ErkJggg==
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {"0183e8bfed394432bf412ff0b9e30826": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "VBoxModel", "state": {"_dom_classes": ["widget-interact"], "_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4", "children": ["IPY_MODEL_a4801d72e5f543d7bd75e01d3a8f9608", "IPY_MODEL_9f819f23e8384dc4b12a72c1cb1c66d8"], "layout": "IPY_MODEL_c3710303bc3f45e9b69bf55e64f6d764"}}, "057c9aed327648df81e021f425ccbf5c": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "LayoutModel", "state": {"_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4"}}, "0d8d960fd5c34824a62127e31570d48e": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "OutputModel", "state": {"_dom_classes": [], "_model_module": "jupyter-js-widgets", "_model_module_version": "~2.1.4", "_view_module": "jupyter-js-widgets", "_view_module_version": "~2.1.4", "layout": "IPY_MODEL_708f03c3f96840d0bab9e6a3f8463966", "msg_throttle": 1}}, "0e652c71266545eaa93fe07eea028d32": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "LayoutModel", "state": {"_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4"}}, "1843796a67bd46eb85a521020f2672e5": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "LayoutModel", "state": {"_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4"}}, "2473a2e848ab42dcb102d340c277d675": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "LayoutModel", "state": {"_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4"}}, "2e1b9389eb4c4a8ea65b8af7516c2463": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "LayoutModel", "state": {"_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4"}}, "317f48c9696e41be99fed925c42b713a": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "OutputModel", "state": {"_dom_classes": [], "_model_module": "jupyter-js-widgets", "_model_module_version": "~2.1.4", "_view_module": "jupyter-js-widgets", "_view_module_version": "~2.1.4", "layout": "IPY_MODEL_7502cb948d194eacaaaf2c82eadcb527", "msg_throttle": 1}}, "450fc252ef234f8b88f1151bbf3ca3af": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "VBoxModel", "state": {"_dom_classes": ["widget-interact"], "_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4", "children": ["IPY_MODEL_9b1c9099cb6b4e22a913679609e562cd", "IPY_MODEL_681c22e18e7046cbaea4dd4c34783937"], "layout": "IPY_MODEL_fe18ebbeaab648c5aab90b913f0c02de"}}, "4a32f47bfe424a22bdb2a57df38bc3be": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "DropdownModel", "state": {"_model_module_version": "~2.1.4", "_options_labels": ["2003-04", "2004-05", "2005-06", "2006-07", "2007-08", "2008-09", "2009-10", "2010-11", "2011-12", "2012-13", "2013-14", "2014-15", "2015-16", "2016-17"], "_view_module_version": "~2.1.4", "description": "Season", "layout": "IPY_MODEL_847494ad293a47eb8cd4a2c519dc6445", "value": "2010-11"}}, "50d8da8165f6485c9a2cefdd3dfb234c": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "VBoxModel", "state": {"_dom_classes": ["widget-interact"], "_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4", "children": ["IPY_MODEL_f6995af097bf4d5c9d9346926cd0b30f", "IPY_MODEL_68d039b9f2804a1ba88303014e75d899"], "layout": "IPY_MODEL_63f5d335d753405e8da38d396305d7f0"}}, "5677d2ffeb5748839c679acdd0a4003e": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "LayoutModel", "state": {"_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4"}}, "63f5d335d753405e8da38d396305d7f0": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "LayoutModel", "state": {"_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4"}}, "652cd8f7d484450cbbb1e95d4f6c6294": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "LayoutModel", "state": {"_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4"}}, "66724dee621b43378a8b9e9df429dc82": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "VBoxModel", "state": {"_dom_classes": ["widget-interact"], "_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4", "children": ["IPY_MODEL_8c34125a289d40c391173871be6ed367", "IPY_MODEL_94e71f9f166845eda2b8c7737ae6a487"], "layout": "IPY_MODEL_c089b743b3cf4ebe88d0126fcf2394da"}}, "681c22e18e7046cbaea4dd4c34783937": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "OutputModel", "state": {"_dom_classes": [], "_model_module": "jupyter-js-widgets", "_model_module_version": "~2.1.4", "_view_module": "jupyter-js-widgets", "_view_module_version": "~2.1.4", "layout": "IPY_MODEL_5677d2ffeb5748839c679acdd0a4003e", "msg_throttle": 1}}, "685e951643be457892b1434e064dc479": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "LayoutModel", "state": {"_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4"}}, "68d039b9f2804a1ba88303014e75d899": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "OutputModel", "state": {"_dom_classes": [], "_model_module": "jupyter-js-widgets", "_model_module_version": "~2.1.4", "_view_module": "jupyter-js-widgets", "_view_module_version": "~2.1.4", "layout": "IPY_MODEL_685e951643be457892b1434e064dc479", "msg_throttle": 1}}, "6b4d98e3366746be86dbf723c155072f": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "LayoutModel", "state": {"_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4"}}, "708f03c3f96840d0bab9e6a3f8463966": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "LayoutModel", "state": {"_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4"}}, "71ef10b36a9846bd867ea0c7dddb1c81": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "LayoutModel", "state": {"_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4"}}, "72dc18a4bc6a4c3398904f9c27a74f0a": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "LayoutModel", "state": {"_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4"}}, "7502cb948d194eacaaaf2c82eadcb527": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "LayoutModel", "state": {"_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4"}}, "7b2e7381b0f8420d8a69245ca8a1aee8": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "OutputModel", "state": {"_dom_classes": [], "_model_module": "jupyter-js-widgets", "_model_module_version": "~2.1.4", "_view_module": "jupyter-js-widgets", "_view_module_version": "~2.1.4", "layout": "IPY_MODEL_6b4d98e3366746be86dbf723c155072f", "msg_throttle": 1}}, "7dd9c282a79748cb9e67ebb125e6ce0a": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "LayoutModel", "state": {"_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4"}}, "847494ad293a47eb8cd4a2c519dc6445": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "LayoutModel", "state": {"_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4"}}, "88089ea0b5954dbb938e76eee4aedd6a": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "OutputModel", "state": {"_dom_classes": [], "_model_module": "jupyter-js-widgets", "_model_module_version": "~2.1.4", "_view_module": "jupyter-js-widgets", "_view_module_version": "~2.1.4", "layout": "IPY_MODEL_2e1b9389eb4c4a8ea65b8af7516c2463", "msg_throttle": 1}}, "8b4bce280c7340e6941e521d301bf168": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "VBoxModel", "state": {"_dom_classes": ["widget-interact"], "_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4", "children": ["IPY_MODEL_4a32f47bfe424a22bdb2a57df38bc3be", "IPY_MODEL_0d8d960fd5c34824a62127e31570d48e"], "layout": "IPY_MODEL_8bb9b7e7436d4542bd387183afc5f515"}}, "8bb9b7e7436d4542bd387183afc5f515": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "LayoutModel", "state": {"_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4"}}, "8c34125a289d40c391173871be6ed367": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "DropdownModel", "state": {"_model_module_version": "~2.1.4", "_options_labels": ["2009-10", "2010-11", "2011-12", "2012-13", "2013-14", "2014-15", "2015-16", "2016-17"], "_view_module_version": "~2.1.4", "description": "Season", "layout": "IPY_MODEL_b0d202186c3f4559bd145e1f7cfbb265", "value": "2009-10"}}, "94e71f9f166845eda2b8c7737ae6a487": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "OutputModel", "state": {"_dom_classes": [], "_model_module": "jupyter-js-widgets", "_model_module_version": "~2.1.4", "_view_module": "jupyter-js-widgets", "_view_module_version": "~2.1.4", "layout": "IPY_MODEL_db608a9d214d430e88bde7f26a5b3922", "msg_throttle": 1}}, "952193af2a284c858367e193e6d7284f": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "DropdownModel", "state": {"_model_module_version": "~2.1.4", "_options_labels": ["2003-04", "2004-05", "2005-06", "2006-07", "2007-08", "2008-09", "2009-10", "2010-11", "2011-12", "2012-13", "2013-14", "2014-15", "2015-16", "2016-17"], "_view_module_version": "~2.1.4", "description": "Season", "layout": "IPY_MODEL_e3800dc2a3ab4ee18955c855ded2406d", "value": "2016-17"}}, "9b1c9099cb6b4e22a913679609e562cd": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "DropdownModel", "state": {"_model_module_version": "~2.1.4", "_options_labels": ["2003-04", "2004-05", "2005-06", "2006-07", "2007-08", "2008-09", "2009-10", "2010-11", "2011-12", "2012-13", "2013-14", "2014-15", "2015-16", "2016-17"], "_view_module_version": "~2.1.4", "description": "x", "layout": "IPY_MODEL_652cd8f7d484450cbbb1e95d4f6c6294", "value": "2008-09"}}, "9f557bc8032d49aaa79a4b74539200ef": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "VBoxModel", "state": {"_dom_classes": ["widget-interact"], "_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4", "children": ["IPY_MODEL_f5c72f010f504eb2a38af8d4210baefe", "IPY_MODEL_7b2e7381b0f8420d8a69245ca8a1aee8"], "layout": "IPY_MODEL_057c9aed327648df81e021f425ccbf5c"}}, "9f819f23e8384dc4b12a72c1cb1c66d8": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "OutputModel", "state": {"_dom_classes": [], "_model_module": "jupyter-js-widgets", "_model_module_version": "~2.1.4", "_view_module": "jupyter-js-widgets", "_view_module_version": "~2.1.4", "layout": "IPY_MODEL_7dd9c282a79748cb9e67ebb125e6ce0a", "msg_throttle": 1}}, "a16b615ba7954931bacd43685d925c0e": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "LayoutModel", "state": {"_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4"}}, "a4801d72e5f543d7bd75e01d3a8f9608": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "DropdownModel", "state": {"_model_module_version": "~2.1.4", "_options_labels": ["2003-04", "2004-05", "2005-06", "2006-07", "2007-08", "2008-09", "2009-10", "2010-11", "2011-12", "2012-13", "2013-14", "2014-15", "2015-16", "2016-17"], "_view_module_version": "~2.1.4", "description": "Season", "layout": "IPY_MODEL_a6f91c19dd95457cb7f62eac48dc5abb", "value": "2016-17"}}, "a6f91c19dd95457cb7f62eac48dc5abb": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "LayoutModel", "state": {"_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4"}}, "a7f2345c163a4b5ab973ff99df4b38a6": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "DropdownModel", "state": {"_model_module_version": "~2.1.4", "_options_labels": ["2009-10", "2010-11", "2011-12", "2012-13", "2013-14", "2014-15", "2015-16", "2016-17"], "_view_module_version": "~2.1.4", "description": "Season", "layout": "IPY_MODEL_72dc18a4bc6a4c3398904f9c27a74f0a", "value": "2015-16"}}, "b0d202186c3f4559bd145e1f7cfbb265": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "LayoutModel", "state": {"_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4"}}, "b4e55b0b3b3b4e16850cee84fe9266a5": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "VBoxModel", "state": {"_dom_classes": ["widget-interact"], "_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4", "children": ["IPY_MODEL_c6da66489a46472a821bf1389e1730b0", "IPY_MODEL_88089ea0b5954dbb938e76eee4aedd6a"], "layout": "IPY_MODEL_cf9775d763434885821e710d8fefe16a"}}, "bab7dc446d7f4ab3b01048e2d3369579": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "OutputModel", "state": {"_dom_classes": [], "_model_module": "jupyter-js-widgets", "_model_module_version": "~2.1.4", "_view_module": "jupyter-js-widgets", "_view_module_version": "~2.1.4", "layout": "IPY_MODEL_0e652c71266545eaa93fe07eea028d32", "msg_throttle": 1}}, "bd2023ad945f4e60a4ffd2f7b565fe4e": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "VBoxModel", "state": {"_dom_classes": ["widget-interact"], "_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4", "children": ["IPY_MODEL_952193af2a284c858367e193e6d7284f", "IPY_MODEL_317f48c9696e41be99fed925c42b713a"], "layout": "IPY_MODEL_e939add54dac4ebb8bbb4509112ac72c"}}, "c089b743b3cf4ebe88d0126fcf2394da": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "LayoutModel", "state": {"_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4"}}, "c36fe1fc905640dda10deaea1d62e1a5": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "VBoxModel", "state": {"_dom_classes": ["widget-interact"], "_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4", "children": ["IPY_MODEL_a7f2345c163a4b5ab973ff99df4b38a6", "IPY_MODEL_bab7dc446d7f4ab3b01048e2d3369579"], "layout": "IPY_MODEL_a16b615ba7954931bacd43685d925c0e"}}, "c3710303bc3f45e9b69bf55e64f6d764": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "LayoutModel", "state": {"_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4"}}, "c6da66489a46472a821bf1389e1730b0": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "DropdownModel", "state": {"_model_module_version": "~2.1.4", "_options_labels": ["2003-04", "2004-05", "2005-06", "2006-07", "2007-08", "2008-09", "2009-10", "2010-11", "2011-12", "2012-13", "2013-14", "2014-15", "2015-16", "2016-17"], "_view_module_version": "~2.1.4", "description": "Season", "layout": "IPY_MODEL_2473a2e848ab42dcb102d340c277d675", "value": "2006-07"}}, "ceb4bf30104e4e9fbe06d715e98d6270": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "LayoutModel", "state": {"_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4"}}, "cf9775d763434885821e710d8fefe16a": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "LayoutModel", "state": {"_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4"}}, "d98c0fd42b05412587467e6dbaac378e": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "OutputModel", "state": {"_dom_classes": [], "_model_module": "jupyter-js-widgets", "_model_module_version": "~2.1.4", "_view_module": "jupyter-js-widgets", "_view_module_version": "~2.1.4", "layout": "IPY_MODEL_db86707d8b7d4095a95f97ade7bdf277", "msg_throttle": 1}}, "db608a9d214d430e88bde7f26a5b3922": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "LayoutModel", "state": {"_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4"}}, "db86707d8b7d4095a95f97ade7bdf277": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "LayoutModel", "state": {"_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4"}}, "dfd39a58e533437d84ce6b1cc6084610": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "LayoutModel", "state": {"_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4"}}, "e3800dc2a3ab4ee18955c855ded2406d": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "LayoutModel", "state": {"_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4"}}, "e939add54dac4ebb8bbb4509112ac72c": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "LayoutModel", "state": {"_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4"}}, "f2bbab2332594e4e960748de60b46b17": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "VBoxModel", "state": {"_dom_classes": ["widget-interact"], "_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4", "children": ["IPY_MODEL_f6093c61b22e4667814d694adb510953", "IPY_MODEL_d98c0fd42b05412587467e6dbaac378e"], "layout": "IPY_MODEL_ceb4bf30104e4e9fbe06d715e98d6270"}}, "f4adcb401b5345e69eed1b22846243fb": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "SliderStyleModel", "state": {"_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4"}}, "f5c72f010f504eb2a38af8d4210baefe": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "DropdownModel", "state": {"_model_module_version": "~2.1.4", "_options_labels": ["2003-04", "2004-05", "2005-06", "2006-07", "2007-08", "2008-09", "2009-10", "2010-11", "2011-12", "2012-13", "2013-14", "2014-15", "2015-16", "2016-17"], "_view_module_version": "~2.1.4", "description": "Season", "layout": "IPY_MODEL_dfd39a58e533437d84ce6b1cc6084610", "value": "2003-04"}}, "f6093c61b22e4667814d694adb510953": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "DropdownModel", "state": {"_model_module_version": "~2.1.4", "_options_labels": ["2003-04", "2004-05", "2005-06", "2006-07", "2007-08", "2008-09", "2009-10", "2010-11", "2011-12", "2012-13", "2013-14", "2014-15", "2015-16", "2016-17"], "_view_module_version": "~2.1.4", "description": "Season", "layout": "IPY_MODEL_1843796a67bd46eb85a521020f2672e5", "value": "2003-04"}}, "f6995af097bf4d5c9d9346926cd0b30f": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "IntSliderModel", "state": {"_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4", "description": "i", "layout": "IPY_MODEL_71ef10b36a9846bd867ea0c7dddb1c81", "max": 13, "style": "IPY_MODEL_f4adcb401b5345e69eed1b22846243fb"}}, "fe18ebbeaab648c5aab90b913f0c02de": {"model_module": "jupyter-js-widgets", "model_module_version": "~2.1.4", "model_name": "LayoutModel", "state": {"_model_module_version": "~2.1.4", "_view_module_version": "~2.1.4"}}}, "version_major": 1, "version_minor": 0}
 </script>
-
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
@@ -36485,11 +36584,11 @@ d3/rETSa9gAAAABJRU5ErkJggg==
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
             var disqus_shortname = 'doing-the-dishes'; // required: replace example with your forum shortname
 
-                    var disqus_identifier = 'grantland_shotchart';
-                var disqus_url = 'https://eyalshafran.github.io/grantland_shotchart.html';
-
             var disqus_config = function () {
-                this.language = "english";
+                this.language = "en";
+
+                        this.page.identifier = '2017-05-07-grantland_shotchart';
+                        this.page.url = 'https://eyalshafran.github.io/grantland_shotchart.html';
             };
 
             /* * * DON'T EDIT BELOW THIS LINE * * */
@@ -36510,91 +36609,15 @@ d3/rETSa9gAAAABJRU5ErkJggg==
     </section>
 
         </div>
-        <div class="col-sm-3" id="sidebar">
-            <aside>
-<div id="aboutme">
-        <p>
-            <img width="100%" class="img-thumbnail" src="https://eyalshafran.github.io/images/logo.png"/>
-        </p>
-</div>
-<section class="well well-sm">
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
-              <ul class="list-group" id="social">
-                <li class="list-group-item"><a href="https://github.com/eyalshafran"><i class="fa fa-github-square fa-lg"></i> github</a></li>
-                <li class="list-group-item"><a href="https://twitter.com/EyalShafran"><i class="fa fa-twitter-square fa-lg"></i> twitter</a></li>
-                <li class="list-group-item"><a href="https://www.linkedin.com/in/eyal-shafran-11924216/"><i class="fa fa-linkedin-square fa-lg"></i> linkedin</a></li>
-                <li class="list-group-item"><a href="https://www.facebook.com/sportsplotting/"><i class="fa fa-facebook-square fa-lg"></i> facebook</a></li>
-              </ul>
-            </li>
-
-            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
-                <ul class="list-group" id="recentposts">
-                    <li class="list-group-item">
-                        <a href="https://eyalshafran.github.io/all-star-and-draft-picks.html">
-                            All-Star and Draft Picks
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://eyalshafran.github.io/age.html">
-                            Age
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://eyalshafran.github.io/per-ws-vs-salary.html">
-                            PER & WS vs. Salary
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://eyalshafran.github.io/assists_breakdown.html">
-                            Assists Breakdown
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://eyalshafran.github.io/figure-summary-1.html">
-                            A few figures - week 1
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-
-
-
-    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
-      <ul class="list-group" id="links">
-        <li class="list-group-item">
-            <a href="http://shafrane.wixsite.com/doingthedishes" target="_blank">
-                My old blog
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://grantland.com/" target="_blank">
-                Grantland
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="https://fivethirtyeight.com/" target="_blank">
-                FiveThirtyEight
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://nyloncalculus.com/" target="_blank">
-                nylon calculus
-            </a>
-        </li>
-      </ul>
-    </li>
-    </ul>
-</section>            </aside>
-        </div>
     </div>
 </div>
+<!-- End Content Container -->
+
 <footer>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2018 Eyal Shafran
+         <div class="col-xs-10">&copy; 2020 Eyal Shafran
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
@@ -36609,6 +36632,7 @@ d3/rETSa9gAAAABJRU5ErkJggg==
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
 <script src="https://eyalshafran.github.io/theme/js/respond.min.js"></script>
+
 
     <!-- Disqus -->
     <script type="text/javascript">
@@ -36642,6 +36666,7 @@ d3/rETSa9gAAAABJRU5ErkJggg==
         })();
     </script>
     <!-- End Google Analytics Code -->
+
 
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58f04647af3a2863"></script>
 </body>

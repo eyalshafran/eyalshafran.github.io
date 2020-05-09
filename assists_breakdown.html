@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="english" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>Assists Breakdown - Doing The Dishes</title>
+    <title>Assists Breakdown - Eyal Shafran</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -16,7 +16,7 @@
         <meta name="keywords" content="NBA,Assists,Shot chart" />
         <meta name="description" content="A more in depth look at assists" />
 
-        <meta property="og:site_name" content="Doing The Dishes" />
+        <meta property="og:site_name" content="Eyal Shafran" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Assists Breakdown"/>
         <meta property="og:url" content="https://eyalshafran.github.io/assists_breakdown.html"/>
@@ -28,10 +28,7 @@
             <meta property="article:tag" content="Shot chart" />
             <meta property="article:author" content="Eyal Shafran" />
 
-    <meta name="twitter:card" content="summary">
-        <meta name="twitter:site" content="@EyalShafran">
-        <meta name="twitter:creator" content="@EyalShafran">
-    <meta name="twitter:domain" content="https://eyalshafran.github.io">
+
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="https://eyalshafran.github.io/theme/css/bootstrap.flatly.min.css" type="text/css"/>
@@ -39,32 +36,18 @@
 
     <link href="https://eyalshafran.github.io/theme/css/pygments/default.css" rel="stylesheet">
     <link rel="stylesheet" href="https://eyalshafran.github.io/theme/css/style.css" type="text/css"/>
+        <link href="https://eyalshafran.github.io/static/css/custom.css" rel="stylesheet">
 
         <link href="https://eyalshafran.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
-              title="Doing The Dishes ATOM Feed"/>
-
-
+              title="Eyal Shafran ATOM Feed"/>
 
         <link href="https://eyalshafran.github.io/feeds/blog.atom.xml" type="application/atom+xml" rel="alternate"
-              title="Doing The Dishes Blog ATOM Feed"/>
-
-	<!-- Doing the Dishes Specific CSS -->
-	<link href="https://eyalshafran.github.io/theme/css/doingthedishes/dtd-main.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.11.1.min.css" type="text/css" />
-	<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.12.13.min.css" type="text/css" />
+              title="Eyal Shafran Blog ATOM Feed"/>
 </head>
 <body>
 
-
-<!-- Embedded Javascript. Same as referecing an external JS document -->
- <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.11.1.min.js"></script>
- <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.13.min.js"></script>
- <script type="text/javascript">
-     Bokeh.set_log_level("info");
- </script>
-
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="container">
+    <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -73,15 +56,12 @@
                 <span class="icon-bar"></span>
             </button>
             <a href="https://eyalshafran.github.io/" class="navbar-brand">
-Doing The Dishes            </a>
+Eyal Shafran            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                         <li><a href="https://eyalshafran.github.io/pages/about-me.html">
-                             About Me
-                          </a></li>
-                         <li><a href="https://eyalshafran.github.io/pages/contact-en.html">
-                             Contact
+                         <li><a href="https://eyalshafran.github.io/pages/about.html">
+                             About
                           </a></li>
                         <li class="active">
                             <a href="https://eyalshafran.github.io/category/blog.html">Blog</a>
@@ -90,7 +70,7 @@ Doing The Dishes            </a>
                             <a href="https://eyalshafran.github.io/category/code.html">Code</a>
                         </li>
                         <li >
-                            <a href="https://eyalshafran.github.io/category/interactive-graphs.html">Interactive graphs</a>
+                            <a href="https://eyalshafran.github.io/category/code-deprecated.html">Code - deprecated</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -99,11 +79,14 @@ Doing The Dishes            </a>
         <!-- /.navbar-collapse -->
     </div>
 </div> <!-- /.navbar -->
+
 <!-- Banner -->
 <!-- End Banner -->
+
+<!-- Content Container -->
 <div class="container">
     <div class="row">
-        <div class="col-sm-9">
+        <div class="col-lg-12">
     <section id="content">
         <article>
             <header class="page-header">
@@ -125,6 +108,8 @@ Doing The Dishes            </a>
     </span>
 
 
+            <span class="label label-default">By</span>
+            <a href="https://eyalshafran.github.io/author/eyal-shafran.html"><i class="fa fa-user"></i> Eyal Shafran</a>
 
         <span class="label label-default">Category</span>
         <a href="https://eyalshafran.github.io/category/blog.html">Blog</a>
@@ -141,34 +126,34 @@ Doing The Dishes            </a>
                 </div>
                 <p>What gets you most excited about the game? A crazy dunk? Buzzer beater? A LeBron style block? If you ask for my opinion it is a beautiful assist. I find nothing more satisfying than a nice team play that ends up in an easy dunk or a creative pass.</p>
 <p>My first attempt was to try and show that assists are important for winning. One way to do that is to check whether a team that assists on a lot of their FG also shoots at a higher FG %. So I plotted the % of assisted FG (i.e. assisted FG / Total FG) as a function of the EFG to see if there is a correlation:</p>
-<p><br><br>
-<img alt="figure 1" src="images/assists/team_assisted_EFG_2017.png">
-<br><br></p>
+<p><br/><br/>
+<img alt="figure 1" src="images/assists/team_assisted_EFG_2017.png"/>
+<br/><br/></p>
 <p>Conclusion? At first glance there seems to be a medium-strong correlation. Yes! Assists are very important! </p>
 <p>But to be more thorough I also looked at a few other seasons. To my surprise, for some seasons there is a strong correlation and for others a weak or no correlation. For the 2004-05 it even seemed like there is a weak negative correlation (i.e. assisting more = lower EFG). If we look at the last 10 seasons combined, there seems to be no correlation at all. Does this mean assists are not important? I still think they are significant but more importantly, a coach needs to match the team style of play to the strengh of the players on the team. For Golden State the ball and player movement are vital for shooting effeciently. The Rockets on the other hand, can still shoot at a high perecntage without many assists due to the amazing ability of Harden and Paul to score unassisted. So the question of how important assists are for winning is still an open question.</p>
 <p>I still think a more in depth investigation of the location of the shooter on an assist is an important piece of information.  </p>
 <p>I divided the court into 4 section - under the basket (8 ft. or less), short 2 (8-16 ft.), long 2 (16-24 ft.) and 3-Points. Here is an illustration of the court:
-<br><br>
-<img alt="figure 1" src="images/assists/Court_breakdown.png">
-<br><br>
+<br/><br/>
+<img alt="figure 1" src="images/assists/Court_breakdown.png"/>
+<br/><br/>
 We can look at the assist leaders and where their passes go:
-<br><br>
-<img alt="figure 1" src="images/assists/Assists_breakdown.png">
-<br><br></p>
+<br/><br/>
+<img alt="figure 1" src="images/assists/Assists_breakdown.png"/>
+<br/><br/></p>
 <p>For example, Chris Paul leads the NBA in assists to 3-Pointers, Westbrook has the most assists when the shooter is under the basket and Draymond Green has the most for midrange shots. This is highly correlated with the teams style of play - Houston shoots a lot of 3s and do not shot from midrange whereas Golden State shots from everywhere with some of the best midrange jumpers in the game.</p>
 <p>We can even do more and look at what I call the assist shot chart. For each player you can scroll through the images and see their passing preference by players and location on the floor:</p>
 <h3>Westbrook</h3>
-<p><blockquote class="imgur-embed-pub" lang="en" data-id="a/wToLW"><a href="//imgur.com/wToLW">Assists by Westbrook</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script></p>
+<p><blockquote class="imgur-embed-pub" data-id="a/wToLW" lang="en"><a href="//imgur.com/wToLW">Assists by Westbrook</a></blockquote><script async="" charset="utf-8" src="//s.imgur.com/min/embed.js"></script></p>
 <h3>James</h3>
-<p><blockquote class="imgur-embed-pub" lang="en" data-id="a/9yoGF"><a href="//imgur.com/9yoGF">Assists by LeBron</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script></p>
+<p><blockquote class="imgur-embed-pub" data-id="a/9yoGF" lang="en"><a href="//imgur.com/9yoGF">Assists by LeBron</a></blockquote><script async="" charset="utf-8" src="//s.imgur.com/min/embed.js"></script></p>
 <h3>Harden</h3>
-<p><blockquote class="imgur-embed-pub" lang="en" data-id="a/EyIoi"><a href="//imgur.com/EyIoi">Assists by Harden</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script></p>
+<p><blockquote class="imgur-embed-pub" data-id="a/EyIoi" lang="en"><a href="//imgur.com/EyIoi">Assists by Harden</a></blockquote><script async="" charset="utf-8" src="//s.imgur.com/min/embed.js"></script></p>
 <h3>Wall</h3>
-<p><blockquote class="imgur-embed-pub" lang="en" data-id="a/yA5Fo"><a href="//imgur.com/yA5Fo">Assists by Wall</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script></p>
+<p><blockquote class="imgur-embed-pub" data-id="a/yA5Fo" lang="en"><a href="//imgur.com/yA5Fo">Assists by Wall</a></blockquote><script async="" charset="utf-8" src="//s.imgur.com/min/embed.js"></script></p>
 <h3>Paul</h3>
-<p><blockquote class="imgur-embed-pub" lang="en" data-id="a/TqPSV"><a href="//imgur.com/TqPSV">Assists by Paul</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script></p>
+<p><blockquote class="imgur-embed-pub" data-id="a/TqPSV" lang="en"><a href="//imgur.com/TqPSV">Assists by Paul</a></blockquote><script async="" charset="utf-8" src="//s.imgur.com/min/embed.js"></script></p>
 <h3>Green</h3>
-<p><blockquote class="imgur-embed-pub" lang="en" data-id="a/RITRb"><a href="//imgur.com/RITRb">Assists by Green</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script></p>
+<p><blockquote class="imgur-embed-pub" data-id="a/RITRb" lang="en"><a href="//imgur.com/RITRb">Assists by Green</a></blockquote><script async="" charset="utf-8" src="//s.imgur.com/min/embed.js"></script></p>
 <h3>A few things I noticed:</h3>
 <ol>
 <li>Harden likes to pass to Capela (88 assists) but he only assisted on 6 Chris Paul shots (also due to limited games played together)</li>
@@ -199,11 +184,11 @@ We can look at the assist leaders and where their passes go:
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
             var disqus_shortname = 'doing-the-dishes'; // required: replace example with your forum shortname
 
-                    var disqus_identifier = 'assists_breakdown';
-                var disqus_url = 'https://eyalshafran.github.io/assists_breakdown.html';
-
             var disqus_config = function () {
-                this.language = "english";
+                this.language = "en";
+
+                        this.page.identifier = '2018-01-01-assists_breakdown';
+                        this.page.url = 'https://eyalshafran.github.io/assists_breakdown.html';
             };
 
             /* * * DON'T EDIT BELOW THIS LINE * * */
@@ -224,91 +209,15 @@ We can look at the assist leaders and where their passes go:
     </section>
 
         </div>
-        <div class="col-sm-3" id="sidebar">
-            <aside>
-<div id="aboutme">
-        <p>
-            <img width="100%" class="img-thumbnail" src="https://eyalshafran.github.io/images/logo.png"/>
-        </p>
-</div>
-<section class="well well-sm">
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
-              <ul class="list-group" id="social">
-                <li class="list-group-item"><a href="https://github.com/eyalshafran"><i class="fa fa-github-square fa-lg"></i> github</a></li>
-                <li class="list-group-item"><a href="https://twitter.com/EyalShafran"><i class="fa fa-twitter-square fa-lg"></i> twitter</a></li>
-                <li class="list-group-item"><a href="https://www.linkedin.com/in/eyal-shafran-11924216/"><i class="fa fa-linkedin-square fa-lg"></i> linkedin</a></li>
-                <li class="list-group-item"><a href="https://www.facebook.com/sportsplotting/"><i class="fa fa-facebook-square fa-lg"></i> facebook</a></li>
-              </ul>
-            </li>
-
-            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
-                <ul class="list-group" id="recentposts">
-                    <li class="list-group-item">
-                        <a href="https://eyalshafran.github.io/all-star-and-draft-picks.html">
-                            All-Star and Draft Picks
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://eyalshafran.github.io/age.html">
-                            Age
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://eyalshafran.github.io/per-ws-vs-salary.html">
-                            PER & WS vs. Salary
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://eyalshafran.github.io/assists_breakdown.html">
-                            Assists Breakdown
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://eyalshafran.github.io/figure-summary-1.html">
-                            A few figures - week 1
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-
-
-
-    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
-      <ul class="list-group" id="links">
-        <li class="list-group-item">
-            <a href="http://shafrane.wixsite.com/doingthedishes" target="_blank">
-                My old blog
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://grantland.com/" target="_blank">
-                Grantland
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="https://fivethirtyeight.com/" target="_blank">
-                FiveThirtyEight
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://nyloncalculus.com/" target="_blank">
-                nylon calculus
-            </a>
-        </li>
-      </ul>
-    </li>
-    </ul>
-</section>            </aside>
-        </div>
     </div>
 </div>
+<!-- End Content Container -->
+
 <footer>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2018 Eyal Shafran
+         <div class="col-xs-10">&copy; 2020 Eyal Shafran
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
@@ -323,6 +232,7 @@ We can look at the assist leaders and where their passes go:
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
 <script src="https://eyalshafran.github.io/theme/js/respond.min.js"></script>
+
 
     <!-- Disqus -->
     <script type="text/javascript">
@@ -356,6 +266,7 @@ We can look at the assist leaders and where their passes go:
         })();
     </script>
     <!-- End Google Analytics Code -->
+
 
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58f04647af3a2863"></script>
 </body>

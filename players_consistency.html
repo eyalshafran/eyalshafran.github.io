@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="english" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>Who is the most consistent player in the NBA? - Doing The Dishes</title>
+    <title>Who is the most consistent player in the NBA? - Eyal Shafran</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -16,23 +16,20 @@
         <meta name="keywords" content="python,NBA,gamescore,consistency" />
         <meta name="description" content="In this post I will try to figure out who is the most consistent player during the 2016-17 season using python and the NBA api." />
 
-        <meta property="og:site_name" content="Doing The Dishes" />
+        <meta property="og:site_name" content="Eyal Shafran" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Who is the most consistent player in the NBA?"/>
         <meta property="og:url" content="https://eyalshafran.github.io/players_consistency.html"/>
         <meta property="og:description" content="In this post I will try to figure out who is the most consistent player during the 2016-17 season using python and the NBA api."/>
         <meta property="article:published_time" content="2017-05-04" />
-            <meta property="article:section" content="Code" />
+            <meta property="article:section" content="Code - Deprecated" />
             <meta property="article:tag" content="python" />
             <meta property="article:tag" content="NBA" />
             <meta property="article:tag" content="gamescore" />
             <meta property="article:tag" content="consistency" />
             <meta property="article:author" content="Eyal" />
 
-    <meta name="twitter:card" content="summary">
-        <meta name="twitter:site" content="@EyalShafran">
-        <meta name="twitter:creator" content="@EyalShafran">
-    <meta name="twitter:domain" content="https://eyalshafran.github.io">
+
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="https://eyalshafran.github.io/theme/css/bootstrap.flatly.min.css" type="text/css"/>
@@ -40,32 +37,18 @@
 
     <link href="https://eyalshafran.github.io/theme/css/pygments/default.css" rel="stylesheet">
     <link rel="stylesheet" href="https://eyalshafran.github.io/theme/css/style.css" type="text/css"/>
+        <link href="https://eyalshafran.github.io/static/css/custom.css" rel="stylesheet">
 
         <link href="https://eyalshafran.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
-              title="Doing The Dishes ATOM Feed"/>
+              title="Eyal Shafran ATOM Feed"/>
 
-
-
-        <link href="https://eyalshafran.github.io/feeds/code.atom.xml" type="application/atom+xml" rel="alternate"
-              title="Doing The Dishes Code ATOM Feed"/>
-
-	<!-- Doing the Dishes Specific CSS -->
-	<link href="https://eyalshafran.github.io/theme/css/doingthedishes/dtd-main.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.11.1.min.css" type="text/css" />
-	<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.12.13.min.css" type="text/css" />
+        <link href="https://eyalshafran.github.io/feeds/code-deprecated.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Eyal Shafran Code - Deprecated ATOM Feed"/>
 </head>
 <body>
 
-
-<!-- Embedded Javascript. Same as referecing an external JS document -->
- <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.11.1.min.js"></script>
- <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.13.min.js"></script>
- <script type="text/javascript">
-     Bokeh.set_log_level("info");
- </script>
-
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="container">
+    <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -74,24 +57,21 @@
                 <span class="icon-bar"></span>
             </button>
             <a href="https://eyalshafran.github.io/" class="navbar-brand">
-Doing The Dishes            </a>
+Eyal Shafran            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                         <li><a href="https://eyalshafran.github.io/pages/about-me.html">
-                             About Me
-                          </a></li>
-                         <li><a href="https://eyalshafran.github.io/pages/contact-en.html">
-                             Contact
+                         <li><a href="https://eyalshafran.github.io/pages/about.html">
+                             About
                           </a></li>
                         <li >
                             <a href="https://eyalshafran.github.io/category/blog.html">Blog</a>
                         </li>
-                        <li class="active">
+                        <li >
                             <a href="https://eyalshafran.github.io/category/code.html">Code</a>
                         </li>
-                        <li >
-                            <a href="https://eyalshafran.github.io/category/interactive-graphs.html">Interactive graphs</a>
+                        <li class="active">
+                            <a href="https://eyalshafran.github.io/category/code-deprecated.html">Code - deprecated</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -100,11 +80,14 @@ Doing The Dishes            </a>
         <!-- /.navbar-collapse -->
     </div>
 </div> <!-- /.navbar -->
+
 <!-- Banner -->
 <!-- End Banner -->
+
+<!-- Content Container -->
 <div class="container">
     <div class="row">
-        <div class="col-sm-9">
+        <div class="col-lg-12">
     <section id="content">
         <article>
             <header class="page-header">
@@ -126,9 +109,11 @@ Doing The Dishes            </a>
     </span>
 
 
+            <span class="label label-default">By</span>
+            <a href="https://eyalshafran.github.io/author/eyal.html"><i class="fa fa-user"></i> Eyal</a>
 
         <span class="label label-default">Category</span>
-        <a href="https://eyalshafran.github.io/category/code.html">Code</a>
+        <a href="https://eyalshafran.github.io/category/code-deprecated.html">Code - Deprecated</a>
 
 
 <span class="label label-default">Tags</span>
@@ -147,9 +132,124 @@ Doing The Dishes            </a>
 * IPython notebook
 *
 */
-/* CSS font colors for translated ANSI colors. */
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
 .ansibold {
   font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
 }
 /* use dark versions for foreground, to improve visibility */
 .ansiblack {
@@ -228,12 +328,20 @@ div.cell {
   /* This acts as a spacer between cells, that is outside the border */
   margin: 0px;
   outline: none;
-  border-left-width: 1px;
-  padding-left: 5px;
-  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
 }
 div.cell.jupyter-soft-selected {
-  border-left-color: #90CAF9;
   border-left-color: #E3F2FD;
   border-left-width: 1px;
   padding-left: 5px;
@@ -246,27 +354,39 @@ div.cell.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected {
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
   border-color: #ababab;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
 }
 @media print {
-  div.cell.selected {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected.jupyter-soft-selected {
-  border-left-width: 0;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
-}
 .edit_mode div.cell.selected {
   border-color: #66BB6A;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
 }
 @media print {
   .edit_mode div.cell.selected {
@@ -462,7 +582,9 @@ div.input_area > div.highlight > pre {
 .CodeMirror-lines {
   /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
   /* we have set a different line-height and want this to scale with that. */
-  padding: 0.4em;
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
 }
 .CodeMirror-linenumber {
   padding: 0 8px 0 4px;
@@ -472,11 +594,24 @@ div.input_area > div.highlight > pre {
   border-top-left-radius: 2px;
 }
 .CodeMirror pre {
-  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
-  /* .CodeMirror-lines */
-  padding: 0;
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
   border: 0;
   border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
 }
 /*
 
@@ -724,6 +859,9 @@ div.output_area img.unconfined,
 div.output_area svg.unconfined {
   max-width: none;
 }
+div.output_area .mglyph > img {
+  max-width: none;
+}
 /* This is needed to protect the pre formating from global settings such
    as that of bootstrap */
 .output {
@@ -762,7 +900,7 @@ div.output_area svg.unconfined {
 }
 div.output_area pre {
   margin: 0;
-  padding: 0;
+  padding: 1px 0 1px 0;
   border: 0;
   vertical-align: baseline;
   color: black;
@@ -884,6 +1022,10 @@ div.output_unrecognized a:hover {
 .rendered_html h6:first-child {
   margin-top: 1em;
 }
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
 
 
 
@@ -900,16 +1042,24 @@ div.output_unrecognized a:hover {
 }
 
 
+
+
+
 .rendered_html pre,
+
 
 
 
 .rendered_html tr,
 .rendered_html th,
 
-.rendered_html td,
 
-
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
 .rendered_html * + table {
   margin-top: 1em;
 }
@@ -925,6 +1075,11 @@ div.output_unrecognized a:hover {
 
 .rendered_html img.unconfined,
 
+
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] 
 div.text_cell {
   /* Old browsers */
   display: -webkit-box;
@@ -975,8 +1130,15 @@ h6:hover .anchor-link {
   display: none;
 }
 .text_cell.rendered 
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered 
 .text_cell.unrendered .text_cell_render {
   display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
 }
 .cm-header-1,
 .cm-header-2,
@@ -1076,48 +1238,8 @@ h6:hover .anchor-link {
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
-<style type="text/css">
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-</style>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In this post I will try to figure out who is the most consistent player during the 2016-17 season using python and the NBA api. My goal is to find how consistent a player is from one game to another and therefore I need to be able to measure the performnce on a game by game basis. In order to do that I'm using a player's <a href="http://www.basketball-reference.com/about/glossary.html - GmSc">gamescore</a> since it allows to calculate productivity per game from the boxscore.</p>
 </div>
@@ -1128,7 +1250,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<div class="highlight hl-ipython2"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">NBAapi</span> <span class="kn">as</span> <span class="nn">nba</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
@@ -1151,7 +1273,7 @@ h6:hover .anchor-link {
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_html rendered_html output_subarea ">
+<div class="output_html rendered_html output_subarea">
 <div class="bk-banner">
 <a class="bk-logo bk-logo-small bk-logo-notebook" href="http://bokeh.pydata.org" target="_blank"></a>
 <span id="e5614336-2159-4d5e-98f0-d5b688e4e7e3">Loading BokehJS ...</span>
@@ -1160,10 +1282,10 @@ h6:hover .anchor-link {
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div id="879bd9d3-da4a-4773-9c21-a760526b346e"></div>
-<div class="output_subarea output_javascript ">
+<div id="0ff7a25e-965d-475a-a4ea-0a3a794bde3b"></div>
+<div class="output_subarea output_javascript">
 <script type="text/javascript">
-var element = $('#879bd9d3-da4a-4773-9c21-a760526b346e');
+var element = $('#0ff7a25e-965d-475a-a4ea-0a3a794bde3b');
 
 (function(global) {
   function now() {
@@ -1252,10 +1374,8 @@ var element = $('#879bd9d3-da4a-4773-9c21-a760526b346e');
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Let's write a function that calculates the gamescore:</p>
 </div>
@@ -1266,7 +1386,7 @@ var element = $('#879bd9d3-da4a-4773-9c21-a760526b346e');
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">gamescore</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">gamescore</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
     <span class="sd">'''</span>
 <span class="sd">    gamescore accepts a DataFrame with boxscore infromation and computes the gamescore for each game</span>
 <span class="sd">    '''</span>
@@ -1288,10 +1408,8 @@ var element = $('#879bd9d3-da4a-4773-9c21-a760526b346e');
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>First, we need to load the boxscore information for each player and then calculate the gamescore for each of those games. For example I can load the game log data for LeBron James and Anthony Davis from the NBA api and compare the distribution of gamescores for each player using a histogram:</p>
 </div>
@@ -1302,7 +1420,7 @@ var element = $('#879bd9d3-da4a-4773-9c21-a760526b346e');
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">player_list</span> <span class="o">=</span> <span class="n">nba</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">commonallplayers</span><span class="p">(</span><span class="n">currentseason</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">season</span><span class="o">=</span><span class="s1">'2016-17'</span><span class="p">)</span> <span class="c1"># load a current list of NBA players </span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">player_list</span> <span class="o">=</span> <span class="n">nba</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">commonallplayers</span><span class="p">(</span><span class="n">currentseason</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">season</span><span class="o">=</span><span class="s1">'2016-17'</span><span class="p">)</span> <span class="c1"># load a current list of NBA players </span>
 <span class="n">james_id</span> <span class="o">=</span> <span class="n">player_list</span><span class="p">[</span><span class="n">player_list</span><span class="p">[</span><span class="s1">'DISPLAY_LAST_COMMA_FIRST'</span><span class="p">]</span><span class="o">==</span><span class="s1">'James, LeBron'</span><span class="p">]</span><span class="o">.</span><span class="n">PERSON_ID</span> <span class="c1"># get players id</span>
 <span class="n">james_gamelog</span> <span class="o">=</span> <span class="n">nba</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">gamelog</span><span class="p">(</span><span class="n">james_id</span><span class="p">,</span><span class="n">Season</span><span class="o">=</span><span class="s1">'2016-17'</span><span class="p">)</span> <span class="c1"># load all game logs</span>
 <span class="n">james_GS</span> <span class="o">=</span> <span class="n">gamescore</span><span class="p">(</span><span class="n">james_gamelog</span><span class="p">)</span> <span class="c1"># calculate game score for each game</span>
@@ -1327,12 +1445,12 @@ var element = $('#879bd9d3-da4a-4773-9c21-a760526b346e');
 <div class="output_area">
 <div class="prompt output_prompt">Out[3]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre><matplotlib.text.text at 0xcbc7160></pre>
+<pre>&lt;matplotlib.text.Text at 0xcbc7160&gt;</pre>
 </div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgEAAAFpCAYAAAAFqfvLAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3X14U/X9//FX0jRtaVruLIoTCjIZCFJs8W5yU4VSVGBg
 ydY6cEqnk4mgQ4UKk1YsrZNteFcFN8TBtI6Joh0/HaxlenWIBS2KExxVcApDaOlN0kpbcn5/8CVS
@@ -1561,16 +1679,14 @@ BT3//PNyOBwaN26c5syZI+nYYfs///nPys3NVUZGhux2u0aNGqX7779fVqtV5513nl544QU9+uij
 mjdvnmw2m6688kotXbpU55577mnr/O1vf6vHH39czz77rMrLy3X++efrvvvua3JiImB2XDEQAACT
 4pwAAABMihAAAIBJEQIAADApQgAAACZFCAAAwKQIAQAAmBQhAAAAkyIEAABgUv8fCkWCjSGvs3MA
 AAAASUVORK5CYII=
-">
-</img></div>
+"/>
 </div>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
 </div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We can see that the average gamescore is about the same for both players but that James has a narrower distribution meaning that he is more consistent.</p>
 <p>Now let's load the game logs for the 2016-17 season for each player and calculate the mean gamescore and the standard deviation:</p>
@@ -1582,7 +1698,7 @@ AAAASUVORK5CYII=
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">player_gs</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">player_gs</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">bar</span> <span class="o">=</span> <span class="n">progressbar</span><span class="o">.</span><span class="n">ProgressBar</span><span class="p">(</span><span class="n">max_value</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">player_list</span><span class="p">))</span> <span class="c1"># create status bar for download</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">player_id</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">player_list</span><span class="o">.</span><span class="n">PERSON_ID</span><span class="p">):</span>
     <span class="n">player_gamelog</span> <span class="o">=</span> <span class="n">nba</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">gamelog</span><span class="p">(</span><span class="n">player_id</span><span class="p">,</span><span class="n">Season</span><span class="o">=</span><span class="s1">'2016-17'</span><span class="p">)</span>
@@ -1611,7 +1727,7 @@ AAAASUVORK5CYII=
 <div class="prompt output_prompt">Out[4]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
-<table border="1" class="dataframe">
+<table class="dataframe">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -1665,10 +1781,8 @@ AAAASUVORK5CYII=
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We can now plot the standard deviation (std) and mean gamescore for each player in the league:</p>
 </div>
@@ -1679,7 +1793,7 @@ AAAASUVORK5CYII=
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">mask</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">GP</span><span class="o">>=</span><span class="mi">10</span> <span class="c1"># Only include players that played over 10 games</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">mask</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">GP</span><span class="o">&gt;=</span><span class="mi">10</span> <span class="c1"># Only include players that played over 10 games</span>
 <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">GAMESCORE_MEAN</span><span class="p">[</span><span class="n">mask</span><span class="p">]),</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">GAMESCORE_STD</span><span class="p">[</span><span class="n">mask</span><span class="p">]),</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># powerlaw fit y=ax^b</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">axisbg</span><span class="o">=</span><span class="s1">'#EEEEEE'</span><span class="p">),</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">'white'</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">'solid'</span><span class="p">)</span>
@@ -1707,12 +1821,12 @@ AAAASUVORK5CYII=
 <div class="output_area">
 <div class="prompt output_prompt">Out[5]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>[<matplotlib.lines.line2d at 0xca93208>]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0xca93208&gt;]</pre>
 </div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAtIAAAIECAYAAAA0DcmYAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Xd8T9f/wPHXJ3uRRO0Vs/kgQUJCxCZGlZoVQuxWCUWN
 GKUoahVF8UOjiK1GjdjUDmJFpfYIiZklIuPzub8/8s2tj8SKFen7+Xj08eg999x7zz3n4v0599xz
@@ -4392,16 +4506,14 @@ fftSq3XcvU/NmjUNNU6YMAFFUfD09CQmJsZw85aoqChmzJjB5MmTMTMzw8PDg9WrV/Pmm29y5MgR
 wy89j9oDIYR4EhS9/KouhBBCCCHEY5M50kIIIYQQQpSBBGkhhBBCCCHKQIK0EEIIIYQQZSBBWggh
 hBBCiDKQIC2EEEIIIUQZSJAWQgghhBCiDCRICyGEEEIIUQYSpIUQQgghhCiD/w9+bOJ8XZUReQAA
 AABJRU5ErkJggg==
-">
-</img></div>
+"/>
 </div>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
 </div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We can use the Bokeh to get an interactive plot. If you hover over the data point with the mouse the name of the player and the gamescore mean and std appears on the figure:</p>
 </div>
@@ -4412,7 +4524,7 @@ AABJRU5ErkJggg==
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">source</span> <span class="o">=</span> <span class="n">ColumnDataSource</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mask</span><span class="p">,:]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">())</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">source</span> <span class="o">=</span> <span class="n">ColumnDataSource</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mask</span><span class="p">,:]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">())</span>
 
 <span class="c1"># create hover tool</span>
 <span class="n">hover</span> <span class="o">=</span> <span class="n">HoverTool</span><span class="p">(</span>
@@ -4439,7 +4551,7 @@ AABJRU5ErkJggg==
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_html rendered_html output_subarea ">
+<div class="output_html rendered_html output_subarea">
 <div class="plotdiv" id="0595df4c-e3ca-4d0a-92b2-2d9c228f75a8"></div>
 <script type="text/javascript">
   
@@ -4531,16 +4643,14 @@ AABJRU5ErkJggg==
 <div class="output_area">
 <div class="prompt output_prompt">Out[6]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result">
-<p><code><bokeh notebook handle for &lt;strong>In[6]</strong>></code></p>
+<p><code>&lt;Bokeh Notebook handle for <strong>In[6]</strong>&gt;</code></p>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>I'm having some issues rendering the Bokeh plots with pelican so for now you can see the plot <a href="http://www.eyalshafran.com\consistency.html">here</a></li>
@@ -4548,10 +4658,8 @@ AABJRU5ErkJggg==
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We see a strong correlations between the mean gamescore and the std. This means that a player that contributes more tends to have larger swings around the average. This makes sense! When you don't produce much the fluctuations are smaller. But it also means that it is harder to compare the consistency of players with different productivity.</p>
 <p>We can try to compare players with similar gamescores to see who is more consistent. 
@@ -4566,9 +4674,9 @@ For players with a gamescore above 10, <strong>Gobert</strong> is the most consi
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'GAMESCORE_CV'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">GAMESCORE_STD</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">GAMESCORE_MEAN</span><span class="p">)</span> <span class="c1"># create new column with coefficient of variation</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'GAMESCORE_CV'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">GAMESCORE_STD</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">GAMESCORE_MEAN</span><span class="p">)</span> <span class="c1"># create new column with coefficient of variation</span>
 
-<span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">GP</span><span class="o">>=</span><span class="mi">10</span><span class="p">)</span> <span class="o">&</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">GAMESCORE_CV</span><span class="o"><</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># create mask</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">GP</span><span class="o">&gt;=</span><span class="mi">10</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">GAMESCORE_CV</span><span class="o">&lt;</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># create mask</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">axisbg</span><span class="o">=</span><span class="s1">'#EEEEEE'</span><span class="p">),</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">'white'</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">'solid'</span><span class="p">)</span>
@@ -4589,12 +4697,12 @@ For players with a gamescore above 10, <strong>Gobert</strong> is the most consi
 <div class="output_area">
 <div class="prompt output_prompt">Out[7]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre><matplotlib.text.text at 0xe2f1518></pre>
+<pre>&lt;matplotlib.text.Text at 0xe2f1518&gt;</pre>
 </div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAtQAAAH1CAYAAADWNWn+AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3XdUVFfXwOHfzFBlaIIiNkRUQLFiwwhRY28RuyLYosZu
 7L1gL9hbIjYMlthNDMQoBgtRLMGCgqIoRSDS6wBTvj/4vG+Impi8prx6nrWyFnNn7p1z7x2z9pzZ
@@ -6891,16 +6999,14 @@ qYmDg0Ozp3s03cfQ0FBZY1hYGAqFAgsLC1JSUpT/BCYuLo7o6GgWLlyIlpYWZmZmpKamEhAQwMmT
 J5Uffv7bNhBCiLagaJCP7EIIIYQQQvxrModaCCGEEEKIVpBALYQQQgghRCtIoBZCCCGEEKIVJFAL
 IYQQQgjRChKohRBCCCGEaAUJ1EIIIYQQQrSCBGohhBBCCCFaQQK1EEIIIYQQrfB/7wduc4PtIOsA
 AAAASUVORK5CYII=
-">
-</img></div>
+"/>
 </div>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
 </div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We can use an interactive plot again:</p>
 </div>
@@ -6911,7 +7017,7 @@ AAAASUVORK5CYII=
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">source</span> <span class="o">=</span> <span class="n">ColumnDataSource</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mask</span><span class="p">,:]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">())</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">source</span> <span class="o">=</span> <span class="n">ColumnDataSource</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mask</span><span class="p">,:]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">())</span>
 <span class="n">hover</span> <span class="o">=</span> <span class="n">HoverTool</span><span class="p">(</span>
         <span class="n">tooltips</span><span class="o">=</span><span class="p">[</span>
             <span class="p">(</span><span class="s2">"Player"</span><span class="p">,</span> <span class="s2">"@DISPLAY_LAST_COMMA_FIRST"</span><span class="p">),</span>
@@ -6934,7 +7040,7 @@ AAAASUVORK5CYII=
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_html rendered_html output_subarea ">
+<div class="output_html rendered_html output_subarea">
 <div class="plotdiv" id="423b4c84-ba9a-40cc-a3f6-35bdb3eb8563"></div>
 <script type="text/javascript">
   
@@ -7026,16 +7132,14 @@ AAAASUVORK5CYII=
 <div class="output_area">
 <div class="prompt output_prompt">Out[8]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result">
-<p><code><bokeh notebook handle for &lt;strong>In[8]</strong>></code></p>
+<p><code>&lt;Bokeh Notebook handle for <strong>In[8]</strong>&gt;</code></p>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In this case it is clear the LeBron and the most consistent player with Durant and Thomas close beind.</p>
 <p>We can also see it in a table format:</p>
@@ -7047,7 +7151,7 @@ AAAASUVORK5CYII=
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mask</span><span class="p">,:]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">'GAMESCORE_CV'</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mask</span><span class="p">,:]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">'GAMESCORE_CV'</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7058,7 +7162,7 @@ AAAASUVORK5CYII=
 <div class="prompt output_prompt">Out[9]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
-<table border="1" class="dataframe">
+<table class="dataframe">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -7198,10 +7302,8 @@ AAAASUVORK5CYII=
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We can also check a player's stability over time. Let's take LeBron James as an example:</p>
 </div>
@@ -7212,7 +7314,7 @@ AAAASUVORK5CYII=
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">years</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2003</span><span class="p">,</span><span class="mi">2017</span><span class="p">)</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">years</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2003</span><span class="p">,</span><span class="mi">2017</span><span class="p">)</span>
 <span class="n">seasons</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">james_gamelog</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">years</span><span class="p">:</span>
@@ -7238,7 +7340,7 @@ AAAASUVORK5CYII=
 <div class="prompt output_prompt">Out[10]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
-<table border="1" class="dataframe">
+<table class="dataframe">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -7346,10 +7448,8 @@ AAAASUVORK5CYII=
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Let's plot it:</p>
 </div>
@@ -7360,7 +7460,7 @@ AAAASUVORK5CYII=
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">james_evolution</span><span class="p">))</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">james_evolution</span><span class="p">))</span>
 <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">james_evolution</span><span class="o">.</span><span class="n">GS_STD</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">cm</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">'jet'</span><span class="p">)</span>
 <span class="n">color</span> <span class="o">=</span> <span class="n">james_evolution</span><span class="o">.</span><span class="n">GS_MEAN</span>
@@ -7382,12 +7482,12 @@ AAAASUVORK5CYII=
 <div class="output_area">
 <div class="prompt output_prompt">Out[11]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>[<matplotlib.lines.line2d at 0xf4b7ba8>]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0xf4b7ba8&gt;]</pre>
 </div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAjQAAAGfCAYAAABIuEizAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3XdYU+fbwPFvQthLRMUtTnALaN2zbnFQFbWgVq1W66q2
 db/aVq12uJWKbZ1171FX1aq1aF21dS/cExRZIhBy3j/8mZYKspJA4P5cV66WnJP7uXNAuPOcZ6gU
@@ -8154,16 +8254,14 @@ X2xOqlObDApOSUnB9evXERYW9tb3y2hNdmvzOTbHbg/s1uZz7PbF5qQ6tckGDf0/+ry9sVubz7E5
 dntgtzafY7cvNifVqU02aDhx4sSJEydOnOqLy9vMiRMnTpw4cWrz4ho0nDhx4sSJE6c2L65Bw4kT
 J06cOHFq8+IaNJw4ceLEiROnNi+uQcOJEydOnDhxavPiGjScOHHixIkTpzYvrkHDiRMnTpw4cWrz
 +h9vSoA3fR3ZqQAAAABJRU5ErkJggg==
-">
-</img></div>
+"/>
 </div>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
 </div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Clearly LeBron is getting more consistent with time. This seems to agree with the intuition the experienced players tend to be more consistent but we only have an n of 1 so we are not going to jump to conclusions. We have seem that there is a correlation between a players gamescore mean and std but in LeBron's case his gamescore average is very consistent since his second year in the league.</p>
 <p>Let's try another player. This time I'm going to choose Tim Duncan:</p>
@@ -8175,7 +8273,7 @@ J06cOHFq8+IaNJw4ceLEiROnNi+uQcOJEydOnDhxavPiGjScOHHixIkTpzYvrkHDiRMnTpw4cWrz
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">player_list</span> <span class="o">=</span> <span class="n">nba</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">commonallplayers</span><span class="p">(</span><span class="n">currentseason</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">season</span><span class="o">=</span><span class="s1">'2015-16'</span><span class="p">)</span> <span class="c1"># load a current list of NBA players </span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">player_list</span> <span class="o">=</span> <span class="n">nba</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">commonallplayers</span><span class="p">(</span><span class="n">currentseason</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">season</span><span class="o">=</span><span class="s1">'2015-16'</span><span class="p">)</span> <span class="c1"># load a current list of NBA players </span>
 <span class="n">duncan_id</span> <span class="o">=</span> <span class="n">player_list</span><span class="p">[</span><span class="n">player_list</span><span class="p">[</span><span class="s1">'DISPLAY_LAST_COMMA_FIRST'</span><span class="p">]</span><span class="o">==</span><span class="s1">'Duncan, Tim'</span><span class="p">]</span><span class="o">.</span><span class="n">PERSON_ID</span> <span class="c1"># get players id</span>
 <span class="n">years</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1997</span><span class="p">,</span><span class="mi">2016</span><span class="p">)</span>
 <span class="n">seasons</span> <span class="o">=</span> <span class="p">[]</span>
@@ -8202,7 +8300,7 @@ J06cOHFq8+IaNJw4ceLEiROnNi+uQcOJEydOnDhxavPiGjScOHHixIkTpzYvrkHDiRMnTpw4cWrz
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">duncan_evolution</span><span class="p">))</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">duncan_evolution</span><span class="p">))</span>
 <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">duncan_evolution</span><span class="o">.</span><span class="n">GS_STD</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">color</span> <span class="o">=</span> <span class="n">duncan_evolution</span><span class="o">.</span><span class="n">GS_MEAN</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
@@ -8224,12 +8322,12 @@ J06cOHFq8+IaNJw4ceLEiROnNi+uQcOJEydOnDhxavPiGjScOHHixIkTpzYvrkHDiRMnTpw4cWrz
 <div class="output_area">
 <div class="prompt output_prompt">Out[13]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>[<matplotlib.lines.line2d at 0x1061ab70>]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x1061ab70&gt;]</pre>
 </div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAjQAAAGjCAYAAAA7AI9lAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Xd8jff7+PHXSU5kb5EQJMQMtSLEnjFTO1QlaI2i2qCt
 XW1RfHVpjaJqU6VWzVZq79ijaAVBEEKGEImTnN8ffs5HmnWSnJET1/PxyKM9577v677OkeRceU+F
@@ -9048,16 +9146,14 @@ nTt3MgdadoZYrmTZynI/HJPlfjimJHJZ/fWSImKzoP6uqqura1GpmOV+vEyW+2G5kmSrpHElydYP
 yWX114od0LBixYoVK1asJF5/i23brFixYsWKFat/ttgBDStWrFixYsVK4sUOaFixYsWKFStWEi92
 QMOKFStWrFixknixAxpWrFixYsWKlcSLHdCwYsWKFStWrCRe7ICGFStWrFixYiXx+n/aVJThpWTk
 QgAAAABJRU5ErkJggg==
-">
-</img></div>
+"/>
 </div>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
 </div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We can also see a trend in Duncan's case but it also seems like his gamescore has been declining over the years which we know is correlated with lower std. Let's check the correlation between gamescore mean and std for Duncan's career. The color represents the number of years h has been in the league:</p>
 </div>
@@ -9068,7 +9164,7 @@ QgAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 <span class="n">color</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">duncan_evolution</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">duncan_evolution</span><span class="o">.</span><span class="n">GS_MEAN</span><span class="p">,</span><span class="n">duncan_evolution</span><span class="o">.</span><span class="n">GS_STD</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="n">color</span><span class="p">,</span><span class="n">vmin</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="mi">19</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">'Blues'</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
@@ -9083,12 +9179,12 @@ QgAAAABJRU5ErkJggg==
 <div class="output_area">
 <div class="prompt output_prompt">Out[14]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre><matplotlib.text.text at 0x1053cb00></pre>
+<pre>&lt;matplotlib.text.Text at 0x1053cb00&gt;</pre>
 </div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAjQAAAGFCAYAAADq9WlOAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Xt8THf+P/DXmZlkcpmJSEQQJBHXuAviGnFdRd2StO60
 lq2y2/K1Va1lv3RVfW3r1y1d1rrUFqVuRbEUcSeIIO63lAhCIsnkMsnMnN8ftlkpmUuScyYneT37
@@ -9473,16 +9569,14 @@ PuTm5pKQkMDq1auxtrame/fuTJo0CSjeNbR+/Xrmzp3LtGnTMDc3p0uXLoSEhGBiYkL9+vVJSEhg
 RqdOnXTObiq5TIMGDZSMISEhqFQqnJ2diY+PV36ELyoqirCwMKZPn46FhQVOTk6sWbOG0aNHc/bs
 WaX5/LfbQAhheCqtfN0QQgghhJGTY2iEEEIIYfSkoRFCCCGE0ZOGRgghhBBGTxoaIYQQQhg9aWiE
 EEIIYfSkoRFCCCGE0ZOGRgghhBBGTxoaIYQQQhi9/wM7n4e83NrtBQAAAABJRU5ErkJggg==
-">
-</img></div>
+"/>
 </div>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
 </div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>And the same figure in Bokeh:</p>
 </div>
@@ -9493,7 +9587,7 @@ EEIIYfSkoRFCCCGE0ZOGRgghhBBGTxoaIYQQQhi9/wM7n4e83NrtBQAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">source</span> <span class="o">=</span> <span class="n">ColumnDataSource</span><span class="p">(</span><span class="n">duncan_evolution</span><span class="o">.</span><span class="n">reset_index</span><span class="p">())</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">source</span> <span class="o">=</span> <span class="n">ColumnDataSource</span><span class="p">(</span><span class="n">duncan_evolution</span><span class="o">.</span><span class="n">reset_index</span><span class="p">())</span>
 <span class="n">hover</span> <span class="o">=</span> <span class="n">HoverTool</span><span class="p">(</span>
         <span class="n">tooltips</span><span class="o">=</span><span class="p">[</span>
             <span class="p">(</span><span class="s2">"Season"</span><span class="p">,</span> <span class="s2">"@SEASON"</span><span class="p">),</span>
@@ -9522,7 +9616,7 @@ EEIIYfSkoRFCCCGE0ZOGRgghhBBGTxoaIYQQQhi9/wM7n4e83NrtBQAAAABJRU5ErkJggg==
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_html rendered_html output_subarea ">
+<div class="output_html rendered_html output_subarea">
 <div class="plotdiv" id="1231c2ee-d7f6-46ff-bb63-c36c0311f98a"></div>
 <script type="text/javascript">
   
@@ -9614,16 +9708,14 @@ EEIIYfSkoRFCCCGE0ZOGRgghhBBGTxoaIYQQQhi9/wM7n4e83NrtBQAAAABJRU5ErkJggg==
 <div class="output_area">
 <div class="prompt output_prompt">Out[15]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result">
-<p><code><bokeh notebook handle for &lt;strong>In[15]</strong>></code></p>
+<p><code>&lt;Bokeh Notebook handle for <strong>In[15]</strong>&gt;</code></p>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This jupyter notebook can be downloaded <a href="https://github.com/eyalshafran/Example-notebooks">here</a></p>
 <ul>
@@ -9632,19 +9724,15 @@ EEIIYfSkoRFCCCGE0ZOGRgghhBBGTxoaIYQQQhi9/wM7n4e83NrtBQAAAABJRU5ErkJggg==
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Let-me-know-what-you-think.">Let me know what you think.<a class="anchor-link" href="#Let-me-know-what-you-think.">¶</a></h2>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>References:</p>
 <ol>
@@ -9654,7 +9742,6 @@ EEIIYfSkoRFCCCGE0ZOGRgghhBBGTxoaIYQQQhi9/wM7n4e83NrtBQAAAABJRU5ErkJggg==
 </div>
 </div>
 </div>
-
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
@@ -9703,11 +9790,11 @@ EEIIYfSkoRFCCCGE0ZOGRgghhBBGTxoaIYQQQhi9/wM7n4e83NrtBQAAAABJRU5ErkJggg==
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
             var disqus_shortname = 'doing-the-dishes'; // required: replace example with your forum shortname
 
-                    var disqus_identifier = 'players_consistency';
-                var disqus_url = 'https://eyalshafran.github.io/players_consistency.html';
-
             var disqus_config = function () {
-                this.language = "english";
+                this.language = "en";
+
+                        this.page.identifier = '2017-05-04-players_consistency';
+                        this.page.url = 'https://eyalshafran.github.io/players_consistency.html';
             };
 
             /* * * DON'T EDIT BELOW THIS LINE * * */
@@ -9728,91 +9815,15 @@ EEIIYfSkoRFCCCGE0ZOGRgghhBBGTxoaIYQQQhi9/wM7n4e83NrtBQAAAABJRU5ErkJggg==
     </section>
 
         </div>
-        <div class="col-sm-3" id="sidebar">
-            <aside>
-<div id="aboutme">
-        <p>
-            <img width="100%" class="img-thumbnail" src="https://eyalshafran.github.io/images/logo.png"/>
-        </p>
-</div>
-<section class="well well-sm">
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
-              <ul class="list-group" id="social">
-                <li class="list-group-item"><a href="https://github.com/eyalshafran"><i class="fa fa-github-square fa-lg"></i> github</a></li>
-                <li class="list-group-item"><a href="https://twitter.com/EyalShafran"><i class="fa fa-twitter-square fa-lg"></i> twitter</a></li>
-                <li class="list-group-item"><a href="https://www.linkedin.com/in/eyal-shafran-11924216/"><i class="fa fa-linkedin-square fa-lg"></i> linkedin</a></li>
-                <li class="list-group-item"><a href="https://www.facebook.com/sportsplotting/"><i class="fa fa-facebook-square fa-lg"></i> facebook</a></li>
-              </ul>
-            </li>
-
-            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
-                <ul class="list-group" id="recentposts">
-                    <li class="list-group-item">
-                        <a href="https://eyalshafran.github.io/all-star-and-draft-picks.html">
-                            All-Star and Draft Picks
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://eyalshafran.github.io/age.html">
-                            Age
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://eyalshafran.github.io/per-ws-vs-salary.html">
-                            PER & WS vs. Salary
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://eyalshafran.github.io/assists_breakdown.html">
-                            Assists Breakdown
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://eyalshafran.github.io/figure-summary-1.html">
-                            A few figures - week 1
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-
-
-
-    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
-      <ul class="list-group" id="links">
-        <li class="list-group-item">
-            <a href="http://shafrane.wixsite.com/doingthedishes" target="_blank">
-                My old blog
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://grantland.com/" target="_blank">
-                Grantland
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="https://fivethirtyeight.com/" target="_blank">
-                FiveThirtyEight
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://nyloncalculus.com/" target="_blank">
-                nylon calculus
-            </a>
-        </li>
-      </ul>
-    </li>
-    </ul>
-</section>            </aside>
-        </div>
     </div>
 </div>
+<!-- End Content Container -->
+
 <footer>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2018 Eyal Shafran
+         <div class="col-xs-10">&copy; 2020 Eyal Shafran
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
@@ -9827,6 +9838,7 @@ EEIIYfSkoRFCCCGE0ZOGRgghhBBGTxoaIYQQQhi9/wM7n4e83NrtBQAAAABJRU5ErkJggg==
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
 <script src="https://eyalshafran.github.io/theme/js/respond.min.js"></script>
+
 
     <!-- Disqus -->
     <script type="text/javascript">
@@ -9860,6 +9872,7 @@ EEIIYfSkoRFCCCGE0ZOGRgghhBBGTxoaIYQQQhi9/wM7n4e83NrtBQAAAABJRU5ErkJggg==
         })();
     </script>
     <!-- End Google Analytics Code -->
+
 
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58f04647af3a2863"></script>
 </body>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="english" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>Offensive rebounds and their dependency on shot distance - Doing The Dishes</title>
+    <title>Offensive rebounds and their dependency on shot distance - Eyal Shafran</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -16,7 +16,7 @@
         <meta name="keywords" content="offensive rebounds,Matlab,distance" />
         <meta name="description" content="In this post I will explore offesive rebounds and their dependency on shot distance for various situations." />
 
-        <meta property="og:site_name" content="Doing The Dishes" />
+        <meta property="og:site_name" content="Eyal Shafran" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Offensive rebounds and their dependency on shot distance"/>
         <meta property="og:url" content="https://eyalshafran.github.io/offensive-rebounds.html"/>
@@ -28,10 +28,7 @@
             <meta property="article:tag" content="distance" />
             <meta property="article:author" content="Eyal Shafran" />
 
-    <meta name="twitter:card" content="summary">
-        <meta name="twitter:site" content="@EyalShafran">
-        <meta name="twitter:creator" content="@EyalShafran">
-    <meta name="twitter:domain" content="https://eyalshafran.github.io">
+
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="https://eyalshafran.github.io/theme/css/bootstrap.flatly.min.css" type="text/css"/>
@@ -39,32 +36,18 @@
 
     <link href="https://eyalshafran.github.io/theme/css/pygments/default.css" rel="stylesheet">
     <link rel="stylesheet" href="https://eyalshafran.github.io/theme/css/style.css" type="text/css"/>
+        <link href="https://eyalshafran.github.io/static/css/custom.css" rel="stylesheet">
 
         <link href="https://eyalshafran.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
-              title="Doing The Dishes ATOM Feed"/>
-
-
+              title="Eyal Shafran ATOM Feed"/>
 
         <link href="https://eyalshafran.github.io/feeds/blog.atom.xml" type="application/atom+xml" rel="alternate"
-              title="Doing The Dishes Blog ATOM Feed"/>
-
-	<!-- Doing the Dishes Specific CSS -->
-	<link href="https://eyalshafran.github.io/theme/css/doingthedishes/dtd-main.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.11.1.min.css" type="text/css" />
-	<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.12.13.min.css" type="text/css" />
+              title="Eyal Shafran Blog ATOM Feed"/>
 </head>
 <body>
 
-
-<!-- Embedded Javascript. Same as referecing an external JS document -->
- <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.11.1.min.js"></script>
- <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.13.min.js"></script>
- <script type="text/javascript">
-     Bokeh.set_log_level("info");
- </script>
-
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="container">
+    <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -73,15 +56,12 @@
                 <span class="icon-bar"></span>
             </button>
             <a href="https://eyalshafran.github.io/" class="navbar-brand">
-Doing The Dishes            </a>
+Eyal Shafran            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                         <li><a href="https://eyalshafran.github.io/pages/about-me.html">
-                             About Me
-                          </a></li>
-                         <li><a href="https://eyalshafran.github.io/pages/contact-en.html">
-                             Contact
+                         <li><a href="https://eyalshafran.github.io/pages/about.html">
+                             About
                           </a></li>
                         <li class="active">
                             <a href="https://eyalshafran.github.io/category/blog.html">Blog</a>
@@ -90,7 +70,7 @@ Doing The Dishes            </a>
                             <a href="https://eyalshafran.github.io/category/code.html">Code</a>
                         </li>
                         <li >
-                            <a href="https://eyalshafran.github.io/category/interactive-graphs.html">Interactive graphs</a>
+                            <a href="https://eyalshafran.github.io/category/code-deprecated.html">Code - deprecated</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -99,11 +79,14 @@ Doing The Dishes            </a>
         <!-- /.navbar-collapse -->
     </div>
 </div> <!-- /.navbar -->
+
 <!-- Banner -->
 <!-- End Banner -->
+
+<!-- Content Container -->
 <div class="container">
     <div class="row">
-        <div class="col-sm-9">
+        <div class="col-lg-12">
     <section id="content">
         <article>
             <header class="page-header">
@@ -125,6 +108,8 @@ Doing The Dishes            </a>
     </span>
 
 
+            <span class="label label-default">By</span>
+            <a href="https://eyalshafran.github.io/author/eyal-shafran.html"><i class="fa fa-user"></i> Eyal Shafran</a>
 
         <span class="label label-default">Category</span>
         <a href="https://eyalshafran.github.io/category/blog.html">Blog</a>
@@ -141,30 +126,30 @@ Doing The Dishes            </a>
                 </div>
                 <p>Ever since I started playing basketball I remember hearing that it is easier to take an offensive rebound when shooting far away from the basket because the ball bounces further. Is that true? In recent years the NBA is sharing a tremendous amount of data on its website through the NBA API and now question like these become something that is (fairly) straightforward to answer. The argumentative part of me misses the days were you have an old fashion argument that lasts forever without someone pulling out their smartphone to google the answer. The nerdy part of me is just thrilled to harness the power of my laptop to answer these kind of questions. In this post I will explore the chances of taking offensive rebounds for different shooting scenarios.</p>
 <p>The NBA now records the shot coordinates for every shot taken since 2009. The play by play for each game is also available. By using the shot coordinates for all the shots taken in the 2014-2015 season and by correlating each shot with the play by play I was able to determine whether a missed shot was offensively or defensively rebounded. From that data we can extract the offensive rebound ratio (ORR) - (offensive rebounds)/(offensive rebounds + defensive rebounds). Since I have the coordinates of each shot, this ratio can be plotted as a function of the shot distance. Here are the results:
-<img alt="figure 1" src="images/fig1.png">
+<img alt="figure 1" src="/images/offensive_rebounds/fig1.png"/>
 Fig 1: Offensive rebound ratio as a function of shot distance.</p>
 <p>It is clear from the data that the closer the shooter is to the basket the more likely to be an offensive rebound if they miss the shot. So the myth that offensive rebounds are easier to grab when shooting far away from the basket is wrong! We see a steady decrease as we shot further from the basket. One interesting feature is the bump at 23 feet. The short 3 pointer is at 22 feet and is included in that data point. So for some reason there is an increase in the probability of taking an offensive rebound when shooting a 3 over a long 2. We will get back to that. </p>
 <p>So why is it easier to take an offensive rebound when the shooter is close to the basket? One explanation is that the shooter is more likely to rebound their own missed shot if they are close to the basket. Luckily, we can also plot that data:
-<img alt="figure 2" src="images/fig2.png">
+<img alt="figure 2" src="/images/offensive_rebounds/fig2.png"/>
 Fig 2: Own shot offensive rebounds as a function of shooting distance. Only offensive rebounds recovered by the shooter are included.</p>
 <p>This makes sense. The closer the shooter is to the basket the higher the chances they will grab their own missed shot. This is the main reason the ORR is higher when shooting close to the basket.</p>
 <p>The next question I wanted to answer is whether there is any change in the chances of taking an offensive rebound because of the presence of the backboard. My experience tells me the ball bounces differently when the backboard is not involved. It seems like it is harder to predict the bounce of the ball when shooting from the corner. So I divided all the shots into shots taken from the center and shots taken from the side. I also thought that if it easier to take an offensive rebound for side shots that can explain the higher ORR for 3's. Since so many corner 3's are taken these days that could cause an artificial bump in the ORR (if the ORR for side shots is higher across the board). The division of the court can be seen in the illustration below:
-<img alt="figure 3" src="images/fig3.png">
+<img alt="figure 3" src="/images/offensive_rebounds/fig3.png"/>
 Fig 3: The court can be divided to center shots (depicted in blue) and side shots (depicted in red).</p>
 <p>and the results or the ORR:
-<img alt="figure 4" src="images/fig4.png">
+<img alt="figure 4" src="/images/offensive_rebounds/fig4.png"/>
 Fig 4: Offensive rebound ratio as a function of shot distance for shots taken from the center (blue) and from the side (red).</p>
 <p>We can see that the curves look similar with the exception of the data starting from the corner 3 where there is a big increase in the ORR compared to the center shots. The corner 3 is at 22 feet where the center 3 is at 23 feet and 9 inches. For the center 3s the increase is not as high and only appears for fairly far 3s (26 feet -28 feet). For center 3's taken from 24 feet-26 feet there is no real increase in the ORR. For longer 3's the statistics was lower and the increase in ORR needs to be regarded with caution. What is so special about the corner 3 that makes it much easier to rebound offensively?</p>
 <p>Most corner 3's are catch and shoot and if it is easier to offensively rebound a catch and shoot that can explain the increase in ORR for corner 3s. We are in luck since the NBA also has information about the number of dribbles and possession time before each shot. How does that affect the probability of taking offensive rebounds?
-<img alt="figure 5" src="images/fig5.png">
+<img alt="figure 5" src="/images/offensive_rebounds/fig5.png"/>
 Fig 5: Offensive rebound ratio broken down into catch and shoot (blue) and pullup jumpers\one dribble or more (red). Catch and shoot is defined as 0 dribbles and ball possession time of 2 sec or less. One dribble or more is exactly what it sounds. This is basically pullup jumpers above a distance of 10 feet.</p>
 <p>For close range, it is easier to take an offensive rebound when catching and shooting. One explanation is better positioning of the offensive player when they shoot without dribbling. Also, when shooting off the dribble the shooter is more likely to be off balance therefore decreasing the chances of the shooter recovering their own rebound. This can be checked when plotting the own offensive rebounds for catch and shoot vs. one dribble or more: 
-<img alt="figure 6" src="images/fig6.png">
+<img alt="figure 6" src="/images/offensive_rebounds/fig6.png"/>
 Fig 6: Own shot offensive rebound ratio for catch and shoot (blue) and one dribble or more (red).</p>
 <p>As can be seen, closer than 10 feet, it is much easier to rebound your own missed shot when shooting a catch and shot vs. one dribble or more. In fact, that chances of taking your own rebound during a catch and shoot under the basket is almost at 20%. That is extremely high!</p>
 <p>Going back to Fig. 5, for mid-range shots the chances of taking an offensive rebound off a pullup jumper is slightly higher. One possible explanation is that the defense is slightly off position trying to close out the shooter. Finally, there is no noticeable increase in the ORR for pullup 3s while there is a large increase for catch and shoot. The only explanation I can think of is the position of the offensive players on the court during a catch and shoot 3 pointer. When posting up and passing to a 3 point shooter the offensive player should be closer to the basket. Also, when driving and kicking out to an outside shooter the passer should be closer to the basket. In both cases there is an offensive player close to the basket thus increasing the chance of an offensive rebound.</p>
 <p>Last figure is a heatmap of the ORR for the 2014-2015 season:
-<img alt="figure 7" src="images/fig7.png">
+<img alt="figure 7" src="/images/offensive_rebounds/fig7.png"/>
 Fig 7: Heatmap of offensive rebound ratio for all shots in the 2014-2015 season.</p>
 <p>This heatmap summarizes a few of the above figures. The highest chances of taking an offensive rebound are when shooting close to the basket. It is also apparent that there is a higher chance of taking an offensive rebound from a corner 3 compared to a long 2 but that increase does not exist for center shots.</p>
 <p>Note: after I almost finalized this post I came across the following post:</p>
@@ -211,11 +196,11 @@ Fig 7: Heatmap of offensive rebound ratio for all shots in the 2014-2015 season.
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
             var disqus_shortname = 'doing-the-dishes'; // required: replace example with your forum shortname
 
-                    var disqus_identifier = 'offensive-rebounds';
-                var disqus_url = 'https://eyalshafran.github.io/offensive-rebounds.html';
-
             var disqus_config = function () {
-                this.language = "english";
+                this.language = "en";
+
+                        this.page.identifier = '2015-10-27-offensive-rebounds';
+                        this.page.url = 'https://eyalshafran.github.io/offensive-rebounds.html';
             };
 
             /* * * DON'T EDIT BELOW THIS LINE * * */
@@ -236,91 +221,15 @@ Fig 7: Heatmap of offensive rebound ratio for all shots in the 2014-2015 season.
     </section>
 
         </div>
-        <div class="col-sm-3" id="sidebar">
-            <aside>
-<div id="aboutme">
-        <p>
-            <img width="100%" class="img-thumbnail" src="https://eyalshafran.github.io/images/logo.png"/>
-        </p>
-</div>
-<section class="well well-sm">
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
-              <ul class="list-group" id="social">
-                <li class="list-group-item"><a href="https://github.com/eyalshafran"><i class="fa fa-github-square fa-lg"></i> github</a></li>
-                <li class="list-group-item"><a href="https://twitter.com/EyalShafran"><i class="fa fa-twitter-square fa-lg"></i> twitter</a></li>
-                <li class="list-group-item"><a href="https://www.linkedin.com/in/eyal-shafran-11924216/"><i class="fa fa-linkedin-square fa-lg"></i> linkedin</a></li>
-                <li class="list-group-item"><a href="https://www.facebook.com/sportsplotting/"><i class="fa fa-facebook-square fa-lg"></i> facebook</a></li>
-              </ul>
-            </li>
-
-            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
-                <ul class="list-group" id="recentposts">
-                    <li class="list-group-item">
-                        <a href="https://eyalshafran.github.io/all-star-and-draft-picks.html">
-                            All-Star and Draft Picks
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://eyalshafran.github.io/age.html">
-                            Age
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://eyalshafran.github.io/per-ws-vs-salary.html">
-                            PER & WS vs. Salary
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://eyalshafran.github.io/assists_breakdown.html">
-                            Assists Breakdown
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://eyalshafran.github.io/figure-summary-1.html">
-                            A few figures - week 1
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-
-
-
-    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
-      <ul class="list-group" id="links">
-        <li class="list-group-item">
-            <a href="http://shafrane.wixsite.com/doingthedishes" target="_blank">
-                My old blog
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://grantland.com/" target="_blank">
-                Grantland
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="https://fivethirtyeight.com/" target="_blank">
-                FiveThirtyEight
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://nyloncalculus.com/" target="_blank">
-                nylon calculus
-            </a>
-        </li>
-      </ul>
-    </li>
-    </ul>
-</section>            </aside>
-        </div>
     </div>
 </div>
+<!-- End Content Container -->
+
 <footer>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2018 Eyal Shafran
+         <div class="col-xs-10">&copy; 2020 Eyal Shafran
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
@@ -335,6 +244,7 @@ Fig 7: Heatmap of offensive rebound ratio for all shots in the 2014-2015 season.
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
 <script src="https://eyalshafran.github.io/theme/js/respond.min.js"></script>
+
 
     <!-- Disqus -->
     <script type="text/javascript">
@@ -368,6 +278,7 @@ Fig 7: Heatmap of offensive rebound ratio for all shots in the 2014-2015 season.
         })();
     </script>
     <!-- End Google Analytics Code -->
+
 
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58f04647af3a2863"></script>
 </body>

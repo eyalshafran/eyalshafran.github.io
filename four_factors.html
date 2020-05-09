@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="english" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>Four Factors - Doing The Dishes</title>
+    <title>Four Factors - Eyal Shafran</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -16,13 +16,13 @@
         <meta name="keywords" content="python,NBA,four factors,regression,home court" />
         <meta name="description" content="In this post I&#39;m going to explore Dean Oliver&#39;s Four Factors, compute the weight of each factor based on linear regression and see how those factors are influenced by home court advantage." />
 
-        <meta property="og:site_name" content="Doing The Dishes" />
+        <meta property="og:site_name" content="Eyal Shafran" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Four Factors"/>
         <meta property="og:url" content="https://eyalshafran.github.io/four_factors.html"/>
         <meta property="og:description" content="In this post I&#39;m going to explore Dean Oliver&#39;s Four Factors, compute the weight of each factor based on linear regression and see how those factors are influenced by home court advantage."/>
         <meta property="article:published_time" content="2017-11-24" />
-            <meta property="article:section" content="Code" />
+            <meta property="article:section" content="Code - Deprecated" />
             <meta property="article:tag" content="python" />
             <meta property="article:tag" content="NBA" />
             <meta property="article:tag" content="four factors" />
@@ -30,10 +30,7 @@
             <meta property="article:tag" content="home court" />
             <meta property="article:author" content="Eyal" />
 
-    <meta name="twitter:card" content="summary">
-        <meta name="twitter:site" content="@EyalShafran">
-        <meta name="twitter:creator" content="@EyalShafran">
-    <meta name="twitter:domain" content="https://eyalshafran.github.io">
+
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="https://eyalshafran.github.io/theme/css/bootstrap.flatly.min.css" type="text/css"/>
@@ -41,32 +38,18 @@
 
     <link href="https://eyalshafran.github.io/theme/css/pygments/default.css" rel="stylesheet">
     <link rel="stylesheet" href="https://eyalshafran.github.io/theme/css/style.css" type="text/css"/>
+        <link href="https://eyalshafran.github.io/static/css/custom.css" rel="stylesheet">
 
         <link href="https://eyalshafran.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
-              title="Doing The Dishes ATOM Feed"/>
+              title="Eyal Shafran ATOM Feed"/>
 
-
-
-        <link href="https://eyalshafran.github.io/feeds/code.atom.xml" type="application/atom+xml" rel="alternate"
-              title="Doing The Dishes Code ATOM Feed"/>
-
-	<!-- Doing the Dishes Specific CSS -->
-	<link href="https://eyalshafran.github.io/theme/css/doingthedishes/dtd-main.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.11.1.min.css" type="text/css" />
-	<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.12.13.min.css" type="text/css" />
+        <link href="https://eyalshafran.github.io/feeds/code-deprecated.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Eyal Shafran Code - Deprecated ATOM Feed"/>
 </head>
 <body>
 
-
-<!-- Embedded Javascript. Same as referecing an external JS document -->
- <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.11.1.min.js"></script>
- <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.13.min.js"></script>
- <script type="text/javascript">
-     Bokeh.set_log_level("info");
- </script>
-
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="container">
+    <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -75,24 +58,21 @@
                 <span class="icon-bar"></span>
             </button>
             <a href="https://eyalshafran.github.io/" class="navbar-brand">
-Doing The Dishes            </a>
+Eyal Shafran            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                         <li><a href="https://eyalshafran.github.io/pages/about-me.html">
-                             About Me
-                          </a></li>
-                         <li><a href="https://eyalshafran.github.io/pages/contact-en.html">
-                             Contact
+                         <li><a href="https://eyalshafran.github.io/pages/about.html">
+                             About
                           </a></li>
                         <li >
                             <a href="https://eyalshafran.github.io/category/blog.html">Blog</a>
                         </li>
-                        <li class="active">
+                        <li >
                             <a href="https://eyalshafran.github.io/category/code.html">Code</a>
                         </li>
-                        <li >
-                            <a href="https://eyalshafran.github.io/category/interactive-graphs.html">Interactive graphs</a>
+                        <li class="active">
+                            <a href="https://eyalshafran.github.io/category/code-deprecated.html">Code - deprecated</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -101,11 +81,14 @@ Doing The Dishes            </a>
         <!-- /.navbar-collapse -->
     </div>
 </div> <!-- /.navbar -->
+
 <!-- Banner -->
 <!-- End Banner -->
+
+<!-- Content Container -->
 <div class="container">
     <div class="row">
-        <div class="col-sm-9">
+        <div class="col-lg-12">
     <section id="content">
         <article>
             <header class="page-header">
@@ -127,9 +110,11 @@ Doing The Dishes            </a>
     </span>
 
 
+            <span class="label label-default">By</span>
+            <a href="https://eyalshafran.github.io/author/eyal.html"><i class="fa fa-user"></i> Eyal</a>
 
         <span class="label label-default">Category</span>
-        <a href="https://eyalshafran.github.io/category/code.html">Code</a>
+        <a href="https://eyalshafran.github.io/category/code-deprecated.html">Code - Deprecated</a>
 
 
 <span class="label label-default">Tags</span>
@@ -150,9 +135,124 @@ Doing The Dishes            </a>
 * IPython notebook
 *
 */
-/* CSS font colors for translated ANSI colors. */
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
 .ansibold {
   font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
 }
 /* use dark versions for foreground, to improve visibility */
 .ansiblack {
@@ -231,12 +331,20 @@ div.cell {
   /* This acts as a spacer between cells, that is outside the border */
   margin: 0px;
   outline: none;
-  border-left-width: 1px;
-  padding-left: 5px;
-  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
 }
 div.cell.jupyter-soft-selected {
-  border-left-color: #90CAF9;
   border-left-color: #E3F2FD;
   border-left-width: 1px;
   padding-left: 5px;
@@ -249,27 +357,39 @@ div.cell.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected {
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
   border-color: #ababab;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
 }
 @media print {
-  div.cell.selected {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected.jupyter-soft-selected {
-  border-left-width: 0;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
-}
 .edit_mode div.cell.selected {
   border-color: #66BB6A;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
 }
 @media print {
   .edit_mode div.cell.selected {
@@ -465,7 +585,9 @@ div.input_area > div.highlight > pre {
 .CodeMirror-lines {
   /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
   /* we have set a different line-height and want this to scale with that. */
-  padding: 0.4em;
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
 }
 .CodeMirror-linenumber {
   padding: 0 8px 0 4px;
@@ -475,11 +597,24 @@ div.input_area > div.highlight > pre {
   border-top-left-radius: 2px;
 }
 .CodeMirror pre {
-  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
-  /* .CodeMirror-lines */
-  padding: 0;
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
   border: 0;
   border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
 }
 /*
 
@@ -727,6 +862,9 @@ div.output_area img.unconfined,
 div.output_area svg.unconfined {
   max-width: none;
 }
+div.output_area .mglyph > img {
+  max-width: none;
+}
 /* This is needed to protect the pre formating from global settings such
    as that of bootstrap */
 .output {
@@ -765,7 +903,7 @@ div.output_area svg.unconfined {
 }
 div.output_area pre {
   margin: 0;
-  padding: 0;
+  padding: 1px 0 1px 0;
   border: 0;
   vertical-align: baseline;
   color: black;
@@ -887,6 +1025,10 @@ div.output_unrecognized a:hover {
 .rendered_html h6:first-child {
   margin-top: 1em;
 }
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
 
 
 
@@ -903,16 +1045,24 @@ div.output_unrecognized a:hover {
 }
 
 
+
+
+
 .rendered_html pre,
+
 
 
 
 .rendered_html tr,
 .rendered_html th,
 
-.rendered_html td,
 
-
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
 .rendered_html * + table {
   margin-top: 1em;
 }
@@ -928,6 +1078,11 @@ div.output_unrecognized a:hover {
 
 .rendered_html img.unconfined,
 
+
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] 
 div.text_cell {
   /* Old browsers */
   display: -webkit-box;
@@ -978,8 +1133,15 @@ h6:hover .anchor-link {
   display: none;
 }
 .text_cell.rendered 
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered 
 .text_cell.unrendered .text_cell_render {
   display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
 }
 .cm-header-1,
 .cm-header-2,
@@ -1079,48 +1241,8 @@ h6:hover .anchor-link {
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
-<style type="text/css">
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-</style>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In this post I'm going to explore Dean Oliver's Four Factors, compute the weight of each factor based on linear regression and see how those factors are influenced by home court advantage.</p>
 <p>For a quick overview of the four factors read this: <a href="https://www.basketball-reference.com/about/factors.html">https://www.basketball-reference.com/about/factors.html</a></p>
@@ -1133,7 +1255,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">NBAapi</span> <span class="kn">as</span> <span class="nn">nba</span>
@@ -1154,7 +1276,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">seasons_string</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="p">):</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">seasons_string</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="p">):</span>
     <span class="sd">'''</span>
 <span class="sd">    creates a list of NBA seasons from start-end</span>
 <span class="sd">    '''</span>
@@ -1171,10 +1293,8 @@ h6:hover .anchor-link {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Getting-game-log-data-for-the-last-30-years:">Getting game log data for the last 30 years:<a class="anchor-link" href="#Getting-game-log-data-for-the-last-30-years:">¶</a></h3>
 </div>
@@ -1185,7 +1305,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">seasons</span> <span class="o">=</span> <span class="n">seasons_string</span><span class="p">(</span><span class="mi">1987</span><span class="p">,</span><span class="mi">2016</span><span class="p">)</span> <span class="c1"># define seasons to look at</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">seasons</span> <span class="o">=</span> <span class="n">seasons_string</span><span class="p">(</span><span class="mi">1987</span><span class="p">,</span><span class="mi">2016</span><span class="p">)</span> <span class="c1"># define seasons to look at</span>
 <span class="n">game_logs</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">season</span> <span class="ow">in</span> <span class="n">seasons</span><span class="p">:</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">nba</span><span class="o">.</span><span class="n">league</span><span class="o">.</span><span class="n">gamelog</span><span class="p">(</span><span class="n">season</span><span class="o">=</span><span class="n">season</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'GAME_ID'</span><span class="p">)</span> <span class="c1"># get game logs</span>
@@ -1204,10 +1324,8 @@ h6:hover .anchor-link {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="How-often-does-the-home-team-win?">How often does the home team win?<a class="anchor-link" href="#How-often-does-the-home-team-win?">¶</a></h3>
 </div>
@@ -1218,7 +1336,7 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">game_logs</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'WL'</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">game_logs</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'WL'</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1237,19 +1355,15 @@ dtype: int64</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Home team wins 60.8% of the games</strong> (21038/(21038+13558))</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Calculating-the-four-factors-+-more:">Calculating the four factors + more:<a class="anchor-link" href="#Calculating-the-four-factors-+-more:">¶</a></h3>
 </div>
@@ -1260,7 +1374,7 @@ dtype: int64</pre>
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">EFG_home</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">*</span><span class="p">(</span><span class="n">game_logs</span><span class="p">[</span><span class="s1">'FGM'</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">game_logs</span><span class="p">[</span><span class="s1">'FG3M'</span><span class="p">])</span><span class="o">/</span><span class="n">game_logs</span><span class="p">[</span><span class="s1">'FGA'</span><span class="p">]</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">EFG_home</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">*</span><span class="p">(</span><span class="n">game_logs</span><span class="p">[</span><span class="s1">'FGM'</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">game_logs</span><span class="p">[</span><span class="s1">'FG3M'</span><span class="p">])</span><span class="o">/</span><span class="n">game_logs</span><span class="p">[</span><span class="s1">'FGA'</span><span class="p">]</span>
 <span class="n">EFG_away</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">*</span><span class="p">(</span><span class="n">game_logs</span><span class="p">[</span><span class="s1">'FGM_OPP'</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">game_logs</span><span class="p">[</span><span class="s1">'FG3M_OPP'</span><span class="p">])</span><span class="o">/</span><span class="n">game_logs</span><span class="p">[</span><span class="s1">'FGA_OPP'</span><span class="p">]</span>
 <span class="n">OREB_PCT_home</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">*</span><span class="p">(</span><span class="n">game_logs</span><span class="p">[</span><span class="s1">'OREB'</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="n">game_logs</span><span class="p">[</span><span class="s1">'OREB'</span><span class="p">]</span><span class="o">+</span><span class="n">game_logs</span><span class="p">[</span><span class="s1">'DREB_OPP'</span><span class="p">])</span>
 <span class="n">OREB_PCT_away</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">*</span><span class="p">(</span><span class="n">game_logs</span><span class="p">[</span><span class="s1">'OREB_OPP'</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="n">game_logs</span><span class="p">[</span><span class="s1">'OREB_OPP'</span><span class="p">]</span><span class="o">+</span><span class="n">game_logs</span><span class="p">[</span><span class="s1">'DREB'</span><span class="p">])</span>
@@ -1282,10 +1396,8 @@ dtype: int64</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Plotting-the-distributions:">Plotting the distributions:<a class="anchor-link" href="#Plotting-the-distributions:">¶</a></h3><ul>
 <li>See legend for the average</li>
@@ -1298,7 +1410,7 @@ dtype: int64</pre>
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">'fivethirtyeight'</span><span class="p">)</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">'fivethirtyeight'</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">EFG_home</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span><span class="n">bins</span><span class="o">=</span><span class="mi">51</span><span class="p">,</span><span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.8</span><span class="p">),</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">normed</span><span class="o">=</span><span class="bp">True</span><span class="p">);</span>
@@ -1350,12 +1462,12 @@ dtype: int64</pre>
 <div class="output_area">
 <div class="prompt output_prompt">Out[6]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre><matplotlib.text.text at 0x13290518></pre>
+<pre>&lt;matplotlib.text.Text at 0x13290518&gt;</pre>
 </div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAk4AAAGSCAYAAAAVTU48AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3Xd8jff///EnIcSIYyb2aoxYJWpGrVqlRm1alFZLqrR2
 Wx8URZUKNVKrVqpGaodSK0GsUqsqNYqWqJAQIkjy+8M359cj60qckyGP++3m1p7rep/rep13TpJn
@@ -1658,12 +1770,12 @@ K1euKEuWLCpVqpTGjh3L5PBnJLVfkbik9unjx481ZswYXb9+XdmzZze3b968eWqUn2YltV9z5cql
 9evXa8SIEWrSpIlMJpNat25tePmSjCA53//37t2Tj4+PRowYYWguVEaU1H7t2bOnwsLCtGDBAn3+
 +edydHRUgwYNNH78eJvVmObWcQIAAEir0tQcJwAAgLSM4AQAAGAQwQkAAMAgghMAAIBBBCcAAACD
 CE4AAAAGEZwAAAAMIjgBAAAY9P8A+lVBNPNU8HUAAAAASUVORK5CYII=
-">
-</img></div>
+"/>
+</div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAk4AAAGSCAYAAAAVTU48AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Xl8DWf///F3iBBLBBUhEhp37KqKErUmllpDtShKW0sR
 brVEuO9qaWkUrdZSVVup0qK1K7U3lnC3lLaICFFrLJEEiUjI7w+/nK/jnCST5Ujwej4eebSZuc7M
@@ -2000,12 +2112,12 @@ X19fyOVylJeXe+3N4QC/19v/G64dTU9Po6ysDF+/fsW6deucx2dkZIgRnwmuHQUEBODx48fQaDRI
 S0tDYGAgDh8+7PKYkH8Rn9fa79+/0dLSAo1Gw+w+X4+b40QIIYQQ4qk86h4nQgghhBBPRhsnQggh
 hBAX0caJEEIIIcRFtHEihBBCCHERbZwIIYQQQlxEGydCCCGEEBfRxokQQgghxEW0cSKEEEIIcdF/
 76YvpoBT9tEAAAAASUVORK5CYII=
-">
-</img></div>
+"/>
+</div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlcAAAGSCAYAAADO9uQeAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3Xl4Tdfi//FPJEIEDREJISJphJirZlENF60qesVYUyk1
 XToo2l6q1Ua1rhalxrbG0pYqgppr1gFRU0NKzalUDDFk/P3h53ydJjhJ1pHp/XqePE+zzzprrb2y
@@ -2301,12 +2413,12 @@ sLAwlS9fXnPmzLnv/k25jT3G9fLlyxoyZIiio6NVtGhRVatWTeHh4apVq5b9TygbSO+YzpkzR4mJ
 iRo5cqRGjhxpOd6wYUOtWrVKEteqZJ9x5VpN35gmJSXp7bff1p9//iknJyf5+vpq9OjRVgvaH8a1
 miP2uQIAAMgpsv2aKwAAgJyEcAUAAGAQ4QoAAMAgwhUAAIBBhCsAAACDCFcAAAAGEa4AAAAMIlwB
 AAAY9P8AJ36kwYE5YYsAAAAASUVORK5CYII=
-">
-</img></div>
+"/>
+</div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAk4AAAGSCAYAAAAVTU48AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3Xt8zvX/x/HnNmzDuJgd5DDRwkgOtTkfQ1Jb+pJEiG8J
 icqxUqEaiW/mlK8hZmKx5DhF0lbmnEMHDUmKLTSadsD2+8Nv19fVxj47XIfN43677VbX+/ocXtd7
@@ -2582,12 +2694,12 @@ eKmQ4qggP29//fWXoqOjrf4L3FHkt4/69u2rlJQULVy4UK+99poqVKigNm3aaNKkSfYo3yYK8m/b
 3LlzdezYMZUuXVqtW7fWZ599ZtWRFHs7cOCAHnnkEfPj0NBQhYaGqk+fPpo/f77Onj2rn3/+2fx8
 xYoV9cknn2j06NHq0KGDTCaThg8frueff96qdTrcOk4AAACOigulAAAABhGcAAAADCI4AQAAGERw
 AgAAMIjgBAAAYBDBCQAAwCCCEwAAgEEEJwAAAIP+D+LBonhVRuzmAAAAAElFTkSuQmCC
-">
-</img></div>
+"/>
+</div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAmQAAAGSCAYAAABNMt0lAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3XlYVdXi//GPgDgrSgxlKjkPhVKKQyYKV7IccMg5NdIc
 M0tzLBvMIiP7mVct04uJikVqmZlaGgjkXA55+0pkUZoKgaGhKCD8/vDhXE/nwDkisAHfr+fheTxr
@@ -2923,12 +3035,12 @@ a2ur4Kz/24qLiwFMiinD2F2ztLQ0AMnVAgaDgYSEBLq7u7Gzs8PPz4/y8nLWrl0LSKa/i+Rqvvfv
 3xMfH09PTw/z5s0jJCSEe/fuGf8uSabmW7ZsGaWlpWRmZqLT6XBxcSE9PZ34+HjjGCVzlTpkQggh
 hBAK++OfIRNCCCGEUJpsyIQQQgghFCYbMiGEEEIIhcmGTAghhBBCYbIhE0IIIYRQmGzIhBBCCCEU
 JhsyIYQQQgiFyYZMCCGEEEJh/wM2AvXKklN6mQAAAABJRU5ErkJggg==
-">
-</img></div>
+"/>
+</div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAk4AAAGSCAYAAAAVTU48AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3Xl8TPf+x/G3iMRuCElEExpL1VZBYwliKapaqdZStFW0
 VNVSO9faqiBo7YpqkeptWlvUkltqCRLU3t4rUqqXIikaLs3SkN8fHpmfabaTZCYZ8no+HvO45nuW
@@ -3216,12 +3328,12 @@ zJgxatOmjUwmkzp16mR4ug8Yk93r0rt3b92+fVsrVqzQxIkTVbp0abVo0ULTpk3Lj/IfWcePHzeH
 VUkKDAxUYGCgevbsqaVLl+rq1av65ZdfzMvLlCmjjRs3atSoUWrdurVMJpMGDx6sd99916Z12t08
 TgAAAPbKrsY4AQAA2DOCEwAAgEEEJwAAAIMITgAAAAYRnAAAAAwiOAEAABhEcAIAADCI4AQAAGDQ
 /wFqFkRIkNugogAAAABJRU5ErkJggg==
-">
-</img></div>
+"/>
+</div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAm0AAAGSCAYAAACxJ/bvAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3XlcVdX+//E3Mig5EYQHB5RUInIAroVDGgYOddHIMbV+
 GTeLTDPTVPRmZnq/RJQ379XMMrhZYpFRWlY2iAKpWKbZyBcrp1JIEEkvouD5/eGXk6dzkMOgsOH1
@@ -3572,16 +3684,14 @@ oqKisHHjRmRnZwvPDtjtdhQXF+Orr76C1WrF0qVLUVZWJkxl0/jr7+/HJ598gpMnT6K3txdyuRxr
 UF7y8/OxaNEil9tVVFQI7ScGBwexc+dO1NTUYHBwECtWrIBOp2O/zzFyd83ca8GCBQ4tPwDmZrRY
 tBERERF5AT7TRkREROQFWLQREREReQEWbURERERegEUbERERkRdg0UZERETkBVi0EREREXkBFm1E
 REREXoBFGxEREZEX+B+Q3rUXr72AJwAAAABJRU5ErkJggg==
-">
-</img></div>
+"/>
 </div>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
 </div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>What can we learn from these distributions? Home team does better at almost everything. Can these differences be a fluke? I ran a T test and since we are looking at so many games even a very small change between the home and away team is not a coincidence.</p>
 <p>Let's summerize the differences we see for the home team:</p>
@@ -3596,19 +3706,15 @@ REREXoBFGxEREZEX+B+Q3rUXr72AJwAAAABJRU5ErkJggg==
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Using-regression-to-find-the-weight-of-each-factor:">Using regression to find the weight of each factor:<a class="anchor-link" href="#Using-regression-to-find-the-weight-of-each-factor:">¶</a></h3>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>First decision I made is to compute the difference between the four factors per game instead of having 8 factors (4 for each team). This reduces the number of features to 4 and at least to me it is more intuitive.</p>
 <p>For the logistic regression the predictor is either win (1) or lose (0). For the linear regression the predictor is the final score points difference.</p>
@@ -3620,7 +3726,7 @@ REREXoBFGxEREZEX+B+Q3rUXr72AJwAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">homeW</span> <span class="o">=</span> <span class="n">game_logs</span><span class="p">[</span><span class="s1">'WL'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">'W'</span><span class="p">)</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">homeW</span> <span class="o">=</span> <span class="n">game_logs</span><span class="p">[</span><span class="s1">'WL'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">'W'</span><span class="p">)</span>
 
 <span class="n">EFGd</span> <span class="o">=</span> <span class="n">EFG_home</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">-</span> <span class="n">EFG_away</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
 <span class="n">OREBd</span> <span class="o">=</span> <span class="n">OREB_PCT_home</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">-</span> <span class="n">OREB_PCT_away</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
@@ -3638,19 +3744,15 @@ REREXoBFGxEREZEX+B+Q3rUXr72AJwAAAABJRU5ErkJggg==
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Another important decision when computing the weights is whether we should scale the different factors so their standard deviation is the same. For example, we can see that the EFG has a much higher distribution then any other factor so the weight would be under emphasized if we do not scale the factors. I decided to scale each feature.</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>I'm going to use logistic regression to see home many games can be predicted correctly with it. To find the coefficients I'm going to use linear regression:</p>
 </div>
@@ -3661,7 +3763,7 @@ REREXoBFGxEREZEX+B+Q3rUXr72AJwAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">logreg</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LogisticRegression</span><span class="p">(</span><span class="n">C</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">logreg</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LogisticRegression</span><span class="p">(</span><span class="n">C</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="n">linreg</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LinearRegression</span><span class="p">()</span>
 <span class="n">logreg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xscaled</span><span class="p">,</span> <span class="n">Y</span><span class="p">);</span>
 <span class="n">linreg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xscaled</span><span class="p">,</span> <span class="n">PTSd</span><span class="p">);</span>
@@ -3670,10 +3772,8 @@ REREXoBFGxEREZEX+B+Q3rUXr72AJwAAAABJRU5ErkJggg==
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="How-many-did-we-get-right?">How many did we get right?<a class="anchor-link" href="#How-many-did-we-get-right?">¶</a></h3>
 </div>
@@ -3684,7 +3784,7 @@ REREXoBFGxEREZEX+B+Q3rUXr72AJwAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="s1">'Using Logistic Regression we can predict at: {} accuracy'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">logreg</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xscaled</span><span class="p">,</span><span class="n">Y</span><span class="p">))</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="s1">'Using Logistic Regression we can predict at: {} accuracy'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">logreg</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xscaled</span><span class="p">,</span><span class="n">Y</span><span class="p">))</span>
 <span class="k">print</span> <span class="s1">'Using Linear Regression the R^2 factor is: {}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">linreg</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">Xscaled</span><span class="p">,</span><span class="n">PTSd</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -3703,10 +3803,8 @@ Using Linear Regression the R^2 factor is: 0.935771070796
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The four factors are very good predictors of winning as can be seen by the Logistic regression.</p>
 <h3 id="Let's-take-a-look-at-the-coefficients:">Let's take a look at the coefficients:<a class="anchor-link" href="#Let's-take-a-look-at-the-coefficients:">¶</a></h3>
@@ -3718,7 +3816,7 @@ Using Linear Regression the R^2 factor is: 0.935771070796
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'EFG'</span><span class="p">,</span><span class="s1">'OREB'</span><span class="p">,</span><span class="s1">'TOV'</span><span class="p">,</span><span class="s1">'FT'</span><span class="p">]</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'EFG'</span><span class="p">,</span><span class="s1">'OREB'</span><span class="p">,</span><span class="s1">'TOV'</span><span class="p">,</span><span class="s1">'FT'</span><span class="p">]</span>
 <span class="nb">zip</span><span class="p">(</span><span class="n">features</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">linreg</span><span class="o">.</span><span class="n">coef_</span><span class="o">.</span><span class="n">ravel</span><span class="p">()))</span>
 </pre></div>
 </div>
@@ -3738,10 +3836,8 @@ Using Linear Regression the R^2 factor is: 0.935771070796
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Weighted-coefficients-(to-give-100%):">Weighted coefficients (to give 100%):<a class="anchor-link" href="#Weighted-coefficients-(to-give-100%):">¶</a></h3>
 </div>
@@ -3752,7 +3848,7 @@ Using Linear Regression the R^2 factor is: 0.935771070796
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="s1">'Linear Regression Weights:'</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="s1">'Linear Regression Weights:'</span>
 <span class="k">for</span> <span class="n">f</span><span class="p">,</span><span class="n">n</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">features</span><span class="p">,</span><span class="mf">100.0</span><span class="o">*</span><span class="n">linreg</span><span class="o">.</span><span class="n">coef_</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">linreg</span><span class="o">.</span><span class="n">coef_</span><span class="o">.</span><span class="n">ravel</span><span class="p">()))):</span>
     <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
 </pre></div>
@@ -3775,10 +3871,8 @@ Using Linear Regression the R^2 factor is: 0.935771070796
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Dean Oliver work:</p>
 <ol>
@@ -3798,10 +3892,8 @@ Using Linear Regression the R^2 factor is: 0.935771070796
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Let's-try-to-visualize-the-two-most-import-parameters">Let's try to visualize the two most import parameters<a class="anchor-link" href="#Let's-try-to-visualize-the-two-most-import-parameters">¶</a></h3>
 </div>
@@ -3812,7 +3904,7 @@ Using Linear Regression the R^2 factor is: 0.935771070796
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">'fivethirtyeight'</span><span class="p">)</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">'fivethirtyeight'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">13.3</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">EFGd</span><span class="p">[</span><span class="n">homeW</span><span class="p">[</span><span class="n">idx</span><span class="p">]],</span><span class="n">TOVd</span><span class="p">[</span><span class="n">homeW</span><span class="p">[</span><span class="n">idx</span><span class="p">]],</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">'Win'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">EFGd</span><span class="p">[</span><span class="n">homeW</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">==</span><span class="bp">False</span><span class="p">],</span><span class="n">TOVd</span><span class="p">[</span><span class="n">homeW</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">==</span><span class="bp">False</span><span class="p">],</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">'s'</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">'Lose'</span><span class="p">)</span>
@@ -3832,7 +3924,7 @@ Using Linear Regression the R^2 factor is: 0.935771070796
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA5UAAAKSCAYAAABC2v/fAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3XucTHXjB/DPOXPZsXbXuuy6LUtFksuWW2GXyCWKeOyj
 6IJ6SKmUSrqQUkJF6dGjC1EqfqWQkki7NksPkupJKZFLLhtrrTXXc35/nDmzc7/tzO7M7uf9eu2r
@@ -10119,16 +10211,14 @@ oXv37hg6dCiWLVsW1jkyMjJQU1ODZ599Fq+//jq2bt2K7Oxs9O/fH4sWLUJBQUHE7Zo2bRrKysrw
 iIiIiKjT45pKIiIiIiIi0oxBJREREREREWnGoJKIiIiIiIg0Y1BJREREREREmjGoJCIiIiIiIs0Y
 VBIREREREZFmDCqJiIiIiIhIMwaVREREREREpBmDSiIiIiIiItKMQSURERERERFp9v+pv35KCZ2E
 UwAAAABJRU5ErkJggg==
-">
-</img></div>
+"/>
 </div>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
 </div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We can see that there is a fairly good separation between the wins and loses if we explore just the EFG and TOV % differential.</p>
 </div>
@@ -10139,16 +10229,16 @@ UwAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">plot_winning_chances</span><span class="p">(</span><span class="n">ddata</span><span class="p">,</span><span class="n">W1</span><span class="p">,</span><span class="n">W2</span><span class="p">,</span><span class="n">bin_numbers</span><span class="o">=</span><span class="mi">21</span><span class="p">,</span><span class="n">lim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.16</span><span class="p">,</span><span class="mf">0.16</span><span class="p">)):</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">plot_winning_chances</span><span class="p">(</span><span class="n">ddata</span><span class="p">,</span><span class="n">W1</span><span class="p">,</span><span class="n">W2</span><span class="p">,</span><span class="n">bin_numbers</span><span class="o">=</span><span class="mi">21</span><span class="p">,</span><span class="n">lim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.16</span><span class="p">,</span><span class="mf">0.16</span><span class="p">)):</span>
     <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">lim</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">lim</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">bin_numbers</span><span class="p">)</span>
     <span class="n">N_games</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">bin_numbers</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">WP</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">bin_numbers</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">WP2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">bin_numbers</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">bins</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-        <span class="n">idx2</span> <span class="o">=</span> <span class="p">(</span><span class="n">ddata</span><span class="o">>=</span><span class="n">bins</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&</span> <span class="p">(</span><span class="n">ddata</span><span class="o"><</span><span class="n">bins</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
-        <span class="n">idx3</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="o">*</span><span class="n">ddata</span><span class="o">>=</span><span class="n">bins</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="o">*</span><span class="n">ddata</span><span class="o"><</span><span class="n">bins</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">idx2</span> <span class="o">=</span> <span class="p">(</span><span class="n">ddata</span><span class="o">&gt;=</span><span class="n">bins</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">ddata</span><span class="o">&lt;</span><span class="n">bins</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">idx3</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="o">*</span><span class="n">ddata</span><span class="o">&gt;=</span><span class="n">bins</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="o">*</span><span class="n">ddata</span><span class="o">&lt;</span><span class="n">bins</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
         <span class="n">N_games</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">idx2</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">idx2</span><span class="p">)</span> <span class="o">></span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">idx2</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">WP</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">W1</span><span class="p">[</span><span class="n">idx2</span><span class="p">])</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">idx2</span><span class="p">)</span>
             <span class="n">WP2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">W2</span><span class="p">[</span><span class="n">idx3</span><span class="p">])</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">idx3</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
@@ -10162,10 +10252,8 @@ UwAAAABJRU5ErkJggg==
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="What-are-the-chances-of-winning-the-game-based-on-each-factor:">What are the chances of winning the game based on each factor:<a class="anchor-link" href="#What-are-the-chances-of-winning-the-game-based-on-each-factor:">¶</a></h3>
 </div>
@@ -10176,7 +10264,7 @@ UwAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">'fivethirtyeight'</span><span class="p">)</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">'fivethirtyeight'</span><span class="p">)</span>
 
 <span class="n">hW</span> <span class="o">=</span> <span class="n">game_logs</span><span class="p">[</span><span class="s1">'WL'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">'W'</span><span class="p">)[</span><span class="n">idx</span><span class="p">]</span>
 <span class="n">aW</span> <span class="o">=</span> <span class="n">game_logs</span><span class="p">[</span><span class="s1">'WL_OPP'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">'W'</span><span class="p">)[</span><span class="n">idx</span><span class="p">]</span>
@@ -10228,7 +10316,7 @@ UwAAAABJRU5ErkJggg==
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAApQAAAHjCAYAAACdAI/YAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Xdc1dX/wPHXvRfuZXORIYiIuQeZhgM3ieLKnH1LK3Kk
 VmiWX8vsW6almaalOdC01J/bHKmpOFDBGW5SHLgHMhTZ3H1/fxA3r/ciKCio5/l48FDOZ53P4d77
@@ -11261,12 +11349,12 @@ ePHiEt/Lu7TmzJmDhYUFW7duJTAwkJycHIyNjenZsyeDBg0qUR3lOcaF8ff3Z86cOfj5+fH69Wt6
 giAI5SISSkEQBEEQBKFcREIpCIIgCIIglItIKAVBEARBEIRyEQmlIAiCIAiCUC4ioRQEQRAEQRDK
 RSSUgiAIgiAIQrmIhFIQBEEQBEEoF5FQCoIgCIIgCOUiEkpBEARBEAShXP4PDTCYoCx3TSUAAAAA
 SUVORK5CYII=
-">
-</img></div>
+"/>
+</div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAApQAAAHjCAYAAACdAI/YAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Xl8TPf6wPFPVlkkhmwithISSzUaSWyRSGKrXSlCY6e1
 lKsqtlqKH9pyY9+3xlZrVRGUEEtiLam6NFr7kkVEZF9/f+TOXGMGiSQm6nm/XvNizvmec54zczLz
@@ -12124,12 +12212,12 @@ GsKcOXPg6+uLL774AsuXLwegnnwTGhqqtWNPdfr37499+/Zh5cqV+PLLL1FQUABnZ2fNTkJ1sWLF
 CrzxxhuIjIxEUVERBg4cWGlCCah3Jpo3bx7Wr18PlUqF3r17Iz4+vkKvNhHVHyE7O7tuo6KJiIiI
 iMAxlERERESkJyaURERERKQXJpREREREpBcmlERERESkFyaURERERKQXJpREREREpBcmlERERESk
 FyaURERERKQXJpREREREpBcmlERERESkl/8HR2pXTdJB9+0AAAAASUVORK5CYII=
-">
-</img></div>
+"/>
+</div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAoQAAAHjCAYAAAC6rg4wAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Xl8TOf+wPFPVolIjKwithJbqUZDYouEpJaqndraqL0V
 LpdKbLVcXFT5Re1LLTeoBkEVESV2sVZTFKH2JYuIyCbr74/cmWvMJCaRZCzf9+s1r2Se85xznvMk
@@ -12948,12 +13036,12 @@ r2D+/PlqtZmUlISkpCQYGhqiTZs26Ny5M8LDwxESEgJHR0e12miIwMBAODg4YOXKlVi9ejXKy8vh
 o6PKQBgbGwsjIyPs2LEDP/74I7y9vbF9+3Z8+OGHjfpsImo8gVgsbtzdwERERETULPAeQiIiIiI9
 x0BIREREpOcYCImIiIj0HAMhERERkZ5jICQiIiLScwyERERERHqOgZCIiIhIzzEQEhEREek5BkIi
 IiIiPcdASERERKTn/h/N4AIf1iJZzQAAAABJRU5ErkJggg==
-">
-</img></div>
+"/>
+</div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_png output_subarea ">
+<div class="output_png output_subarea">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAApQAAAHjCAYAAACdAI/YAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Xl8TFf/wPHPZE8QQxaJxB6xRJWGxJYISRUpYnsQbdTe
 Cj+qtatSVFGeqH3niX2Jfa99jz1VpWntRVYR2bf5/eGZeYyZEIIh+b5fr7yYc8+995xZ7nznbFeR
@@ -13896,40 +13984,33 @@ tw4PHz6E0+nE1atX8ePHD6SmpiInJwd79uyJaYy0tDQ8efIE1dXVePDgAa5fv47k5GRYrVbN084H
 DhzA27dvcefOHVy+fBkGg2HSQHn8+HGMjIygubkZd+/exfLly3Hr1i3cvn1baUMgor/nv3A4rK8L
 noiIiIj+aeyhJCIiIiJdGCiJiIiISBcGSiIiIiLShYGSiIiIiHRhoCQiIiIiXRgoiYiIiEgXBkoi
 IiIi0oWBkoiIiIh0YaAkIiIiIl0YKImIiIhIl/8BWq3GCO0j5EAAAAAASUVORK5CYII=
-">
-</img></div>
+"/>
 </div>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
 </div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>And we can see how important the Effective Field Goal is for winning. We can also see that for each factor by itself, if there is no difference between the home and away team, the home team still wins 60% of the games. For example, if the EFG is the same for both teams, the home team still wins about 60% of the time. This is due to the fact that the home team on average performs better at each of the four factors so even if there is no advantage in EFG the home team is still statistically more likely to do better at the other 3 factors.</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Let-me-know-what-you-think!">Let me know what you think!<a class="anchor-link" href="#Let-me-know-what-you-think!">¶</a></h3>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Thank you Tomer Tal for the helpful disscusions and advice.</p>
 </div>
 </div>
 </div>
-
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
@@ -13978,11 +14059,11 @@ IiIi0oWBkoiIiIh0YaAkIiIiIl0YKImIiIhIl/8BWq3GCO0j5EAAAAAASUVORK5CYII=
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
             var disqus_shortname = 'doing-the-dishes'; // required: replace example with your forum shortname
 
-                    var disqus_identifier = 'four_factors';
-                var disqus_url = 'https://eyalshafran.github.io/four_factors.html';
-
             var disqus_config = function () {
-                this.language = "english";
+                this.language = "en";
+
+                        this.page.identifier = '2017-11-24-four_factors';
+                        this.page.url = 'https://eyalshafran.github.io/four_factors.html';
             };
 
             /* * * DON'T EDIT BELOW THIS LINE * * */
@@ -14003,91 +14084,15 @@ IiIi0oWBkoiIiIh0YaAkIiIiIl0YKImIiIhIl/8BWq3GCO0j5EAAAAAASUVORK5CYII=
     </section>
 
         </div>
-        <div class="col-sm-3" id="sidebar">
-            <aside>
-<div id="aboutme">
-        <p>
-            <img width="100%" class="img-thumbnail" src="https://eyalshafran.github.io/images/logo.png"/>
-        </p>
-</div>
-<section class="well well-sm">
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
-              <ul class="list-group" id="social">
-                <li class="list-group-item"><a href="https://github.com/eyalshafran"><i class="fa fa-github-square fa-lg"></i> github</a></li>
-                <li class="list-group-item"><a href="https://twitter.com/EyalShafran"><i class="fa fa-twitter-square fa-lg"></i> twitter</a></li>
-                <li class="list-group-item"><a href="https://www.linkedin.com/in/eyal-shafran-11924216/"><i class="fa fa-linkedin-square fa-lg"></i> linkedin</a></li>
-                <li class="list-group-item"><a href="https://www.facebook.com/sportsplotting/"><i class="fa fa-facebook-square fa-lg"></i> facebook</a></li>
-              </ul>
-            </li>
-
-            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
-                <ul class="list-group" id="recentposts">
-                    <li class="list-group-item">
-                        <a href="https://eyalshafran.github.io/all-star-and-draft-picks.html">
-                            All-Star and Draft Picks
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://eyalshafran.github.io/age.html">
-                            Age
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://eyalshafran.github.io/per-ws-vs-salary.html">
-                            PER & WS vs. Salary
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://eyalshafran.github.io/assists_breakdown.html">
-                            Assists Breakdown
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://eyalshafran.github.io/figure-summary-1.html">
-                            A few figures - week 1
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-
-
-
-    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
-      <ul class="list-group" id="links">
-        <li class="list-group-item">
-            <a href="http://shafrane.wixsite.com/doingthedishes" target="_blank">
-                My old blog
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://grantland.com/" target="_blank">
-                Grantland
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="https://fivethirtyeight.com/" target="_blank">
-                FiveThirtyEight
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://nyloncalculus.com/" target="_blank">
-                nylon calculus
-            </a>
-        </li>
-      </ul>
-    </li>
-    </ul>
-</section>            </aside>
-        </div>
     </div>
 </div>
+<!-- End Content Container -->
+
 <footer>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2018 Eyal Shafran
+         <div class="col-xs-10">&copy; 2020 Eyal Shafran
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
@@ -14102,6 +14107,7 @@ IiIi0oWBkoiIiIh0YaAkIiIiIl0YKImIiIhIl/8BWq3GCO0j5EAAAAAASUVORK5CYII=
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
 <script src="https://eyalshafran.github.io/theme/js/respond.min.js"></script>
+
 
     <!-- Disqus -->
     <script type="text/javascript">
@@ -14135,6 +14141,7 @@ IiIi0oWBkoiIiIh0YaAkIiIiIl0YKImIiIhIl/8BWq3GCO0j5EAAAAAASUVORK5CYII=
         })();
     </script>
     <!-- End Google Analytics Code -->
+
 
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58f04647af3a2863"></script>
 </body>

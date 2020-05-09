@@ -1,0 +1,34 @@
+table.dataframe {
+  margin-left: 0;
+  margin-right: 0;
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  background-color: white;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+    
+}
+
+table.dataframe th {
+	border-bottom: 1px solid;
+	text-align: center;
+	background-color: white;
+	padding: 0.5em;
+}
+
+table.dataframe tbody th, td {
+  text-align: left;
+  padding: 4px;
+  border: none;
+}
+
+table.dataframe tbody tr:nth-child(odd) th, table tbody tr:nth-child(odd) td {
+  background-color: #f2f2f2;
+}
+
+table.dataframe tbody tr:nth-child(even) th, table tbody tr:nth-child(even) td {
+  background-color: white;
+}
+
